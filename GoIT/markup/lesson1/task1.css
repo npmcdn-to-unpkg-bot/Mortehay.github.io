@@ -1,0 +1,45 @@
+h1 {
+	text-align: center;
+	margin-top:50px; 
+}
+img {
+	width: 250px;
+	white-space: 50px;
+	}
+p {
+	font-size: 15px;
+	margin-left: 50px;
+	text-align: left;
+}
+ul {
+	margin-left: 50px;
+	text-align:left;
+}
+a {
+	text-decoration: none;
+	text-align: left;
+	margin-left: -150px;
+}
+.border {
+	text-align: center;
+	border-bottom: 1px solid black;
+	width: 500px;
+}
+body div div {
+	float:left;
+}
+}
+#right {
+
+	width:25%;
+	border:10px solid white;
+}
+#left {
+	width:25%;	
+	border:10px solid white;
+}
+#center {
+	width:50%;
+	border:10px solid white;
+}
+
