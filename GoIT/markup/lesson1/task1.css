@@ -1,3 +1,6 @@
+body {
+	background-color: #dcdcdc;
+}
 h1 {
 	text-align: center;
 	margin-top:50px; 
@@ -23,7 +26,8 @@ a {
 .border {
 	text-align: center;
 	border-bottom: 1px solid black;
-	width: 500px;
+	width: 470px;
+	margin: 20px;
 }
 body div div {
 	float:left;
@@ -31,15 +35,16 @@ body div div {
 }
 #right {
 
-	width:25%;
-	border:10px solid white;
+	width:33%;
+	border:10px solid #dcdcdc;
 }
 #left {
-	width:25%;	
-	border:10px solid white;
+	width:33%;	
+	border:10px solid #dcdcdc;
 }
 #center {
-	width:50%;
-	border:10px solid white;
+	width:34%;
+	border:10px solid #dcdcdc;
+	background-color: white;
 }
 
