@@ -1,38 +1,38 @@
 body {
 	background-color: #dcdcdc;
 }
-h3 {
+h1 {
 	text-align: center;
 	padding: 0 5px 0 5px;
-	margin-top:40px; 
+	margin-top:50px; 
 }
 img {
-	width: 150px;
-	white-space: 40px;
+	height: 150px;
+	white-space: 30px;
 	border-radius: 30%
 }
 p {
-	font-size: 12px;
-	margin-left: 20px;
+	font-size: 16px;
+	margin: 0 0 0 20px;
 	text-align: left;
 }
 ul {
 	text-align:left;
-	font-size: 12px;
+	font-size: 16px;
 }
 a {
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 16px;
 }
 .border {
 	text-align: center;
 	border-bottom: 1px solid gray;
-	width: 320px;
-	margin: 5px 40px 0px 40px;
-	
+	width: 450px;
+	margin: 25px 50px 25px 50px;
 }
 .center {
-	width:400px;
+	width:550px;
+	height: 700px;
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 2px;
@@ -41,13 +41,11 @@ a {
 }
 .bottom {
 	text-align: center;
-	width: 380px;
-	margin: 5px 40px 50px 40px;
+	width: 450px;
+	margin: 5px 50px 50px 50px;
 }
-.link {
-	margin-left: 20px;
-	text-align: left;
-	padding-bottom: 10px;
+.padding {
+	padding: 0 0 20px 0;
 }
 
 
