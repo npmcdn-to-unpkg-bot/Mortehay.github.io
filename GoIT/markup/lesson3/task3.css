@@ -6,7 +6,7 @@ body {
 	margin:0 0 40px 46px;
 }
 .title_text {
-	font-size: 40px;
+	font-size: 36px;
 	padding-top: 50px;
 }
 .center {
@@ -39,7 +39,7 @@ body {
 	list-style: none;
 }
 .top_panel li:hover{
-	box-shadow: inset 2px 0px 0px 0px #e3e3e3, inset -2px 0px 0px 0px #e3e3e3;	 
+	box-shadow: inset 1px 0px 0px 0px #e3e3e3, inset -1px 0px 0px 0px #e3e3e3;	 
 } 	
 .left_panel {
     -webkit-box-sizing: border-box;
@@ -78,7 +78,11 @@ body {
 span {
 	text-decoration: underline;
 }
-a:link, a:visited {
+.top_panel a:link, .top_panel a:visited {
+	text-decoration:none;
+	color: white; 
+}
+.left_panel a:link, .bottom_panel a:link, .left_panel a:visited, .bottom_panel a:visited {
 	text-decoration:none;
 	color: black; 
 }
