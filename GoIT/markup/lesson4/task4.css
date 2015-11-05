@@ -1,0 +1,126 @@
+body {
+    background: url(img/background.jpg) no-repeat center top fixed;
+    background-size: cover;
+    font-family: Arial;
+    font-size: 12px;
+}
+body p {
+	text-align: center;	
+}
+.dropdown_menu a:link, .dropdown_menu a:visited {
+	text-decoration:none;
+	color: #ffffff;
+	margin: 0 auto; 
+}
+.background {
+	width: 1000px;
+	height: 1000px;
+	margin: 0 auto;
+	box-shadow: 0 0 25px #333;
+	margin-top: -15px;
+}
+.top_part {
+	height: 175px;
+	width: 1000px;
+	background-color: #ffffff;
+}
+.top_part div {
+	float: left;
+}
+.contacts {
+	display: block;
+	margin-left: 840px;
+	padding-top: 10px;
+	margin-bottom: 40px;
+	margin-top: 10px;
+}
+.contacts p {
+	margin-top: -6px;
+	color: #5fa5bb;
+	font-size: 10px;
+	text-align: left;
+}
+.top_part_logo img{
+	margin-left: 32px;
+	margin-top: 11px;
+}
+.top_part_flags li {
+	width: 60px;
+	float:right;
+	font-size: 10px;
+	text-align: center;
+}
+.top_part_flags a:link, .top_part_flags a:visited {
+	color: #5fa5bb;
+}
+.photo {
+	height: 237px;
+	width: 1000px;
+	background-image: url("img/photo.jpg");
+}
+.dropdown_menu {
+	height: 28px;
+	width: 1000px;
+	background-color: #343434;
+	padding-top: 1px;
+	margin-top: -1px; 
+	box-shadow: 0px 5px #333;
+} 
+ .dropdown_menu_hor, .left li, .right li , .top_part_flags, .top_part_flags li, .contacts{
+	list-style:none;
+}
+.dropdown_menu_hor ul {
+	padding: 0;
+	margin-right:37px;
+}
+.dropdown_menu_hor li {
+	float:left;
+	padding: 0;
+	margin-right: 70px;
+}
+.dropdown_menu_hor li a {
+	position:relative;
+
+}
+.dropdown_menu_ver {
+	display: none;
+	position: absolute;
+	-webkit-padding-start:0px;
+	padding-top: 2px;
+
+	background-color: #343434;
+}
+.dropdown_menu_ver li {
+	float:none;
+	display:block;
+	background:none;
+	padding: 5px 0px 5px 5px;
+	margin-right: 10px;
+}
+li:hover ul, li.over ul{
+	display:block;
+}
+.botom_part {
+	
+}
+.right, .left  {
+	width:210px;
+	height:560px;
+	float:right;
+	background-color: #edeef0;
+}
+.middle {
+	width:580px;
+	height:560px;
+	float:right;
+	background-color: #ffffff;
+}
+.left ul, .right ul {
+	margin: -10px;
+}
+.left li, .right li {
+	padding-top: 5px;
+}
+span {
+	font-weight: bold;
+}
