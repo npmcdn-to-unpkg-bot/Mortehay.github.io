@@ -25,7 +25,12 @@ body {
 	margin-bottom: 700px;
 }
 .top_panel {
-	background-color: #4a4949;
+	/* background-color: #4a4949; */
+	background: -webkit-linear-gradient(90deg, #444343 0%, #5e5e5e 100%);
+	background: -moz-linear-gradient(90deg, #444343 0%, #5e5e5e 100%);
+	background: -o-linear-gradient(90deg, #444343 0%, #5e5e5e 100%);
+	background: -ms-linear-gradient(90deg, #444343 0%, #5e5e5e 100%);
+	background: linear-gradient(0deg, #444343 0%, #5e5e5e 100%);
 }
 .bottom_panel {
 	background-color: #e1e1e1;
@@ -44,7 +49,12 @@ body {
 	list-style: none;
 }
 .top_panel li:hover{
-	box-shadow: inset 1px 0px 0px 0px #e3e3e3, inset -1px 0px 0px 0px #e3e3e3;	 
+	box-shadow: inset 1px 0px 0px 0px #e3e3e3, inset -1px 0px 0px 0px #e3e3e3;
+	background: -webkit-linear-gradient(90deg, #2e2e2e 0%, #4a4a4a 100%);
+	background: -moz-linear-gradient(90deg, #2e2e2e 0%, #4a4a4a 100%);
+	background: -o-linear-gradient(90deg, #2e2e2e 0%, #4a4a4a 100%);
+	background: -ms-linear-gradient(90deg, #2e2e2e 0%, #4a4a4a 100%);
+	background: linear-gradient(0deg, #2e2e2e 0%, #4a4a4a 100%);	 
 } 	
 .left_panel {
     -webkit-box-sizing: border-box;
