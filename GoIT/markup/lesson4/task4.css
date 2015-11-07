@@ -1,3 +1,7 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
     background: url(img/background.jpg) no-repeat center top fixed;
     background-size: cover;
@@ -71,21 +75,20 @@ body p {
 	z-index: 2;
 	position: absolute;
 } 
- .dropdown_menu_hor, .left li, .right li , .top_part_flags, .top_part_flags li, .contacts{
+.dropdown_menu_hor {
+	padding-top: 8px;
+	padding-left: 65px;
+} 
+.dropdown_menu_hor, .left li, .right li , .top_part_flags, .top_part_flags li, .contacts{
 	list-style:none;
-}
-.dropdown_menu_hor ul {
-	padding: 0;
-	margin-right:37px;
-	margin-bottom: 10px;
 }
 .dropdown_menu_hor li {
 	float:left;
-	padding: 0;
-	margin-right: 70px;
+	margin-right: 67px;
 }
-.dropdown_menu_hor li a {
+ .dropdown_menu_hor li a {
 	position:relative;
+	display: block;
 }
 .dropdown_menu_ver {
 	display: none;
@@ -122,11 +125,14 @@ li:hover ul, li.over ul{
 	box-shadow: inset 1px 0px 0px 0px rgba(199,202,207,1), inset -1px 0px 0px 0px rgba(199,202,207,1);
 }
 .left ul, .right ul {
-	margin: -10px;
-	padding-top: 10px; 
+	margin: 0 30px  0 30px;
 }
 .left li, .right li {
 	padding-top: 5px;
+}
+.left p, .right p {
+	color: black;
+	padding-top: 50px;
 }
 span {
 	font-weight: bold;
