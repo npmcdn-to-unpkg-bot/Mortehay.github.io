@@ -76,6 +76,7 @@ body p {
 	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 	z-index: 2;
 	position: absolute;
+	border-bottom: 1px solid #000000;
 } 
 .dropdown_menu_hor {
 	padding-top: 8px;
@@ -96,8 +97,10 @@ body p {
 	display: none;
 	position: absolute;
 	-webkit-padding-start:0px;
+	margin-top: 7px;
 	padding-top: 2px;
 	background-color: #343434;
+	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
 .dropdown_menu_ver li {
 	float:none;
