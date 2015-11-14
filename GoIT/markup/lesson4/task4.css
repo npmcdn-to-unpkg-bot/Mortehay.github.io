@@ -92,13 +92,14 @@ body p {
  .dropdown_menu_hor li a {
 	position:relative;
 	display: block;
+	height: 28px;
 }
 .dropdown_menu_ver {
 	display: none;
 	position: absolute;
 	-webkit-padding-start:0px;
-	margin-top: 7px;
-	padding-top: 2px;
+	margin-top: -7px;
+	padding-top: 1px;
 	background-color: #343434;
 	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
@@ -108,6 +109,9 @@ body p {
 	background:none;
 	padding: 5px 0px 5px 5px;
 	margin-right: 10px;
+}
+.dropdown_menu_ver li  a {
+	height: 12px;
 }
 li:hover ul, li.over ul{
 	display:block;
