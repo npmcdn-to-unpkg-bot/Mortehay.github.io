@@ -280,6 +280,9 @@ dl dt {
 	float:left;
 	margin-right: 30px;
 }
+ul.mid_center_first_ul>li:nth-last-child(1) {
+	margin-right: 0;
+}
 .photo {
 	width: 137px;
 	height: 129px;
@@ -426,7 +429,7 @@ ul.mid_top_sub_ul_left>li>a {
 	background-color: #ffffff;
 	border: 1px solid #314b5e;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 2px 2px 2px 0px rgba(0,0,0,0.5);
-	padding: 7px;
+	padding: 5px;
 	border-radius: 3px;
 	display: inline-block;
 	position: relative;
@@ -443,9 +446,9 @@ ul.mid_top_sub_ul_left>li>a {
 }
 .regular-checkbox:checked:after {
 	content: '\2714';
-	font-size: 12px;
+	font-size: 8px;
 	position: absolute;
-	top: -1px;
+	top: 0px;
 	left: 2px;
 	color: #99a1a7;
 }
@@ -475,6 +478,7 @@ ul.mid_top_sub_ul_left>li>a {
 	font-size: 15px;
 	text-decoration: underline;
 	margin-bottom: -2px;
+	font-style: italic;
 	box-sizing: border-box;
 
 }
