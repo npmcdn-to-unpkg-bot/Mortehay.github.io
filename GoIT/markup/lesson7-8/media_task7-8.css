@@ -2,10 +2,10 @@
 /************************************************************************************
 bigger than 960
 *************************************************************************************/
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 961px) {
 
 	.pagewrap {
-		width: 960px;
+		min-width: 961px;
 	}
 	/* header */
 	.header {
@@ -181,7 +181,7 @@ smaller than 960
 @media only screen and (max-width: 960px) and (min-width: 769px){
 
 	.pagewrap {
-		width: 960px;
+		max-width: 960px;
 	}
 	/* header */
 	.header {
@@ -419,7 +419,7 @@ smaller than 768
 @media only screen and (max-width: 768px) and (min-width: 481px) {
 
 	.pagewrap {
-		width: 768px;	
+		max-width: 768px;	
 	}
 	/* header */
 	.header {
@@ -584,7 +584,7 @@ smaller than 480
 @media only screen and (max-width: 480px) and (min-width: 321px){
 
 	.pagewrap {
-		width: 480px;
+		max-width: 480px;
 	}
 	/* header */
 	.header {
@@ -632,25 +632,24 @@ smaller than 480
 	}
 	ul.home_rol_bar {
 		margin-top: 20px;
-		/* padding: 0 auto; */
 		margin: 0 auto;
 		width: 244px;
 		
 	}
 	ul.home_rol_bar a{
-		font-size: 28px;
+	font-size: 28px;
 	}
 	ul.home_rol_bar>li {
-		width: 244px;
+		width: 240px;
 		
 		text-align: center;	
 	}
-	ul.home_rol_bar>a:hover {
+	ul.home_rol_bar>a:hover { 
 		-webkit-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 		-moz-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 		box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 	}
-	ul.home_rol_bar>li>a:hover {
+	ul.home_rol_bar>li:hover {
 		width: 240px;
 		background-color:rgba(68,55,75,0.5);
 		border-left:1px solid #000000;
@@ -661,6 +660,8 @@ smaller than 480
 		-webkit-box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
 		-moz-box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
 		box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
+		margin: -1px -1px 0 -1px;
+		box-sizing: content-box;
 	}
 	/* Header bar */
 	/* Header rollover bar */
@@ -742,17 +743,19 @@ smaller than 320
 @media only screen and (max-width: 320px) {
 
 	.pagewrap {
-		width: 320px;
+		max-width: 320px;
 		}
 	/* header */
 	.header {
 		height: 514px;
 	}
 	/* header LOGO position 320*/
-	.site_logo {
+	div.site_logo {
 		padding-top: 72px;
-		width:30%;
-		margin: 0 auto;/
+		max-width:100%;
+	}
+	div.site_logo>a {
+		text-align: center;
 	}
 	/* header LOGO position 320*/
 	.sub_header {
@@ -772,25 +775,25 @@ smaller than 320
 	}
 	ul.home_rol_bar {
 		margin-top: 20px;
-		/* padding: 0 auto; */
 		margin: 0 auto;
+
 		width: 244px;
 		
 	}
 	ul.home_rol_bar a{
-	font: ;ont-size: 28px;
+	font-size: 28px;
 	}
 	ul.home_rol_bar>li {
-		width: 244px;
+		width: 240px;
 		
 		text-align: center;	
 	}
-	ul.home_rol_bar>a>a:hover {
+	ul.home_rol_bar>a:hover { 
 		-webkit-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 		-moz-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 		box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 	}
-	ul.home_rol_bar>li>a:hover {
+	ul.home_rol_bar>li:hover {
 		width: 240px;
 		background-color:rgba(68,55,75,0.5);
 		border-left:1px solid #000000;
@@ -801,6 +804,8 @@ smaller than 320
 		-webkit-box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
 		-moz-box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
 		box-shadow: inset 0px 1px 0px 0px rgba(54,40,62,1);
+		margin: -1px -1px 0 -1px;
+		box-sizing: content-box;
 	}
 	/* Header bar */
 	/* Header rollover bar */
@@ -808,21 +813,46 @@ smaller than 320
 	 	display: block;
 	}
 	/* Header rollover bar */
-	.header_content_arrow:before {
-	content: url(img/left_arrow.png);
-	position: relative;
-	left:-50px;
-	top:50px;
-	z-index: 9999;
+	div.header_content_arrow {
+		
+		min-height:47px;
+		display:block;
+		
 	}
-	.header_content_arrow:after {
-		content: url(img/right_arrow.png);
+	div.header_content {
 		position: relative;
-		left: 175px;
-		top: -45px;
-		z-index: 9999;
+		top:25%;
+		left:25%; 
+		
+		max-width:100%;
 	}
+	div.header_content>div {
+		min-width: 144px;
+	}
+	div.header_content_arrow>h1 {
+		font-size: 24px;
 
+	}
+	div.header_content_arrow>h2 {
+		font-size: 12px;
+	}
+	div.header_content_nav_selector {
+		top:60px;
+		left:10%;
+	}
+	 div.header_content_arrow>h1:before {
+		content: url(img/left_arrow.png);
+		position: absolute; 
+		max-width: 30px;
+		margin-left: -40px;
+	}
+	div.header_content_arrow>h1:after {
+		content: url(img/right_arrow.png);
+		position: absolute; 
+		max-width: 30px;
+		margin-left: 20px;
+	}
+	
 	/* header */
 	.content {
 		height:595px;
@@ -841,7 +871,7 @@ smaller than 320
 	}
 	div.right_blog {
 		clear:both;
-		width:80%;
+		width:93%;
 		position: relative;
 		top:100px;
 	}

@@ -23,9 +23,14 @@ ul:after {
     clear: both;
     float: none;
 }
+
 @font-face {
     font-family: 'League Gothic Condensed Regular';
     src: url(fonts/LeagueGothic-Regular.otf);
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url(fonts/OpenSans-Semibold.ttf);
 }
 p, a, h2,h3,h1 {
 	font-family: 'League Gothic Condensed Regular', Tahoma, 'Arial Narrow', Helvetica, sans-serif, Arial;
@@ -129,6 +134,7 @@ Header rollover bar
 ul.home_rol_bar {
 	display:block;
 	padding: 0 auto;
+
 }
 ul.home_rol_bar a{
 	color:#ffffff;
@@ -144,13 +150,15 @@ ul.home_rol_bar>li>a {
 	padding: 2px 2px 2px 2px;
 }
 ul.home_rol_bar>li>a:hover {
-	border-bottom: 2px solid #edbfff;
-	margin-bottom: -2px;
+	/* border-bottom: 1px solid #edbfff; */
+	-webkit-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
+	-moz-box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
+	box-shadow: inset 0px -2px 0px 0px rgba(237,191,255,1);
 }
 ul.home_rol_bar_hidden {
 	display:none;
 	position: absolute;
-    width: 244px; 
+    width: 240px; 
     background-color:rgba(68,55,75,0.5);
     border-left:1px solid #000000;
 	border-right:1px solid #000000;
@@ -159,6 +167,7 @@ ul.home_rol_bar_hidden {
 	border-bottom-left-radius: 10px;
 	margin:0 auto;
 	z-index: 10;
+	margin-left:-1px;
 	
 }
 ul.home_rol_bar_hidden>li {
@@ -266,6 +275,25 @@ content
 	padding-top: 72px;
 	color: #ffffff;
 }
+.lower_content_img_1 {
+	background-image: url("img/lower_content_img.png");
+	height:23px;
+	width:30px;
+	background-position: 0 0;
+
+}
+.lower_content_img_2 {
+	background-image: url("img/lower_content_img.png");
+	height:23px;
+	width:30px;
+	background-position: 0 24px;
+}
+.lower_content_img_3 {
+	background-image: url("img/lower_content_img.png");
+	height:23px;
+	width:30px;
+	background-position: 0 48px;
+}
 div.content_lower_content {
 	display: block;
 	width: 100%;
@@ -274,12 +302,14 @@ div.content_lower_content {
 div.content_lower_content>div {
 	display: inline-block;
 }
-div.lower_content_img {
-	width:15%;
+div.lower_content_img_1, div.lower_content_img_2, div.lower_content_img_3 {
+	max-width:12%;
+	margin-right: 6%;
 	float:left;
 }
 div.lower_content_text {
-	width: 85%;
+	max-width: 82%;
+	display: inline-block;
 }
 .lower_content_text{
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
@@ -307,7 +337,7 @@ div.lower_content_text {
 blog
 *************************************************************************************/
 .blog {
-	padding-top:70px; */
+	padding-top:70px;
 }
 /************************************************************************************
 LEFT blog
@@ -315,6 +345,7 @@ LEFT blog
 div.left_blog {
 	width:100%;
 	position: relative;
+
 }
 div.left_blog_img, div.left_blog_text {
 	display: inline-block;
@@ -329,19 +360,25 @@ div.left_blog_text {
 	margin-left: 10%;
 	width:90%;
 	background-color: #ffffff;
+	padding-bottom: 15px;
 }
 div.left_blog_text>h2 {
 	text-transform: uppercase;
 	font-size:25px;
-	margin-left: 10%;	
+	margin-left: 10%;
+	font-family: 'OpenSans';
+
 }
 div.left_blog_text>h2:first-of-type {
 	padding-top: 20px;
+	font-family: 'OpenSans';
 }
 div.left_blog_text>p{
 	margin-left: 10%;
 	font-size: 16px;
-	padding
+	font-family: 'OpenSans';
+	overflow: hidden;
+	max-height: 150px;
 }
 div.left_blog_text>h2>span {
 	color:#f2d1ff;
@@ -351,7 +388,7 @@ LEFT blog selector
 *************************************************************************************/
 div.left_blog_selector {
 	position: relative;
-	top: 86px;
+	top: 26px;
 	left: 32px;
 }
 .left_blog_selector_img{
@@ -384,7 +421,7 @@ RIGHT blog
 } */
 div.right_blog{
 	position: relative;
-	left: 10px;
+	/* left: 10px; */
 	margin-top: 22px;
 }
 div.right_blog>h2 {
@@ -413,6 +450,8 @@ div.right_blog_resent_updates_text>h2{
 }
 div.right_blog_resent_updates_text>p{
 	font-size: 18px;
+	overflow: hidden;
+	max-height:44px; 
 }
 div.right_blog>h3 {
 	text-align: right;
