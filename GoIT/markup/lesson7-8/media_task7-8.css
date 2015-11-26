@@ -1,24 +1,24 @@
-
-/************************************************************************************
+/* 
+***********************************************************************************
 bigger than 960
-*************************************************************************************/
+************************************************************************************
 @media screen and (min-width: 961px) {
 
 	.pagewrap {
 		min-width: 961px;
 	}
-	/* header */
+	header
 	.header {
 		height: 848px;
 	}
 
-	/* header LOGO position 768*/
+	header LOGO position 768
 	.site_logo {
 		padding-top: 54px;
 		margin-left: 10%;
 	}
-	/* header LOGO position 768*/
-	/* sub header */
+	header LOGO position 768
+	sub header
 	.sub_header {
 		height: 400px;
 		margin-top: 77px;
@@ -37,12 +37,12 @@ bigger than 960
 		right: 70px;
 		top: -15px;
 	}
-	/* sub header */
+	sub header
 	div.header_content {
 		top:300px;
 		left:60px;
 	}
-	/* Header content */
+	Header content
 	div.header_content>div>h1 {
 		padding-bottom: 10px;
 	}
@@ -52,8 +52,8 @@ bigger than 960
 	div.header_content>div>p {
 		padding-bottom: 10px;
 	}
-	/* Header content */
-	/* Header content nav selector*/
+	Header content
+	Header content nav selector
 	div.header_content_nav_selector{
 		float:left;
 		position: relative;
@@ -61,8 +61,8 @@ bigger than 960
 		left:67%;
 		margin-right:0.5em; 
 	}
-	/* Header content nav selector*/
-	/* Header rollover bar */
+	Header content nav selector
+	Header rollover bar
 	ul.home_rol_bar {
 		margin-top: 40px;
 		padding-left: 10%;
@@ -74,16 +74,16 @@ bigger than 960
 	ul.home_rol_bar>li {
 		margin-right:4%; 
 	}
-	/* Header rollover bar */
-	/* Header bar */
+	Header rollover bar
+	Header bar
 	
-	/* Header rollover bar */
+	Header rollover bar
 	ul.home_rol_bar>li:hover>ul.home_rol_bar_hidden {
  	display: none;
   	}
-	/* Header rollover bar */
-	/* header */
-	/* content */
+	Header rollover bar
+	header
+	content
 	.content {
 		height:340px;
 	}
@@ -94,8 +94,8 @@ bigger than 960
 	div.lower_content_text>p {
 		line-height: 180%;
 	}
-	/* content */
-	/* blog */
+	content
+	blog
 	.blog {
 		height:484px;
 	}
@@ -109,8 +109,8 @@ bigger than 960
 	div.right_blog>h3 {
 		margin-right: 40%;
 	}
-	/* blog */
-	/* blog IMG*/
+	blog
+	blog IMG
 	.blog_img {
 		height:118px;
 	}
@@ -118,12 +118,16 @@ bigger than 960
 		max-width: 100%;	
 	}
 	div.blog_img>div {
-		margin: 30px 30px;
+		width:12%;
+		margin: 20px 2.3333% 20px 2.3333%;
 		position: relative;
-		left:10%;
+		
 	}
-	/* blog IMG*/
-	/* categories*/
+	div.blog_img>div>img {
+		max-width:100%;
+	}
+	blog IMG
+	categories
 	.categories {
 		height:393px;
 	}
@@ -141,8 +145,8 @@ bigger than 960
 		overflow: hidden;
 		max-height: 150px;
 	}
-	/* categories*/
-	/* footter*/
+	categories
+	footter
 	.footter {
 		height:111px;
 		width:100%;
@@ -174,14 +178,15 @@ bigger than 960
 		margin-right: 2%;
 		
 	}
-}
+} */
 /************************************************************************************
 smaller than 960
 *************************************************************************************/
-@media only screen and (max-width: 960px) and (min-width: 769px){
+@media only screen and (min-width: 960px){
 
 	.pagewrap {
-		max-width: 960px;
+		min-width: 960px;
+		margin: 0 auto;
 	}
 	/* header */
 	.header {
@@ -350,12 +355,13 @@ smaller than 960
 		max-width: 100%;	
 	}
 	div.blog_img>div {
-		margin: 30px 30px;
+		width:12%;
+		margin: 20px 2.3333% 20px 2.3333%;
 		position: relative;
-		left:10%;
-		position: relative;
-		left: 64px;
-		top: -3px;
+		
+	}
+	div.blog_img>div>img {
+		max-width:100%;
 	}
 	/* blog IMG*/
 	/* categories*/
@@ -416,10 +422,10 @@ smaller than 960
 /************************************************************************************
 smaller than 768
 *************************************************************************************/
-@media only screen and (max-width: 768px) and (min-width: 481px) {
+@media only screen and (min-width: 768px) and (max-width: 959px) {
 
 	.pagewrap {
-		max-width: 768px;	
+		max-width: 959px;	
 	}
 	/* header */
 	.header {
@@ -485,7 +491,7 @@ smaller than 768
 	font-size: 20px;
 	}
 	ul.home_rol_bar>li {
-		margin-right:4%; 
+		margin-right:3%; 
 	}
 	/* Header rollover bar */
 	/* Header bar */
@@ -528,9 +534,13 @@ smaller than 768
 		max-width: 100%;	
 	}
 	div.blog_img>div {
-		margin: 20px 20px;
+		width:12%;
+		margin: 20px 2.3333% 20px 2.3333%;
 		position: relative;
-		left:5%;
+		
+	}
+	div.blog_img>div>img {
+		max-width:100%;
 	}
 	/* blog IMG*/
 	/* categories */
@@ -581,10 +591,10 @@ smaller than 768
 /************************************************************************************
 smaller than 480
 *************************************************************************************/
-@media only screen and (max-width: 480px) and (min-width: 321px){
+@media only screen and (min-width: 481px) and (max-width: 767px){
 
 	.pagewrap {
-		max-width: 480px;
+		max-width: 767px;
 	}
 	/* header */
 	.header {
@@ -697,8 +707,9 @@ smaller than 480
 		height:232px;
 	}
 	div.blog_img>div {
-		width:33%;
+		width:25%;
 		margin-bottom: 20px;
+		margin: 20px 4.1666% 0 4.1666%; 
 	}
 	div.blog_img {
 		padding-top: 30px;
@@ -708,6 +719,11 @@ smaller than 480
 	/* CATEGORIES*/
 	.categories {
 		height:667px;
+	}
+	div.categories>p {
+		max-height: 60%;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	/* CATEGORIES*/
@@ -740,10 +756,10 @@ smaller than 480
 /************************************************************************************
 smaller than 320
 *************************************************************************************/
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px)  and (max-width: 479px){
 
 	.pagewrap {
-		max-width: 320px;
+		max-width: 479px;
 		}
 	/* header */
 	.header {
@@ -879,10 +895,12 @@ smaller than 320
 	/* blog IMG*/
 	.blog_img {
 		height:442px;
+
 	}
 	div.blog_img>div {
-		width:50%;
+		width:30%;
 		margin-bottom: 50px;
+		margin: 40px 10% 0 10%; 
 	}
 	div.blog_img {
 		padding-top: 50px;
