@@ -28,6 +28,20 @@ ul {
 	color: #ffffff;
 	margin: 0 auto; 
 }
+
+
+
+div.top_panel div.top_panel_wrapper {
+width: 1215px;
+height: 36px;
+display: block;
+float: none;
+margin: 0 auto;
+}
+.top_panel .top_panel_wrapper div.float_right {float: right;}
+
+
+
 .top_panel {
 	width: 100%;
 	height: 36px;
