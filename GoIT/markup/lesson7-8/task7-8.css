@@ -241,7 +241,7 @@ header_content_nav low resolution
 	width:17px;
 	background-position: 0 0;
 }
-.header_content_nav_selector:hover {
+.header_content_nav_selector:hover, .header_selected {
 	background-position: 17px 0;
 }
 div.header_content_nav_selector{
@@ -251,6 +251,7 @@ div.header_content_nav_selector{
 	left:25%;
 	margin-right:0.5em; 
 }
+
 /************************************************************************************
 sub Header
 *************************************************************************************/
@@ -341,6 +342,7 @@ blog
 *************************************************************************************/
 .blog {
 	padding-top:70px;
+	box-sizing:border-box;
 }
 /************************************************************************************
 LEFT blog
@@ -400,7 +402,7 @@ div.left_blog_selector {
 	width:17px;
 	background-position: 0 0;
 }
-.left_blog_selector_img:hover {
+.left_blog_selector_img:hover, .blog_selected {
 	background-position: 17px 0;
 }
 div.left_blog_selector_img{
@@ -424,6 +426,7 @@ RIGHT blog
 } */
 div.right_blog{
 	position: relative;
+	width: 100%
 	/* left: 10px; */
 	margin-top: 22px;
 }
@@ -457,8 +460,9 @@ div.right_blog_resent_updates_text>p{
 	max-height:44px; 
 }
 div.right_blog>h3 {
-	text-align: right;
-	margin-right: 5px;
+	position: relative;
+	text-align: center;
+	right:2%;
 	text-transform: uppercase;
 	font-size: 18px;
 }
@@ -510,6 +514,7 @@ FOOTTER
 div.footter>h1 {
 	font-size: 10px;
 	color: #ffffff;
+	text-shadow: 1px 2px 2px rgba(0, 0, 0, 1);
 }
 div.footter>h1>span {
 	font-weight: bold;
