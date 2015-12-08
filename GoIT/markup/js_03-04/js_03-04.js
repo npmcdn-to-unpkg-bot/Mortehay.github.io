@@ -43,9 +43,11 @@ function MakeLists (array1, array2) {
 			InnerList.style.listStyleType="none";
 			var CheckboxUl = document.createElement("INPUT");
 			CheckboxUl.setAttribute("type", "checkbox");
+			CheckboxUl.className="regular-checkbox";
 			InnerList.insertBefore(CheckboxUl, InnerItem);
-			CheckboxUl.style.margin="0";
+			/*CheckboxUl.style.margin="0";*/
 			InnerItem.style.display="block";
+			InnerItem.style.marginLeft="10px";
 			CheckboxUl.style.cssFloat="left";
 			
 			/*CheckboxUl.style.border="1px solid #444b7e";*/
