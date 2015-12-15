@@ -1,0 +1,168 @@
+/* ---------------------------------------------------------------------------------------- */
+@media only screen and (min-width: 920px) {
+	
+	div.wraper {
+		width: 900px;
+		height: 620px;
+		background-color: green;
+		margin:2% auto;
+	}
+}
+@media only screen and (max-width: 919px) and (min-width: 200px) {
+	
+	div.wraper {
+	width: 95%;
+	
+	margin:2% auto;
+	height: 450px;
+	background-color: green;
+	}
+
+}
+@media only screen and (max-width: 199px) {
+	
+	div.wraper {
+	width: 180;
+	
+	margin:2% auto;
+	height: 200px;
+	background-color: green;
+	
+	}
+} 
+/* ---------------------------------------------------------------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+}
+div {
+	overflow: hidden;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; box-sizing: border-box;
+}
+input[type="button"]{
+	padding:4px;
+}
+div.header, div.footer {
+	
+	height: 8%;
+	width:100%;
+	background-color: blue;
+}
+div.content {
+	height:84%;
+	width: 100%;
+}
+div.contentHome {
+	width:100%;
+	height:100%;
+}
+div.homeRight, div.homeLeft{
+	width:40%;
+	height: 90%;
+	margin: 2.5% 2.5%;
+	background-color: red;
+	float:left;
+}
+div.homeRight {
+	background-color: red;
+}
+div.homeLeft {
+	background-color: brown;
+}
+div.homeMiddle {
+	width: 5%;
+	height: 90%;
+	margin: 2.5% 2.5%;
+	background-color: yellow;
+	float:left;
+	border-radius:5px;
+}
+div.contentLeft, div.contentRight {
+	display:none;
+}
+div.contentLeft {
+	widows: 100%;
+	height: 100%;
+
+	padding: 10% 15%;
+	background-color: pink;
+}
+div.contentRight {
+	widows: 100%;
+	height: 100%;
+	padding: 10% 15%;
+	background-color: violet;
+}
+div.returnArrow {
+	background-color: black;
+	width:4%;
+	height:50%;
+	display:none;
+}
+
+
+/**************************************************************************
+Display
+**************************************************************************/
+div.mSeconds {
+	-webkit-box-sizing: border-box; box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	text-transform: lowercase;
+	font-size: 15px;
+	width: 30px;
+	background-color: white;
+	float:left;
+}
+div.seconds, div.minutes, div.hours {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; box-sizing: border-box;
+	font-size: 40px;
+	width: 50px;
+	margin-right:5px; 
+	background-color: white;
+	float:left;
+}
+/**************************************************************************
+Display
+**************************************************************************/
+/**************************************************************************
+leftDisplay
+**************************************************************************/
+div.leftDisplay {
+	width:100%;
+	height: 50%;
+	background-color: yellow;
+	margin: 0 auto;
+	margin-top: 10%;
+	padding: 8% 25%;
+}
+
+
+form.leftButtons {
+	margin: 0 auto;
+	width:40%;
+	margin-top: 5%;
+}
+/**************************************************************************
+rightDisplay
+**************************************************************************/
+div.rightDisplay {
+	width:100%;
+	height: 50%;
+	background-color: yellow;
+	margin: 0 auto;
+	margin-top: 10%;
+	padding: 8% 25%;
+}
+
+
+form.rightButtons {
+	margin: 0 auto;
+	width:40%;
+	margin-top: 5%;
+}
+
+/**************************************************************************
+rightDisplay
+**************************************************************************/

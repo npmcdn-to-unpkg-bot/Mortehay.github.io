@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" type="text/css" href="js_05-06.css"> 
+	<title>js_05-06</title>
+	
+<body>
+	
+	<div class="wraper" id="wraper">
+		<div class="header">
+			
+		</div>
+		<div class="content" id="content">
+			<div class="contentLeft" id="contentLeft">
+				<div class="leftDisplay" id="leftDisplay">					
+					<div class="hours" id="hours"></div>
+					<div class="minutes" id="minutes"></div>
+					<div class="seconds" id="seconds"></div>
+					<div class="mSeconds" id="mSeconds"></div>
+				</div>
+				<form class="leftButtons">
+					<input type="button" value="Start" id="leftStart">
+					<input type="button" value="Pause" id="leftPause">	
+					<input type="button" value="Stop" id="leftStop">	
+				</form>
+			</div>
+			<div class="contentHome" id="contentHome">
+				<div class="homeLeft" id="homeLeft">
+					
+				</div>
+				<div class="homeMiddle">
+					
+				</div>
+				<div class="homeRight" id="homeRight">
+					
+				</div>
+			</div>
+			<div class="contentRight" id="contentRight">
+				<div class="rightDisplay" id="rightDisplay">					
+					<div class="hours" id="rhours"></div>
+					<div class="minutes" id="rminutes"></div>
+					<div class="seconds" id="rseconds"></div>
+					<div class="mSeconds" id="rmSeconds"></div>
+				</div>
+				<form class="rightButtons">
+					<input type="button" value="0" id="numButton" onclick='AddValue("0")'>
+					<input type="button" value="1" id="numButton" onclick='AddValue("1")'>
+					<input type="button" value="2" id="numButton" onclick='AddValue("2")'>
+					<input type="button" value="3" id="numButton" onclick='AddValue("3")'>
+					<input type="button" value="4" id="numButton" onclick='AddValue("4")'>
+					<input type="button" value="5" id="numButton" onclick='AddValue("5")'>
+					<input type="button" value="6" id="numButton" onclick='AddValue("6")'>
+					<input type="button" value="7" id="numButton" onclick='AddValue("7")'>
+					<input type="button" value="8" id="numButton" onclick='AddValue("8")'>
+					<input type="button" value="9" id="numButton" onclick='AddValue("9")'>
+				</form>
+				<form class="rightButtons">
+					<input type="button" value="Start" id="rightStart">
+					<input type="button" value="Pause" id="rightPause">	
+					<input type="button" value="Stop" id="rightStop">	
+				</form>	
+			</div>	
+				
+		</div>
+		<div class="footer">
+			<div class="returnArrow" id="returnArrow"></div>
+		</div>
+		<div class="footerLinks"></div>
+	</div>
+	<script src="js_05-06.js">	
+	</script>
+</body>
+</html>		
+
