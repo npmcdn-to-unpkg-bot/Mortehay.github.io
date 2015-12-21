@@ -58,13 +58,8 @@ function counterCheck () {
 		document.getElementById("hours").innerHTML=hours;
 	};
 	////////////////////////////////////////////////
-<<<<<<< HEAD
 	if (mSeconds<10) { document.getElementById("rmSeconds").innerHTML ='00'+mSeconds;
 	} else if(mSeconds<100) {
-=======
-	if (mSeconds<10) { document.getElementById("mSeconds").innerHTML ='00'+mSeconds;
-	} else if (mSeconds<100) {
->>>>>>> origin/master
 		document.getElementById("rmSeconds").innerHTML='0'+mSeconds;
 	} else {
 		document.getElementById("rmSeconds").innerHTML=mSeconds;
@@ -148,36 +143,26 @@ function combiner() {
 			seconds=Number(timeArr[1]+timeArr[0]);
 			minutes=Number(timeArr[2]);
 			console.log("seconds", seconds);
-<<<<<<< HEAD
 			console.log("minutes", minutes);
-=======
->>>>>>> origin/master
 			 break; 
 		case 4:
 			seconds=Number(timeArr[1]+timeArr[0]);
 			minutes=Number(timeArr[3]+timeArr[2]);
 			console.log("seconds", seconds);
-<<<<<<< HEAD
 			console.log("minutes", minutes);
-=======
->>>>>>> origin/master
 			 break; 
 		case 5:
 			seconds=Number(timeArr[1]+timeArr[0]);
 			minutes=Number(timeArr[3]+timeArr[2]);
 			hours=Number(timeArr[5]);
 			console.log("seconds", seconds);
-<<<<<<< HEAD
 			console.log("minutes", minutes);
 			console.log("hours", hours);
-=======
->>>>>>> origin/master
 			 break; 
 		case 6:
 			seconds=Number(timeArr[1]+timeArr[0]);
 			minutes=Number(timeArr[3]+timeArr[2]);
 			hours=Number(timeArr[6]+timeArr[7]);
-<<<<<<< HEAD
 			break; 
 			console.log("seconds", seconds);
 			console.log("minutes", minutes);
@@ -188,22 +173,11 @@ function combiner() {
 	console.log("beginInterval", beginInterval);
 	
 	return beginInterval, seconds, minutes, hours;
-=======
-			console.log("seconds", seconds);
-			 break; 
-	};
-
-	beginInterval=1000*(seconds+60*minutes+hours*60);
-	console.log("beginInterval", beginInterval);
-	
-	return beginInterval;
->>>>>>> origin/master
 };
 
 function downCounter() {
 	
 	console.log("beginInterval", beginInterval);
-<<<<<<< HEAD
 	console.log("seconds", beginInterval);
 		counterOperation = setTimeout(function () {
 		beginInterval--;
@@ -221,18 +195,6 @@ function downCounter() {
 			/*minutes=59;*/
 			if (hours>0) {hours--};
 		}
-=======
-		counterOperation = setTimeout(function () {
-		beginInterval--;
-		
-
-		/*console.log('mSeconds2', mSeconds);*/
-		mSeconds=Math.floor(beginInterval % 1000);
-		seconds=Math.floor(beginInterval/1000);
-		minutes=Math.floor(beginInterval/60);
-		hours=Math.floor(beginInterval/60);
-		
->>>>>>> origin/master
 		counterCheck ();
 
 		if (beginInterval>0) {downCounter()};
@@ -244,7 +206,6 @@ function downCounter() {
 //////////////////////////////////////downtimer//////////////////////////////////////////////////
 
 //////////////////////////////////////start stop pause //////////////////////////////////////////////////
-<<<<<<< HEAD
 function pausedTime() {
 	myFunCalls++;
 	var H4text = document.createElement('h4');
@@ -260,14 +221,6 @@ function myPauseFunction() {
 function myStopFunction() {
     clearTimeout(counterOperation);
    	mSeconds=0; seconds=0; minutes=0; hours=0;myFunCalls=0;beginInterval=0; timeArr=[];
-=======
-function myPauseFunction() {
-    clearTimeout(counterOperation);
-}
-function myStopFunction() {
-    clearTimeout(counterOperation);
-   	mSeconds=0; seconds=0; minutes=0; hours=0;
->>>>>>> origin/master
     document.getElementById("mSeconds").innerHTML = '0'+mSeconds;
 	document.getElementById("seconds").innerHTML ='0'+ seconds;
 	document.getElementById("minutes").innerHTML ='0'+ minutes;
@@ -276,19 +229,10 @@ function myStopFunction() {
 	document.getElementById("rseconds").innerHTML = '0'+ seconds;
 	document.getElementById("rminutes").innerHTML = '0' + minutes;
 	document.getElementById("rhours").innerHTML =  '0' +hours;
-<<<<<<< HEAD
 	
 	return myFunCalls, mSeconds, seconds, minutes, hours, beginInterval,timeArr;
 }
 
-=======
-	myFunCalls=0;
-	rmSeconds=0;
-
-	return myFunCalls, rmSeconds;
-}
-console.log("rmSeconds", rmSeconds);	
->>>>>>> origin/master
 
 
 document.getElementById("mSeconds").innerHTML = '0'+ mSeconds;
