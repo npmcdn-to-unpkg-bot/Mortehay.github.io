@@ -1,0 +1,62 @@
+.styledSelect {
+	width: 400px;
+	height: 100px;
+	background-color: #cbebff;
+	margin:0 auto;
+	padding: 0.5% 1%;
+	box-sizing:border-box;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+.checkBoxes {
+	
+	width: 400px;
+	height: 240px;
+	background-color: #AAF7D9;
+	margin:0 auto;
+	padding: 0.5% 1%;
+	box-sizing:border-box;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.multipleDropdownMenu {
+	width: 800px;
+	height: 240px;
+	background-color: #AAF7D9;
+	margin:0 auto;
+	padding: 0.5% 1%;
+	box-sizing:border-box;
+	border-radius: 4px;
+}
+
+
+/*------checkbox with css only-----*/
+.CSSstyledCheckbox {
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	border: 1px solid #314b5e;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 2px 2px 2px 0px rgba(0,0,0,0.5);
+	padding: 10px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+.CSSstyledCheckbox:active, .CSSstyledCheckbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.CSSstyledCheckbox:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 2px 2px 2px 0px rgba(0,0,0,0.5);
+	color: #99a1a7;
+}
+.CSSstyledCheckbox:checked:after {
+	content: '\2714';
+	font-size: 16px;
+	position: absolute;
+	top: 0px;
+	left: 4px;
+	color: #99a1a7;
+}

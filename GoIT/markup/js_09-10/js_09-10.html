@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- jquery --> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- jCarusels -->
+	<script src="js/jcarousel.connected-carousels.js"></script> 
+	<script src="js/jquery.jcarousel.js"></script> 
+	<!-- Carousels css -->
+	<link rel="stylesheet" type="text/css" href="css/jcarousel.connected-carousels.css"> 
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+
+	<!-- customSelect css -->
+	<link rel="stylesheet" type="text/css" href="css/customSelect.css"> 
+	<!-- customSelect js -->
+	<script src="js/jquery.customSelect.js"></script> 
+
+	<!-- flatcheckbox css -->
+	<link rel="stylesheet" type="text/css" href="css/service.flatcheckbox.jquery.css"> 
+	<!-- flatcheckbox js -->
+	<script src="js/service.flatcheckbox.jquery.js"></script>
+	
+	<!-- dropDownMenu css -->
+	<link rel="stylesheet" type="text/css" href="css/dropDownMenu.css"> 
+
+
+
+	<!-- Main css -->
+	<link rel="stylesheet" type="text/css" href="css/js_09-10.css"> 
+	<!-- Main js -->
+	<script src="js/js_09-10.js"></script>
+
+	<title>js_09-10</title>
+	
+<body>
+	
+	<div class="wrapper">
+
+            <h1>Connected Carousels</h1>
+            
+            <p>This example shows how to connect two carousels together so that one carousels acts as a navigation for the other.</p>
+            
+            <div class="connected-carousels">
+                <div class="stage">
+                    <div class="carousel carousel-stage">
+                        <ul>
+                            <li><img src="img/hs-2001-21-a-1024_wallpaper.jpg" width="600" height="400" alt="">
+                            <h2>About This Image</h2>
+							<p>Ultraviolet radiation and high-speed material, unleashed by the hot, massive, blue star cluster left of center, plow into clouds of gas and dust. The impact causes the gas and dust to glow, and triggers star formation.</p>
+							</li>
+                            <li><img src="img/hs-2002-25-a-1024_wallpaper.jpg" width="600" height="400" alt="">
+                            <h2>About This Image</h2>
+							<p>Reflection nebulae do not emit light on their own. They shine because of a light source embedded within, like a street lamp illuminates fog. The bright, young star left of center gives NGC 1999 its brightightness. The gas and dust of the nebula is left over from the star's formation.</p>
+                            </li>
+                            <li><img src="img/hs-2007-35-b-1024_wallpaper.jpg" width="600" height="400" alt="">
+                            <h2>About This Image</h2>
+							<p>The galaxy I Zwicky 18, originally thought to be a young galaxy, actually seems to have formed around the same time as most other galaxies. The bluish-white knots in the heart of the galaxy are two major star-forming regions.</p>
+                            </li>
+                            <li><img src="img/hs-2002-25-a-1024_wallpaper (1).jpg" width="600" height="400" alt="">
+                            <h2>About This Image</h2>
+							<p>A dying star expels its outer layers, creating a planetary nebula . so called because it resembles a planet when seen with a small telescope. NGC 6369's blue-green ring marks the location where energetic ultraviolet light has stripped electrons from oxygen atoms in the gas.</p>
+                            </li>
+							<li><img src="img/hs-2007-30-c-1024_wallpaper.jpg" width="600" height="400" alt="">
+                            <h2>About This Image</h2>
+							<p>A portion of the Veil Nebula, left behind with the violent explosion of a massive star, shows delicate wisps of gas and dust.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="photo-credits">
+                        Photos by <a href="http://www.hubblesite.org/">www.hubblesite.org</a>
+                    </p>
+                    <a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
+                    <a href="#" class="next next-stage"><span>&rsaquo;</span></a>
+                </div>
+
+                <div class="navigation">
+                    <a href="#" class="prev prev-navigation">&lsaquo;</a>
+                    <a href="#" class="next next-navigation">&rsaquo;</a>
+                    <div class="carousel carousel-navigation">
+                        <ul>
+                            <li><img src="img/hs-2001-21-a-1024_wallpaper.jpg" width="50" height="50" alt=""></li>
+                            <li><img src="img/hs-2002-25-a-1024_wallpaper.jpg" width="50" height="50" alt=""></li>
+							<li><img src="img/hs-2007-35-b-1024_wallpaper.jpg" width="50" height="50" alt=""></li>
+							<li><img src="img/hs-2002-25-a-1024_wallpaper (1).jpg" width="50" height="50" alt=""></li>
+    						<li><img src="img/hs-2007-30-c-1024_wallpaper.jpg" width="50" height="50" alt=""></li>
+    					</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<div class="styledSelect">
+			<h2>Styled with customSelect</h2>
+			<select class="styled">
+			  <option>one</option>
+			  <option>two</option>
+			  <option>three</option>
+			  <option>four</option>
+			  <option>five</option>
+			</select>
+		</div>
+		<div class="checkBoxes">
+			<h2>Styled with jquery</h2>
+			<input type="checkbox" name="" id="chkbox1">
+			<input type="checkbox" name="" id="chkbox2">
+			<input type="checkbox" name="" id="chkbox3">
+
+
+			<h2>Styled with css</h2>
+			<input type="checkbox" name="" id="" class="CSSstyledCheckbox">
+			<input type="checkbox" name="" id="" class="CSSstyledCheckbox">
+			<input type="checkbox" name="" id="" class="CSSstyledCheckbox">
+		</div>
+		<div class="multipleDropdownMenu">
+			<ul id="dropDownMenu" class="dropDownMenu">
+				<li class="menuLevel_1"><a href="#">menuLevel_1.1&nbsp;</a></li>
+			    <li class="menuLevel_2"><a href="#">menuLevel_2.1</a>
+			        <ul>
+			        <li><a href="#">menuLevel_2.2/1 &raquo;</a>            
+			            <ul>			                
+			                <li><a href="#">menuLevel_2.3/1</a></li>
+			                <li><a href="#">menuLevel_2.3/2 &raquo;</a>
+				                <ul>
+				                    <li><a href="#">menuLevel_2.4</a></li>
+				                    <li><a href="#">menuLevel_2.4</a></li>
+				                </ul>
+			                </li>
+			            </ul>
+					</li>
+			        <li><a href="#">menuLevel_2.2/2</a></li>
+			        <li><a href="#">menuLevel_2.2/3</a></li>
+			        <li><a href="#">menuLevel_2.2/4</a></li>
+			        </ul>
+			    </li> 
+			    <li class="menuLevel_3"><a href="#">menuLevel_3.1</a>
+			        <ul>
+			        <li><a href="#">menuLevel_3.2/1</a></li>
+			        <li><a href="#">menuLevel_3.2/2</a></li>
+			        </ul>
+			    </li>
+			    <li class="menuLevel_4"><a href="#">menuLevel_4.1</a>
+			        <ul>
+			        <li><a href="#">menuLevel_4.2/1</a></li>
+			        <li><a href="#">menuLevel_4.2/2</a></li>
+			        <li><a href="#">menuLevel_4.2/3 &raquo;</a>
+			            <ul>
+			                <li><a href="#">menuLevel_4.3/1</a></li>
+			                <li><a href="#">menuLevel_4.3/2</a></li>
+			            </ul>
+			        </li>
+			        </ul>
+			    </li>
+			    <li class="menuLevel_5"><a href="#">menuLevel_5.1</a>
+			            <ul>
+			                <li><a href="#">menuLevel_5.2/1</a></li>
+			                <li><a href="#">menuLevel_5.2/2</a></li>
+			            </ul>
+			    </li>
+			</ul>	       
+		</div>
+</body>
+</html>		
+
