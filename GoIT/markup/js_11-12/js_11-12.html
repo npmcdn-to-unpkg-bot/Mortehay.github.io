@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- jquery --> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- templateJs --> 
+	<script src="js/tmpl.js"></script>
+
+
+	<!-- Main css -->
+	<link rel="stylesheet" type="text/css" href="css/js_11-12.css"> 
+	<!-- Main js -->
+	<script src="js/js_11-12.js"></script>
+
+	<title>js_11-12</title>
+	
+<body>
+	<div class="carousel">
+		<div class="carousel-arrow-left"><span>Влево</span></div>
+		<div class="carousel-hider">
+			<ul class="carousel-list">
+				<li class="carousel-element">
+					<img src="img/hs-2006-10-a-1280x768_wallpaper.jpg">
+					<p>This giant spiral disk of stars, dust and gas is 170,000 light-years across, or nearly twice the diameter of our Milky Way galaxy. M101 is estimated to contain at least one trillion stars. About 100 billion of them could be similar to our Sun.</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2005-12-a-1280x768_wallpaper.jpg">
+					<p>The large Whirlpool Galaxy (left) is known for its sharply defined spiral arms. Their prominence could be the result of the Whirlpool's gravitational tug-of-war with its smaller companion galaxy (right).</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2007-19-a-1280x768_wallpaper.jpg">
+					<p>M81, a spiral galaxy similar to our own Milky Way, is one of the brightest galaxies that can be seen from Earth. The spiral arms wind all the way down into the nucleus and are made up of young, bluish, hot stars formed in the past few million years, while the central bulge contains older, redder stars.</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2007-41-a-1280x768_wallpaper.jpg">
+					<p>Bright knots of glowing gas light up the arms of spiral galaxy M74, indicating a rich environment of star formation. Messier 74, also called NGC 628, is slightly smaller than our Milky Way.</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2003-28-a-1280x768_wallpaper.jpg">
+					<p>A brilliant white core is encircled by thick dust lanes in this spiral galaxy, seen edge-on. The galaxy is 50,000 light-years across and 28 million light years from Earth.</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2003-28-a-1280x768_wallpaper.jpg">
+					<p>A brilliant white core is encircled by thick dust lanes in this spiral galaxy, seen edge-on. The galaxy is 50,000 light-years across and 28 million light years from Earth.</p>
+				</li>
+				<li class="carousel-element">
+					<img src="img/hs-2003-28-a-1280x768_wallpaper.jpg">
+					<p>A brilliant white core is encircled by thick dust lanes in this spiral galaxy, seen edge-on. The galaxy is 50,000 light-years across and 28 million light years from Earth.</p>
+				</li>
+	        </ul>    
+		</div>
+		<div class="carousel-arrow-right"><span>Вправо</span></div>
+	</div>
+	<div class="templateTest">
+		<script type="text/tamplate" id="templateTest">
+			<% for (var i=0; i<data.length;i++) {%>
+				<h6><%= data[i].title %></h1>
+				<p><%= data[i].contentOne %></p>
+				<p><%= data[i].contentTwo %></p> 
+				<p><%= data[i].contentThree %></p>  
+			<% } %>
+		</script>
+	</div>
+</body>
+</html>		
+
