@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    width:40%;
+    margin: 20px auto;
+}
+h6, p {
+    width: 25%;
+    margin: 0 auto;
+}
+h6 {
+    margin-bottom: 10px;
+}
+p {
+	margin-bottom: 5px;
+	font-size: 10px;
+}
+button {
+    margin: 0 auto;
+    display: block;
+}
+.templateTest {
+	
+	margin:0 auto;
+	background-color: #73b1e7;
+	border-radius:4px;
+	margin-bottom: 40px;
+	width: 800px;
+}
