@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    width:40%;
+    margin: 20px auto;
+}
+h6, p {
+    width: 100%;
+    margin: 0 auto;
+}
+h6 {
+    margin-bottom: 10px;
+}
+p {
+	margin-bottom: 5px;
+	font-size: 18px;
+}
+button {
+    margin: 0 auto;
+    display: block;
+}
+.searchTest, .iheritProperties{
+	margin:0 auto;
+	background-color: #73b1e7;
+	border-radius:4px;
+	margin-bottom: 40px;
+	width: 800px;
+}
+.searchcontrol {
+    width:200px;
+    margin:0 auto;
+}
