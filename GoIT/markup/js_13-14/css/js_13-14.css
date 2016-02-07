@@ -22,11 +22,29 @@ button {
     margin: 0 auto;
     display: block;
 }
-.templateTest {
+ul,li {
+    list-style-type: none;
+}
+.templateTest, .Results {
 	
 	margin:0 auto;
 	background-color: #73b1e7;
 	border-radius:4px;
 	margin-bottom: 40px;
 	width: 800px;
+}
+.rightResults {
+    width: 45%;
+    text-align: right;
+    float: left;
+    background-color: #73b1e7;
+}
+.yourResults {
+    width: 49%;
+    text-align: left;
+    float: right;
+    background-color: #73b1e7;
+}
+.border {
+    
 }
