@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "grant": "^3.5.5",
     "grunt": "^0.4.5"
   }
 }
