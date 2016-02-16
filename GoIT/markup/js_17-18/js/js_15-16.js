@@ -1,4 +1,4 @@
- //<!
+ //<!@@@@@
     google.load("search", "1", {"language" : "en"});
 
     function OnLoad() {

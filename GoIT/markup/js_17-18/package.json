@@ -2,7 +2,7 @@
   "name": "js_17-18",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/js_15-16.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "grant": "^3.5.5",
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }
