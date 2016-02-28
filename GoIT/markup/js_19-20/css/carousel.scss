@@ -1,0 +1,122 @@
+.carousel{
+    /* box-sizing:  border-box; */
+    padding-top: 100px;
+	height:300px;
+   
+}
+
+.carousel-hider {
+    width: 1120px;
+    overflow: hidden;
+    margin: 0;
+}
+.carousel-list {    
+    list-style: none;
+    width: 10000px;
+    padding: 0px;
+    position: relative;
+}
+.carousel-element {
+    display: block;
+    margin: 0 10px;
+    float: left;
+}
+.carousel-element img {
+    max-width: 260px;
+}
+
+.carousel-element-overlay {
+    position: relative;
+    float: left;
+    height: 260px;
+    cursor: pointer;
+    -webkit-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    -moz-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+    box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+}
+  
+.carousel-element-overlay:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -moz-transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+  
+.carousel-element-overlay:hover:before {
+    background: rgba(43, 177, 255, 0.5);
+        
+}
+.overlay-color:hover:before {
+    background: rgba(43, 177, 255, 0.5);
+}
+.carousel-element-overlay:after {
+    content:"+";
+    position: absolute;
+    right:40%;
+    top:35%;
+    display:none;
+    color:#ffffff;
+    opacity:0.5;
+    font-size: 80px;
+} 
+.carousel-element-overlay:hover:after{
+   display:block; 
+}
+
+.carousel-element>p{
+    margin-top: 280px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.carousel-element>p:hover{
+    color: #FFFF66;
+}
+ .carousel-arrow-right{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 0 130px 50px;
+    border-color: transparent transparent transparent #646f80;
+}
+.carousel-arrow-left {
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 130px 50px 130px 0;
+   border-color: transparent #646f80 transparent transparent;
+}
+.carousel-arrow-left, .carousel-arrow-right, .carousel-hider{
+	float:left;
+}
+.carousel-arrow-left:hover{
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 50px 130px 0;
+    border-color: transparent #4469a3 transparent transparent;    
+}
+.carousel-arrow-right:hover {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 0 130px 50px;
+    border-color: transparent transparent transparent #4469a3;
+}
+.carousel-arrow-left {
+    margin-right: 5px;
+}
+.carousel-arrow-right {
+    margin-left: 5px;
+}
