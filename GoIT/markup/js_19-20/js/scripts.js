@@ -416,15 +416,19 @@ var fadeintime = 500;
 		sortNamesArr.push(sortNamesObj[i].name);
 	};
 	console.log("sortNamesArr=",sortNamesArr);
-  	var friendsArr=[];
-  	for (var i = 0; i < obj.length; i++) {
-  		for (var j = 0; i < obj[i].friends.length; j++) {
-  			friendsArr.push(obj[i].friends[j].name);
-  		};
-  	};
-  	var friendsArrSort=_.uniq(friendsArr);
-  	friendsArrSort=_.sortBy(friendsArrSor);
-  	console.log("friendsArrSort=",friendsArrSort);
+  	
 
+	var friendsArr = [];
+
+    for (i = 0; i < obj.length; i++) {
+      for (var j = 0; j < obj[i].friends.length; j++) {
+        friendsArr.push( obj[i].friends[j].name);
+      }
+    }
+    console.log("friendsArr=",friendsArr);
+    var friendsArrSort = _.uniq(friendsArr);
+    friendsArrSort = _.sortBy(friendsArrSort);
+
+    console.log("allSortedFriens=",friendsArrSort);
 })(jQuery);
 
