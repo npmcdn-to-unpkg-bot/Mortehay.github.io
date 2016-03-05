@@ -107,38 +107,49 @@ var fadeintime = 500;
 	//----------task22222222222
 	
 	var obj = JSON.parse(text);
-	console.log("JSON.parse=",obj);
+	/*console.log("JSON.parse=",obj);*/
 	var skills=_.map(obj, 'skills');
-	console.log("_.map=",skills);
+	/*console.log("_.map=",skills);*/
 	skills=_.flatten(skills);
-	console.log("_.flatten=length",skills.length)
-	console.log("_.flatten=",skills);
+	/*console.log("_.flatten=length",skills.length)
+	console.log("_.flatten=",skills);*/
 
 	skills=_.uniq(skills);
-	console.log("_.uniq=length",skills.length)
-	console.log("_.uniq=",skills);
-
-	skills.sort();
+	/*console.log("_.uniq=length",skills.length)
+	console.log("_.uniq=",skills);*/
+	_(skills).forEach(function(value) {
+	  skills.sort();
+	});
+	/*skills.sort();*/
 	console.log(skills);
 
-	/*var names=_.map(obj, 'name');
-	console.log("_.map=",names);*/
+	/*
 	var names=_.map(obj, _.partial(_.ary(_.pick, 2), _, ['name', 'friends']));
 	console.log("_.map=",names);
+	};
+	*/
 	
-	var names=_.sortBy(names, 'name', function(o){
-		return _.size(o.friends);
-	});
-	console.log('_.sortBy',names);
-
-	var friends=_.map(obj, 'friends');
-	friends=_.flatten(friends);
-	friends=_.uniq(friends);
-	console.log("friends",names);
-	
-  
-
-
+	var names = _.cloneDeep(obj);
+	console.log("names=",names);
+	for (i = 0; i < names.length; i++) {
+      names[i].friends = names[i].friends.length;
+    };
+    var sortNamesObj=_.sortBy(names,['friends','name']);
+	console.log("sortNamesObj",sortNamesObj);
+	var sortNamesArr=[];
+	for (var i = 0; i < sortNamesObj.length; i++) {
+		sortNamesArr.push(sortNamesObj[i].name);
+	};
+	console.log("sortNamesArr=",sortNamesArr);
+  	var friendsArr=[];
+  	for (var i = 0; i < obj.length; i++) {
+  		for (var j = 0; i < obj[i].friends.length; j++) {
+  			friendsArr.push(obj[i].friends[j].name);
+  		};
+  	};
+  	var friendsArrSort=_.uniq(friendsArr);
+  	friendsArrSort=_.sortBy(friendsArrSor);
+  	console.log("friendsArrSort=",friendsArrSort);
 
 })(jQuery);
 

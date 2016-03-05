@@ -37,7 +37,7 @@ cssmin: {
     files: [{
       expand: true,
       cwd: 'css',
-      src: ['*.css', '!*.min.css'],
+      src: ['main.css', '!main.min.css'],
       dest: 'css',
       ext: '.min.css'
     }]
@@ -60,7 +60,7 @@ watch: {
       }
     },
     cssmin: {
-      files: ['css/*.css'],
+      files: ['css/main.css'],
       tasks: ['cssmin:target'],
       options: {
           livereload: 35729

@@ -221,7 +221,7 @@ body {
   box-sizing: border-box; }
 
 .page-main {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 1920px; }
 
 .header {
