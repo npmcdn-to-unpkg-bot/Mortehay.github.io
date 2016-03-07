@@ -1,25 +1,27 @@
 module.exports = function(grunt) {
 require('load-grunt-tasks')(grunt);
 grunt.initConfig({
+
 babel: {
   options: {
     sourceMap: true,
-    presets: ['babel-preset-es2015']
+    presets: ['babel-preset-es2015'],
+    
   },
   dist:{
-    /*files: {
-            'js/esma/main_esma.js': ['js/working/main_esma.js']
-      }*/
+
     files:[{
       expand:true,
-      cwd:'js/esma',
-      src:['main_esma.js'],
-      dest:'js/working',
-      ext:'.js',
+      cwd:'js/esma/',
+      src:['**/*.js'],
+      dest:'js/working/',
+      ext:'.bab.js',
       extDot:'first'
     }]
   }
 },
+
+
 
 concat: {
   js: {
@@ -65,10 +67,11 @@ cssmin: {
 },
 
 watch: {
-    babel:{
-      files:'js/esma/main_esma.js',
-      task:'babel'
+    build:{
+      files:'js/esma/*.js',
+      task:['babel']
     },
+
     js: {
       files: ['js/working/*.js'],
       tasks: ['concat:js', 'uglify:js'],
@@ -93,7 +96,7 @@ watch: {
     
 
     php : {
-      files : ['**/*.php'],
+      files : ['**.php'],
       options : {
         livereload : 35729
         } 
@@ -107,6 +110,10 @@ watch: {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks("grunt-browserify");
+  grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('build', ['babel']);
 };

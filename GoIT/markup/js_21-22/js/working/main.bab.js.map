@@ -1,0 +1,1 @@
+{"version":3,"sources":["../esma/main.js"],"names":[],"mappings":";;AAAA,IAAI,IAAE,CAAF;;AAEJ,IAAI,IAAE,CAAF;AACJ,IAAI,IAAE,CAAF;AACJ,IAAI,IAAE,CAAF;;AAEJ,QAAQ,GAAR,CAAY,IAAZ,EAAiB,CAAjB","file":"main.bab.js","sourcesContent":["let a=5;\r\n\r\nlet b=4;\r\nlet c=4;\r\nlet f=6;\r\n\r\nconsole.log(\"a:\",a);\r\n\r\n"]}
