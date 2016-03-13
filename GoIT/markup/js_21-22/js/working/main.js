@@ -43,4 +43,7 @@ app.power(10,-2);
 */
 
 
-module.exports = app;
+try {
+	module.exports = app;
+} catch (e) {}
+

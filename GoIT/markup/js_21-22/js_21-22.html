@@ -23,7 +23,27 @@
 </head>
 
 <body>
-  
+  <div class="templateTest">
+    <script type="text/tamplate" id="templateTest">
+      <h3><%= data[0] %></h3>
+      <% for (var i=0; i<data.length;i++) {%>
+
+        <h6><%= data[i].question %></h1>
+        <p><%= data[i].answerOne %></p>
+        <p><%= data[i].answerTwo %></p> 
+        <p><%= data[i].answerThree %></p>  
+      <% } %>
+      <button id="checkResults">Проверка ответов</button>
+      <button id="generateResults">Генерация правильных ответов</button>
+      </script>
+      
+    
+  </div>
+  <div class="Results">
+    <div class="rightResults"></div>
+    <div class="border"></div>
+    <div class="yourResults"></div>
+  </div>
 </body>
 
 </html>
