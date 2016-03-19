@@ -1,0 +1,53 @@
+.carousel-1__list, .carousel-2__list, .carousel-3__list{
+        margin: 0 auto;
+
+}
+
+.carousel-1__hider, .carousel-2__hider, .carousel-3__hider {
+    box-sizing:border--box;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+.carousel-1__list, .carousel-2__list, .carousel-3__list {    
+    list-style: none;
+    width: 10000px;
+    padding: 0px;
+    position: relative;
+}
+.carousel-1__element, .carousel-2__element, .carousel-3__element {
+    display: block;
+    margin: 0 10px;
+    float: left;    
+}
+.carousel-1__img-1, .carousel-2__img-1, .carousel-3__img-2{
+   background-image: url("../img/carousel/carousel-1.png");
+    background-repeat: no-repeat;    
+}
+
+.carousel-1__img-2, .carousel-2__img-1, .carousel-3__img-3{
+   background-image: url("../img/carousel/carousel-2.png");
+    background-repeat: no-repeat;    
+}
+
+.carousel-1__img-3, .carousel-2__img-2, .carousel-3__img-1{
+   background-image: url("../img/carousel/carousel-3.png");
+    background-repeat: no-repeat;    
+}
+
+.carousel-1__arrow-left, .carousel-2__arrow-left, .carousel-3__arrow-left{
+    position: absolute;
+    display: block;
+    z-index: 10;
+    left:10%;
+    color:black;
+    content: url(../img/carousel/arrow-left.png);
+}
+.carousel-1__arrow-right, .carousel-2__arrow-right, .carousel-3__arrow-right{
+    position: absolute;
+    display: block;
+    z-index: 10;
+    left:80%;
+    color:black;
+    content: url(../img/carousel/arrow-right.png);
+}

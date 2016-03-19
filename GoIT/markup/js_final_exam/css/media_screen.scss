@@ -1,0 +1,416 @@
+//variables
+$desktot-width:100%;
+$tablet-width:100%;
+$mobile-width:100%;
+$mobile-width-min:320px;
+//---------------------
+
+
+//bigger than 1440
+@media only screen and (min-width:1440px) {
+	.wrapper{
+		max-width:100%;
+	}
+	//header-------------------------------
+	.header{
+		max-width:100%;
+	}
+	.logo, .login{
+		margin-top: 40px;
+		display:inline-block;
+    	clear:both;
+	}
+	.logo{
+		margin-left:250px;
+	}
+	.login{
+		margin-right: 260px;
+		float:right;
+	}
+	.find{
+    	margin-top: 172px;
+	}
+	.find__text-big{
+		font-size:37px;
+		margin-bottom: 25px;
+	}
+	.find__text-small{
+		font-size:18px;
+		margin-top: 12px;
+		margin-bottom: 37px;
+	}
+	//----------------------------------
+	//about-----------------------------
+	.about{
+		margin-top: 97px;
+	}
+	//carousel__-------------------------
+	.carousel-1, .carousel-2, .carousel-3{
+		height:400px;
+		float:left;
+	}
+	.carousel-1__hider, .carousel-2__hider, .carousel-3__hider {
+		width: 280px;
+	}
+	.carousel-1__img-1, .carousel-1__img-2, .carousel-1__img-3, .carousel-2__img-1, .carousel-2__img-2, .carousel-2__img-3, .carousel-3__img-1, .carousel-3__img-2, .carousel-3__img-3{
+		 height:400px;
+		 background-position: center bottom; 
+	}
+	.carousel-1__list{
+		margin: 0 auto;
+	}
+	.carousel-1__element, .carousel-2__element, .carousel-3__element {
+		color:#ffffff;
+		box-sizing: border-box;
+		div{
+			width:260px;
+
+			margin-top:30%;  
+			box-sizing:border-box;
+		}
+		h6, h3, p{
+			
+			margin-left: 20px;
+		}
+		h6{
+			font-size: 10px;
+			padding: 5px 12px;
+			width:40px;
+			background-color: #ff4e50;
+			border-radius: 15px;
+			text-transform: uppercase;
+			margin-bottom: 17px;
+			
+		}
+		h3{
+			font-size: 20px;
+			width: 160px;
+			margin-bottom: 5px;
+			line-height: 1.2;
+
+		}
+		p{
+			font-size: 12px;
+			font-family: Roboto-Thin;
+			margin-left: 20px;
+		}
+
+	}
+	.carousel-1__arrow-right, .carousel-1__arrow-left, .carousel-2__arrow-right, .carousel-2__arrow-left, .carousel-3__arrow-right, .carousel-3__arrow-left{
+		top:35%;
+	}
+	//----------------------------------
+	//----------------------------------
+}
+//bigger than 768 and smaller than 1440
+@media only screen and (min-width:768px) and (max-width:1439px) {
+	.wrapper{
+		max-width:$tablet-width;
+	}
+	.header{
+		max-width:$tablet-width;
+	}
+	.logo, .login{
+		margin-top: 40px;
+		display:inline-block;
+    	clear:both;
+	}
+	.logo{
+		margin-left:52px;
+	}
+	.login{
+		margin-right: 45px;
+		float:right;
+	}
+	.find{
+    	margin-top: 158px;
+	}
+	.find__text-big{
+		font-size:37px;
+		margin-bottom: 25px;
+	}
+	.find__text-small{
+		font-size:18px;
+		margin-top: 12px;
+		margin-bottom: 37px;
+	}
+	//about-----------------------------
+	.about{
+		margin-top: 97px;
+	}
+	.about>div{
+		width: 800px;
+		height: 400px;
+		margin: 0 auto;
+	}
+	//carousel__-------------------------
+	.carousel-1, .carousel-2, .carousel-3{
+		height:400px;
+		float:left;
+	}
+	.carousel-1__hider, .carousel-2__hider, .carousel-3__hider {
+		width: 240px;
+	}
+	.carousel-1__img-1, .carousel-1__img-2, .carousel-1__img-3, .carousel-2__img-1, .carousel-2__img-2, .carousel-2__img-3, .carousel-3__img-1, .carousel-3__img-2, .carousel-3__img-3{
+		 height:400px;
+		 background-position: center bottom; 
+	}
+	.carousel-1__list{
+		margin: 0 auto;
+	}
+	.carousel-1__element, .carousel-2__element, .carousel-3__element {
+		color:#ffffff;
+		box-sizing: border-box;
+		div{
+			width:240px;
+
+			
+			box-sizing:border-box;
+			margin: 30% 0 10px;
+		}
+		h6, h3, p{
+			
+			margin-left: 20px;
+		}
+		h6{
+			font-size: 10px;
+			padding: 5px 12px;
+			width:40px;
+			background-color: #ff4e50;
+			border-radius: 15px;
+			text-transform: uppercase;
+			margin-bottom: 17px;
+			
+		}
+		h3{
+			font-size: 20px;
+			width: 160px;
+			margin-bottom: 5px;
+			line-height: 1.2;
+
+		}
+		p{
+			font-size: 12px;
+			font-family: Roboto-Thin;
+			margin-left: 20px;
+		}
+
+	}
+	.carousel-1__arrow-right, .carousel-1__arrow-left, .carousel-2__arrow-right, .carousel-2__arrow-left, .carousel-3__arrow-right, .carousel-3__arrow-left{
+		top:35%;
+	}
+	//----------------------------------
+
+	//----------------------------------
+}
+//bigger than 320 and smaller than 768
+@media only screen and (min-width:320px) and (max-width:767px) {
+	.wrapper{
+		max-width:$mobile-width;
+	}
+	.header{
+		max-width:$mobile-width;
+	}
+	.logo, .login{
+		/* clear:both; */
+		margin-top: 20px;
+		display:block;
+		position: relative;
+	}
+	.logo{
+		width: 127px;
+		margin: 0 auto;
+		top:118px;
+	}
+	.login{
+		width: 124px;
+		margin: 0 auto;
+	}
+	.find{
+    	margin-top: 198px;
+	}
+	.find__text-big{
+		font-size:24px;
+		margin-bottom: 20px;
+	}
+	.find__text-small{
+		font-size:12px;
+		margin-top: 12px;
+		margin-bottom: 60px;
+	}
+	.find__button{
+		width:228px;
+	}
+	//about-----------------------------
+	
+	.about{
+		margin-top: 40px;
+	}
+	//carousel__-------------------------
+	.carousel-1, .carousel-2, .carousel-3{
+		height:250px;
+	}
+	.carousel-1__hider, .carousel-2__hider, .carousel-3__hider {
+		width: 280px;
+	}
+	.carousel-1__img-1, .carousel-1__img-2, .carousel-1__img-3, .carousel-2__img-1, .carousel-2__img-2, .carousel-2__img-3, .carousel-3__img-1, .carousel-3__img-2, .carousel-3__img-3{
+		 height:240px;
+		 background-position: center center; 
+	}
+	.carousel-1__list{
+		margin: 0 auto;
+	}
+	.carousel-1__element, .carousel-2__element, .carousel-3__element {
+		color:#ffffff;
+		box-sizing: border-box;
+		div{
+			width:260px;
+
+			margin-top:30%;  
+			box-sizing:border-box;
+		}
+		h6, h3, p{
+			
+			margin-left: 20px;
+		}
+		h6{
+			font-size: 10px;
+			padding: 5px 12px;
+			width:40px;
+			background-color: #ff4e50;
+			border-radius: 15px;
+			text-transform: uppercase;
+			margin-bottom: 17px;
+			
+		}
+		h3{
+			font-size: 20px;
+			width: 160px;
+			margin-bottom: 5px;
+			line-height: 1.2;
+
+		}
+		p{
+			font-size: 12px;
+			font-family: Roboto-Thin;
+			margin-left: 20px;
+		}
+
+	}
+	.carousel-1__arrow-right, .carousel-1__arrow-left, .carousel-2__arrow-right, .carousel-2__arrow-left, .carousel-3__arrow-right, .carousel-3__arrow-left{
+		top:35%;
+	}
+	
+	
+	//----------------------------------
+	//----------------------------------	
+	//partners--------------------------
+	.person{
+		margin: 0 auto;
+	}
+	//----------------------------------
+}
+//smaller than 320
+@media only screen and (max-width:319px) {
+	.wrapper{
+		width:$mobile-width-min;
+	}
+	.header{
+		width:$mobile-width-min;
+	}
+	.logo, .login{
+		/* clear:both; */
+		margin-top: 20px;
+		display:block;
+		position: relative;
+	}
+	.logo{
+		width: 127px;
+		margin: 0 auto;
+		top:121px;
+		margin-bottom: 38px;
+	}
+	.login{
+		width: 124px;
+		margin: 0 auto;
+	}
+	.find{
+    	margin-top: 118px;
+	}
+	.find__text-big{
+		font-size:24px;
+		margin-bottom: 12px;
+	}
+	.find__text-small{
+		font-size:16px;
+		margin-top: 12px;
+		margin-bottom: 37px;
+	}
+	.find__button{
+		width:228px;
+	}
+	//about-----------------------------
+	.about{
+		margin-top: 40px;
+	}
+	//carousel__-------------------------
+	.carousel-1, .carousel-2, .carousel-3{
+		height:250px;
+	}
+	.carousel-1__hider, .carousel-2__hider, .carousel-3__hider {
+		width: 280px;
+	}
+	.carousel-1__img-1, .carousel-1__img-2, .carousel-1__img-3, .carousel-2__img-1, .carousel-2__img-2, .carousel-2__img-3, .carousel-3__img-1, .carousel-3__img-2, .carousel-3__img-3{
+		 height:240px;
+		 background-position: center center; 
+	}
+	.carousel-1__list{
+		margin: 0 auto;
+	}
+	.carousel-1__element, .carousel-2__element, .carousel-3__element {
+		color:#ffffff;
+		box-sizing: border-box;
+		div{
+			width:260px;
+
+			margin-top:30%;  
+			box-sizing:border-box;
+		}
+		h6, h3, p{
+			
+			margin-left: 20px;
+		}
+		h6{
+			font-size: 10px;
+			padding: 5px 12px;
+			width:40px;
+			background-color: #ff4e50;
+			border-radius: 15px;
+			text-transform: uppercase;
+			margin-bottom: 17px;
+			
+		}
+		h3{
+			font-size: 20px;
+			width: 160px;
+			margin-bottom: 5px;
+			line-height: 1.2;
+
+		}
+		p{
+			font-size: 12px;
+			font-family: Roboto-Thin;
+			margin-left: 20px;
+		}
+
+	}
+	.carousel-1__arrow-right, .carousel-1__arrow-left, .carousel-2__arrow-right, .carousel-2__arrow-left, .carousel-3__arrow-right, .carousel-3__arrow-left{
+		top:35%;
+	}
+	//----------------------------------
+	//partners--------------------------
+	.person{
+		margin: 0 auto;
+	}
+	//----------------------------------
+}
