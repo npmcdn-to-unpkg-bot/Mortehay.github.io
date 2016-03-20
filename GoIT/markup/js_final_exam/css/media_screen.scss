@@ -100,7 +100,40 @@ $mobile-width-min:320px;
 		top:35%;
 	}
 	//----------------------------------
+	//partners--------------------------
+	.partners{
+		margin: 0 auto;
+		width:940px;
+	}
+	.person{
+		float:left;
+		margin:0 17.5px;
+	}
 	//----------------------------------
+	//--footer--------------------------
+	.footer{
+		width:940px;
+		margin: 0 auto;
+		text-align: none;
+		ul{
+	        width:80px;
+	        margin:0;
+	    }
+	    li{
+	    	float: none;
+	    	margin: 5px 0;
+	    }
+	    h4{
+	    	text-align:right;
+	    	margin-bottom: 10px;
+	    }
+	}
+	.footer>div{
+		margin: 40px 5% 0 5%;	
+		float:left;
+	}
+	//----------------------------------
+
 }
 //bigger than 768 and smaller than 1440
 @media only screen and (min-width:768px) and (max-width:1439px) {
@@ -200,7 +233,37 @@ $mobile-width-min:320px;
 		top:35%;
 	}
 	//----------------------------------
-
+	//partners--------------------------
+	.partners{
+		margin: 0 auto;
+		width:420px;
+	}
+	.person{
+		float:left;
+	}
+	//----------------------------------
+	//--footer--------------------------
+	.footer{
+		width:700px;
+		margin: 0 auto;
+		text-align: none;
+		ul{
+	        width:80px;
+	        margin:0;
+	    }
+	    li{
+	    	float: none;
+	    	margin: 5px 0;
+	    }
+	    h4{
+	    	text-align:right;
+	    	margin-bottom: 10px;
+	    }
+	}
+	.footer>div{
+		margin: 40px 5% 0 5%;	
+		float:left;
+	}
 	//----------------------------------
 }
 //bigger than 320 and smaller than 768
@@ -309,6 +372,19 @@ $mobile-width-min:320px;
 		margin: 0 auto;
 	}
 	//----------------------------------
+	//--footer--------------------------
+	.footer{
+		    text-align: center;
+		ul{
+	        width:260px;
+	        margin:0 auto;
+	    }
+	    li{
+	    	float: left;
+	    	margin: 10px 15px;
+	    }
+	}
+	//----------------------------------
 }
 //smaller than 320
 @media only screen and (max-width:319px) {
@@ -411,6 +487,19 @@ $mobile-width-min:320px;
 	//partners--------------------------
 	.person{
 		margin: 0 auto;
+	}
+	//----------------------------------
+	//--footer--------------------------
+	.footer{
+		    text-align: center;
+		ul{
+	        width:260px;
+	        margin:0 auto;
+	    }
+	    li{
+	    	float: left;
+	    	margin: 10px 15px;
+	    }
 	}
 	//----------------------------------
 }

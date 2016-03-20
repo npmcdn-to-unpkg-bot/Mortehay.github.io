@@ -130,3 +130,51 @@ var fadeintime = 500;
 	
 })(jQuery);
 
+
+/*$(document).ready(function(){
+	$(".carousel-1__arrow-left").carousel_1_Move();
+	$(".carousel-1__arrow-right").carousel_1_Move();
+	$(".carousel-2__arrow-left").carousel_2_Move();
+	$(".carousel-2__arrow-right").carousel_2_Move();
+	$(".carousel-3__arrow-left").carousel_3_Move();
+	$(".carousel-3__arrow-right").carousel_3_Move();
+	$('.grid').masonry({
+	  itemSelector: '.grid-item',
+	  columnWidth: '.grid-sizer',
+	  isFitWidth: true
+	});
+	var pixelOffset={
+		val1: $(".carousel-1__hider").width(),
+		val2: $(".carousel-2__hider").width(),
+		val3: $(".carousel-3__hider").width()
+	};
+	console.log('pixelOffset',pixelOffset);
+    $( window ).resize(function() {
+	  	pixelOffset.val1 = $(".carousel-1__hider").width();
+		pixelOffset.val2 = $(".carousel-2__hider").width();
+		pixelOffset.val3 = $(".carousel-3__hider").width();
+		console.log('pixelOffset',pixelOffset);
+		return pixelOffset;	
+	});
+    
+});
+
+
+/*console.log('pixelOffset',pixelOffset);*/
+
+
+
+/*$( window ).resize(function() {
+	  	var pixelOffset.val1 = $(".carousel-1__hider").width();
+		console.log('pixelOffset.val1=',pixelOffset.val1);
+		var pixelOffset.val2 = $(".carousel-2__hider").width();
+		var pixelsOffset_3 = $(".carousel-3__hider").width();
+		
+});
+
+console.log('pixelOffset.val1=',pixelOffset.val1);*/
+/*var pixelOffset={
+		val1: $(".carousel-1__hider").width(),
+		val2: $(".carousel-2__hider").width(),
+		val3: $(".carousel-3__hider").width()
+	};*/
