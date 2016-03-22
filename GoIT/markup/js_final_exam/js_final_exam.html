@@ -10,8 +10,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- masonry -->
   <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-  <!-- livereload -->
+  livereload
   <script src="http://localhost:35729/livereload.js"></script>
+  <!-- tmpl -->
+  <script src="js/lib/tmpl.js"></script>
   <title>js_final_exam</title>
   <!-- main css-->
   <link rel="stylesheet" href="css/main.min.css">
@@ -183,14 +185,21 @@
     <div class="activity">
       <h1>Discover holidays activity ideas</h1>
       <div class="grid">
-        <!-- <div class="grid-sizer"></div> -->
-        <div class="grid-item background1 grid-sizer"></div>
+        <div class="grid-sizer"></div>
+
+        <script type="text/template" id="template">
+          <% for (var i=0; i<data.length;i++) {%>
+            <div class="grid-item <%= data[i].tagClass %>  grid-sizer"></div>
+          <% }%>
+
+        </script>
+        <!-- <div class="grid-item background1 grid-sizer"></div>
         <div class="grid-item background2 grid-sizer"></div>
         <div class="grid-item background3 grid-sizer"></div>
         <div class="grid-item background4 grid-sizer"></div>
         <div class="grid-item background5 grid-sizer"></div>
         <div class="grid-item background6 grid-sizer"></div>
-        <div class="grid-item background7 grid-sizer"></div>
+        <div class="grid-item background7 grid-sizer"></div> -->
       </div>
       <h1>Discover holidays activity ideas</h1>
       <h3>Hi!What are your holiday interests?</h3>

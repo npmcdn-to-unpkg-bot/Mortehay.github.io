@@ -184,6 +184,7 @@ ul{
 //activity---------------------------
 .activity{
     h1{
+        clear:both;
         text-align: center;
         font-size:20px;
         font-weight: bold;
@@ -267,49 +268,49 @@ ul{
     top:30%;
 } 
 .background1{
-    background-image: url("../img/masonry/img1.png");
+    /* background-image: url("../img/masonry/img1.png"); */
 }
 .background1::before{
    content:"Sports and Activity"; 
    left:25%;
 }
 .background2{
-    background-image: url("../img/masonry/img2.png");
+    /* background-image: url("../img/masonry/img2.png"); */
 }
 .background2::before{
    content:"Wellness and Health";
    left:18%; 
 }
 .background3{
-    background-image: url("../img/masonry/img3.png");
+   /*  background-image: url("../img/masonry/img3.png"); */
 }
 .background3::before{
    content:"Extreme Sports and Expeditions"; 
    left:1.5%;
 }
 .background4{
-    background-image: url("../img/masonry/img4.png");
+   /*  background-image: url("../img/masonry/img4.png"); */
 }
 .background4::before{
    content:"Games"; 
    left:35%;
 }
 .background5{
-    background-image: url("../img/masonry/img5.png");
+   /*  background-image: url("../img/masonry/img5.png"); */
 }
 .background5::before{
    content:"Culture and Education"; 
    left:16%;
 }
 .background6{
-    background-image: url("../img/masonry/img6.png");
+    /* background-image: url("../img/masonry/img6.png"); */
 }
 .background6::before{
    content:"Relaxation"; 
    left:30%;
 }
 .background7{
-    background-image: url("../img/masonry/img7.png");
+    /* background-image: url("../img/masonry/img7.png"); */
 }
 .background7::before{
    content:"Travelling"; 

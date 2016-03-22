@@ -11,7 +11,8 @@ $(document).ready(function(){
 	  columnWidth: '.grid-sizer',
 	  isFitWidth: true
 	});
-
+	$('.grid-sizer').template();
+	
     
 });
 
@@ -22,6 +23,7 @@ var currentLeftValue_3 = 0;
 var visibleElement=1;
 var pictxtnumber = 1;
 var fadeintime = 500;
+var info=[];
 
 (function($){				
 	
@@ -127,7 +129,29 @@ var fadeintime = 500;
 		});
 	};
 
+	$.fn.template = function(options){
+		var html=$('#template').html();
+		var info=[];
+		for (var i = 0; i < 6; i++) {
+			info.push({
+				link: '..img/masonry/img'+(i+1)+'.png',
+				tagClass: 'background'+(i+1)
+			});
+			console.log('info[i].link', info[i].link);
+			
+		};
+		/*$(info[0].tagClass).css("background-image", "url(" + info[0].link + ")");*/
 	
+		console.log('info', info);
+
+		var content = tmpl(html, {
+			data: info
+		});
+		$(this).append(content);
+
+	};
+	
+
 })(jQuery);
 
 
