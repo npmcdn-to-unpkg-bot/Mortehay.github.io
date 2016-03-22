@@ -12,7 +12,9 @@ $(document).ready(function(){
 	  isFitWidth: true
 	});
 	$('.grid-sizer').template();
-	
+	for (i=0; i < info.length; i++) {
+	    $('.background'+(+1+i) ).css("background-image", "url('" + info[i].link + "')");
+	  };
     
 });
 
@@ -24,6 +26,13 @@ var visibleElement=1;
 var pictxtnumber = 1;
 var fadeintime = 500;
 var info=[];
+
+for (var i = 0; i < 6; i++) {
+			info.push({
+				link: 'img/masonry/img'+(i+1)+'.png',
+				tagClass: 'background'+(i+1)
+			});
+	};
 
 (function($){				
 	
@@ -131,16 +140,7 @@ var info=[];
 
 	$.fn.template = function(options){
 		var html=$('#template').html();
-		var info=[];
-		for (var i = 0; i < 6; i++) {
-			info.push({
-				link: '..img/masonry/img'+(i+1)+'.png',
-				tagClass: 'background'+(i+1)
-			});
-			console.log('info[i].link', info[i].link);
-			
-		};
-		/*$(info[0].tagClass).css("background-image", "url(" + info[0].link + ")");*/
+		
 	
 		console.log('info', info);
 
@@ -151,7 +151,10 @@ var info=[];
 
 	};
 	
-
+	/*$.fn.background = function(options){
+		
+	}
+*/
 })(jQuery);
 
 
