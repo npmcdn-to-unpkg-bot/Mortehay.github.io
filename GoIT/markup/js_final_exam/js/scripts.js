@@ -1,11 +1,32 @@
+//grlobal variebles-----------------------------------
+var info=[];
+var currentLeftValue =0;
+/*var pixelOffset=260;*/
+var options1={elementsList:'.carousel-1__list', tempValue:'.carousel-1__element', arrowLeft:'carousel-1__arrow-left', arrowRight:'carousel-1__arrow-right', visibleElement: 1, pixelsOffset:280};
+var options2={elementsList:'.carousel-2__list', tempValue:'.carousel-2__element', arrowLeft:'carousel-2__arrow-left', arrowRight:'carousel-2__arrow-right', visibleElement: 1, pixelsOffset:280};
+var options3={elementsList:'.carousel-3__list', tempValue:'.carousel-3__element', arrowLeft:'carousel-3__arrow-left', arrowRight:'carousel-3__arrow-right', visibleElement: 1, pixelsOffset:280};
+//----------------------------------------------------
+
+//generating object with link an classes--------------
+for (var i = 0; i < 6; i++) {
+		info.push({
+			link: 'img/masonry/img'+(i+1)+'.png',
+			tagClass: 'background'+(i+1)
+		});
+};
+//----------------------------------------------------
+
+//--jquery main---------------------------------------
 
 $(document).ready(function(){
-	$(".carousel-1__arrow-left").carousel_1_Move();
-	$(".carousel-1__arrow-right").carousel_1_Move();
-	$(".carousel-2__arrow-left").carousel_2_Move();
-	$(".carousel-2__arrow-right").carousel_2_Move();
-	$(".carousel-3__arrow-left").carousel_3_Move();
-	$(".carousel-3__arrow-right").carousel_3_Move();
+//-it does not work korrectly :(
+  	$('.carousel-1__arrow-left').carouselMove(options1);
+	$('.carousel-1__arrow-right').carouselMove(options1);
+	$('.carousel-2__arrow-left').carouselMove(options2);
+	$('.carousel-2__arrow-right').carouselMove(options2);
+	$('.carousel-3__arrow-left').carouselMove(options3);
+	$('.carousel-3__arrow-right').carouselMove(options3);
+
 	$('.grid').masonry({
 	  itemSelector: '.grid-item',
 	  columnWidth: '.grid-sizer',
@@ -14,130 +35,51 @@ $(document).ready(function(){
 	$('.grid-sizer').template();
 	for (i=0; i < info.length; i++) {
 	    $('.background'+(+1+i) ).css("background-image", "url('" + info[i].link + "')");
-	  };
+	};
+
+	
     
 });
 
-var pixelsOffset = 280;
-var currentLeftValue_1 = 0;
-var currentLeftValue_2 = 0;
-var currentLeftValue_3 = 0;
-var visibleElement=1;
-var pictxtnumber = 1;
-var fadeintime = 500;
-var info=[];
+//---------------------------------------------------
 
-for (var i = 0; i < 6; i++) {
-			info.push({
-				link: 'img/masonry/img'+(i+1)+'.png',
-				tagClass: 'background'+(i+1)
-			});
-	};
+
 
 (function($){				
-	
-	$.fn.carousel_1_Move = function(options){
+//carousel plugin------------------------------------	
+	$.fn.carouselMove = function(options){
+		
+		currentLeftValue =0;
+		var elementsList = $(options.elementsList);
+		var tempValue = $(options.tempValue).length-options.visibleElement;
 
-		var elementsList = $('.carousel-1__list');
-		var tempValue= $('.carousel-1__element').length-visibleElement;
-		console.log("elementsList.length=",tempValue);
 		this.on({
-			mouseenter: function(){
-				
-			},
-			mouseleave: function(){
-				
-			},
 			click: function(){
 	        	
-	        	if ($(this).hasClass('carousel-1__arrow-left')) {
+	        	if ($(this).hasClass(options.arrowRight)) {
 
-	        		if (currentLeftValue_1 < 0) {
-	        			currentLeftValue_1 += pixelsOffset;
-	       				elementsList.animate({ left : currentLeftValue_1 + "px"}, 1000);
-		        		console.log("currentLeftValue+++=",currentLeftValue_1);
+	        		if (currentLeftValue > (-tempValue*options.pixelsOffset) ) {
+	        			currentLeftValue -= options.pixelsOffset;
+		        		elementsList.animate({ left : currentLeftValue + "px"}, 1000);
+		        		console.log("currentLeftValue---=",currentLeftValue);
 	        		};
-	        	};
-	        	if ($(this).hasClass('carousel-1__arrow-right')) {
+	        	}
+	        	if ($(this).hasClass(options.arrowLeft)) {
 
-	        		if (currentLeftValue_1 > (-tempValue*pixelsOffset) ) {
-	        			currentLeftValue_1 -= pixelsOffset;
-		        		elementsList.animate({ left : currentLeftValue_1 + "px"}, 1000);
-		        		console.log("currentLeftValue---=",currentLeftValue_1);
+	        		if (currentLeftValue < 0) {
+	        			currentLeftValue += options.pixelsOffset;
+	       				elementsList.animate({ left: currentLeftValue + "px"}, 1000);
+		        		console.log("currentLeftValue+++=",currentLeftValue);
 	        		};
-	        	};
+	        	}
+	        	
+	        	console.log("currentLeftValue=***",currentLeftValue);
 	        }
 		});
 	};
+//----------------------------------------------------
 
-	$.fn.carousel_2_Move = function(options){
-
-		var elementsList = $('.carousel-2__list');
-		var tempValue= $('.carousel-2__element').length-visibleElement;
-		console.log("elementsList.length=",tempValue);
-		this.on({
-			mouseenter: function(){
-				
-			},
-			mouseleave: function(){
-				
-			},
-			click: function(){
-	        	
-	        	if ($(this).hasClass('carousel-2__arrow-left')) {
-
-	        		if (currentLeftValue_2 < 0) {
-	        			currentLeftValue_2 += pixelsOffset;
-	       				elementsList.animate({ left : currentLeftValue_2 + "px"}, 1000);
-		        		console.log("currentLeftValue+++=",currentLeftValue_2);
-	        		};
-	        	};
-	        	if ($(this).hasClass('carousel-2__arrow-right')) {
-
-	        		if (currentLeftValue_2 > (-tempValue*pixelsOffset) ) {
-	        			currentLeftValue_2 -= pixelsOffset;
-		        		elementsList.animate({ left : currentLeftValue_2 + "px"}, 1000);
-		        		console.log("currentLeftValue---=",currentLeftValue_2);
-	        		};
-	        	};
-	        }
-		});
-	};
-
-	$.fn.carousel_3_Move = function(options){
-
-		var elementsList = $('.carousel-3__list');
-		var tempValue= $('.carousel-3__element').length-visibleElement;
-		console.log("elementsList.length=",tempValue);
-		this.on({
-			mouseenter: function(){
-				
-			},
-			mouseleave: function(){
-				
-			},
-			click: function(){
-	        	
-	        	if ($(this).hasClass('carousel-3__arrow-left')) {
-
-	        		if (currentLeftValue_3 < 0) {
-	        			currentLeftValue_3 += pixelsOffset;
-	       				elementsList.animate({ left : currentLeftValue_3 + "px"}, 1000);
-		        		console.log("currentLeftValue+++=",currentLeftValue_3);
-	        		};
-	        	};
-	        	if ($(this).hasClass('carousel-3__arrow-right')) {
-
-	        		if (currentLeftValue_3 > (-tempValue*pixelsOffset) ) {
-	        			currentLeftValue_3 -= pixelsOffset;
-		        		elementsList.animate({ left : currentLeftValue_3 + "px"}, 1000);
-		        		console.log("currentLeftValue---=",currentLeftValue_3);
-	        		};
-	        	};
-	        }
-		});
-	};
-
+//template plugin-------------------------------------
 	$.fn.template = function(options){
 		var html=$('#template').html();
 		
@@ -150,58 +92,9 @@ for (var i = 0; i < 6; i++) {
 		$(this).append(content);
 
 	};
+//-----------------------------------------------------	
 	
-	/*$.fn.background = function(options){
-		
-	}
-*/
 })(jQuery);
 
 
-/*$(document).ready(function(){
-	$(".carousel-1__arrow-left").carousel_1_Move();
-	$(".carousel-1__arrow-right").carousel_1_Move();
-	$(".carousel-2__arrow-left").carousel_2_Move();
-	$(".carousel-2__arrow-right").carousel_2_Move();
-	$(".carousel-3__arrow-left").carousel_3_Move();
-	$(".carousel-3__arrow-right").carousel_3_Move();
-	$('.grid').masonry({
-	  itemSelector: '.grid-item',
-	  columnWidth: '.grid-sizer',
-	  isFitWidth: true
-	});
-	var pixelOffset={
-		val1: $(".carousel-1__hider").width(),
-		val2: $(".carousel-2__hider").width(),
-		val3: $(".carousel-3__hider").width()
-	};
-	console.log('pixelOffset',pixelOffset);
-    $( window ).resize(function() {
-	  	pixelOffset.val1 = $(".carousel-1__hider").width();
-		pixelOffset.val2 = $(".carousel-2__hider").width();
-		pixelOffset.val3 = $(".carousel-3__hider").width();
-		console.log('pixelOffset',pixelOffset);
-		return pixelOffset;	
-	});
-    
-});
 
-
-/*console.log('pixelOffset',pixelOffset);*/
-
-
-
-/*$( window ).resize(function() {
-	  	var pixelOffset.val1 = $(".carousel-1__hider").width();
-		console.log('pixelOffset.val1=',pixelOffset.val1);
-		var pixelOffset.val2 = $(".carousel-2__hider").width();
-		var pixelsOffset_3 = $(".carousel-3__hider").width();
-		
-});
-
-console.log('pixelOffset.val1=',pixelOffset.val1);*/
-/*var pixelOffset={
-		val1: $(".carousel-1__hider").width(),
-		val2: $(".carousel-2__hider").width(),
-		val3: $(".carousel-3__hider").width()
-	};*/
