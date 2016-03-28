@@ -58,8 +58,8 @@
 /** jCarousel Controls **/
 .jcarousel-control-prev,
 .jcarousel-control-next {
-  position: absolute;
-  top: 25%;
+  position: relative;
+  top: -300px;
   margin-top: -15px;
   width: 20px;
   height: 20px;
@@ -76,13 +76,13 @@
   left: 100px; }
 
 .jcarousel-control-next {
-  right: 100px; }
+  right: -1200px; }
 
 /** jCarousel Pagination **/
 .jcarousel-pagination {
-  position: absolute;
-  top: 45%;
-  left: 50%;
+  position: relative;
+  top: -150px;
+  left: 1200px;
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);

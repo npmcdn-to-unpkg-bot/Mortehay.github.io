@@ -11,7 +11,9 @@
   <!-- livereload -->
   <script src="http://localhost:35729/livereload.js"></script>
   <!-- jcarousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel.min.js"></script>
+  <script src="js/lib/jquery.jcarousel.min.js"></script>
+  <!-- tmpl -->
+  <script src="js/lib/tmpl.js"></script>
   <!-- main css-->
   <link rel="stylesheet" href="css/main.min.css">
   <!-- main js-->
@@ -35,7 +37,20 @@
     </div>
     <div class="jcarousel">
       <ul class="jcarousel-list">
-        <li class="jcarousel-item">
+       <script type="text/template" id="template">
+         <% for (var i=0; i<data.length;i++) {%>
+           <li class="jcarousel-item">
+             <img src=" <%= data[i].imgLink %> " alt="img_1">
+             <div>
+               <p> <%= data[i].imgText %></p>
+               <button>Go!</button>
+             </div>
+           </li>
+         <% }%>
+       
+       </script>
+
+        <!-- <li class="jcarousel-item">
           <img src="img/carousel/carousel_1.png" alt="img_1">
           <div>
             <p> Monetize your skills now!</p>
@@ -69,12 +84,30 @@
             <p>And on start!</p>
             <button>Go!</button>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
     <a href="#" class="jcarousel-control-next">&rsaquo;</a>
     <p class="jcarousel-pagination"></p>
+  </div>
+  <div class="article">
+    <script type="text/template" id="article">
+         <% for (var i=0; i<data.length;i++) {%>
+           <ul>
+             <li>
+              <p>
+               <%= data[i].imgAbout %>
+              </p>
+            </li>
+            <li>
+               <p> <%= data[i].imgText %> </p>
+               <img src=" <%= data[i].imgLink %> " alt="img">
+             </li>
+           </ul>
+         <% }%>
+       
+       </script>
   </div>
 </div>
  
