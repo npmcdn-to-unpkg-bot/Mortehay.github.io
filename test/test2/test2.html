@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jquery --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- livereload -->
+  <script src="http://localhost:35729/livereload.js"></script>
+  <!-- tmpl -->
+  <script src="js/lib/tmpl.js"></script>
+  <!-- main css-->
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- main js-->
+  <script src="js/scripts.min.js"></script>
+
+  <title>test2</title>
+</head>
+
+<body>
+  
+<div class="wraper">
+  <ul class="template">
+
+   <script type="text/template" id="template">
+     
+     <% for (var i=0; i<data.length;i++) {%>
+
+      <li class="item">
+         <img src=" <%= data[i].imgLink %> " alt="img_1">
+         <div class="  "><%= data[i].stars %></div>
+         <div>
+            <h2><%= data[i].imgTitle %></h2>
+            <p> <%= data[i].imgText %></p>
+         </div>
+       </li>
+     <% }%>
+   
+   </script>
+  </ul>
+        
+</div>
+ 
+</body>
+
+</html>
