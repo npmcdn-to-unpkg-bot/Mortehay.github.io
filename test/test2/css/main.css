@@ -50,7 +50,7 @@ body {
   .item h2, .item p {
     width: 90%;
     text-align: center;
-    margin: 1%; }
+    margin: 2% 5%; }
   .item p {
     font-size: 12px; }
   .item h2 {
