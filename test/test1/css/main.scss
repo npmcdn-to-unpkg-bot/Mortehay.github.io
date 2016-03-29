@@ -27,6 +27,9 @@ a:link, a:active, a:visited{
 	text-decoration:none;
 	color:#000000;
 }
+.clear{
+	clear:both;
+}
 //wraper---------------------------
 .wraper{
 	width: 1349px;
@@ -74,5 +77,112 @@ a:link, a:active, a:visited{
 		border:none;
 		color: #ffffff;
 		font-weight: bold; 
+	}
+}
+//----------------------------------------
+//article---------------------------------
+.article{
+	margin: 20px;
+	height: 660px;
+	li{
+		float:left;
+		width:30%;
+		
+	}
+	li:nth-child(odd){
+		margin: 0 5% 0 15%;
+		h2{
+			font-size: 28px;
+			margin-top:10px;
+			margin-bottom: 38px;
+		}
+		p{
+			font-size: 16px;
+			line-height:200%;
+		}
+	}
+	li:nth-child(even){
+		margin: 0 15% 0 5%;
+		p{
+			margin-bottom: 10px;
+		}
+	}
+}
+//----------------------------------------
+//register--------------------------------
+.register{
+	margin-top: 100px;
+	box-sizing:border-box;
+	height:520px;
+	background-image: url(../img/register.png);
+	padding-top: 80px;
+
+	div{
+		width:460px;
+		height:350px;
+		background-color: #ffffff;
+		margin: 0 auto;
+		border-radius:4px;
+		padding-top:25px;
+		h2{
+			text-align: center;
+			font-family: Roboto-Thin;
+			font-size: 28px;
+			margin-bottom: 25px;
+			opacity: 0.7;
+		}
+		form{
+			input::-webkit-input-placeholder {
+				color:#555555;
+			}
+			input::-moz-placeholder          {color:#555555 ;}/* Firefox 19+ */
+			input:-moz-placeholder           {color:#555555 ;}/* Firefox 18- */
+			input:-ms-input-placeholder      {color:#555555 ;}
+			display: block;
+			margin: 0 auto;
+			input, select, option, option:focus{
+				display:block;
+				margin:0 auto;
+				font-size: 16px;
+				box-sizing:border-box;
+				width:295px;
+				padding: 5px;
+				border: 1px solid #c4c4c4;
+				padding:5px 0 5px 20px;
+				color:#000000;
+				font-family: Roboto-Thin;
+			}
+			select:focus{
+				padding:0;
+			} 
+
+			input, select{
+				background-color: #f5f5f5;
+				margin-bottom: 10px;
+			}
+		}
+			button{
+			margin: 0 auto;
+			background-color: #24a259;
+			padding: 8px 25px;
+			border-radius: 4px;
+			border:none;
+			color: #ffffff;
+			font-weight: bold; 
+			display: block;
+			font-size:16px;
+		}
+		
+	}
+}
+//----------------------------------------
+//footer----------------------------------
+.footer{
+	height: 40px;
+	background-color: #2c3e50;
+	padding-top: 8px;
+	box-sizing:border-box;
+	p{	
+		text-align:center;
 	}
 }

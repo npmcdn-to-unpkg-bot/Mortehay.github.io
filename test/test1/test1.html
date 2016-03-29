@@ -96,18 +96,42 @@
          <% for (var i=0; i<data.length;i++) {%>
            <ul>
              <li>
-              <p>
+              <h2> 
+                <%= data[i].imgHeader %>
+              </h2>
+              <p class="filecontents">
                <%= data[i].imgAbout %>
               </p>
             </li>
             <li>
-               <p> <%= data[i].imgText %> </p>
-               <img src=" <%= data[i].imgLink %> " alt="img">
-             </li>
+              <p> <%= data[i].imgText %> </p>
+              <img src=" <%= data[i].imgLink %> " alt="img">
+            </li>
            </ul>
          <% }%>
-       
        </script>
+  </div>
+  <div class="register clear"> 
+    <div>
+      <h2>Register</h2>
+      <form action="">
+        <input type="text" name="" id="email" placeholder="Email">
+        <input type="password" name="" id="pass" placeholder="Password">
+        <select name="select1" onmousedown="if(this.options.length>2){this.size=3;}" onchange="this.size=1;" onblur="this.size=1;">
+          <option>Country 1</option>
+          <option>Country 2</option>
+          <option>Country 3</option>
+          <option>Country 4</option>
+          <option>Country 5</option>
+          <option>Country 6</option>
+          <option>Country 7</option>
+        </select>
+      </form>
+      <button id="enter">Enter</button>
+     </div> 
+  </div>
+  <div class="footer clear">
+    <p>&copy; 2015 layout</p>
   </div>
 </div>
  

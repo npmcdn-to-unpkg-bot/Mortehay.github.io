@@ -133,6 +133,9 @@ a:link, a:active, a:visited {
   text-decoration: none;
   color: #000000; }
 
+.clear {
+  clear: both; }
+
 .wraper {
   width: 1349px;
   margin: 0 auto; }
@@ -171,5 +174,92 @@ a:link, a:active, a:visited {
     border: none;
     color: #ffffff;
     font-weight: bold; }
+
+.article {
+  margin: 20px;
+  height: 660px; }
+  .article li {
+    float: left;
+    width: 30%; }
+  .article li:nth-child(odd) {
+    margin: 0 5% 0 15%; }
+    .article li:nth-child(odd) h2 {
+      font-size: 28px;
+      margin-top: 10px;
+      margin-bottom: 38px; }
+    .article li:nth-child(odd) p {
+      font-size: 16px;
+      line-height: 200%; }
+  .article li:nth-child(even) {
+    margin: 0 15% 0 5%; }
+    .article li:nth-child(even) p {
+      margin-bottom: 10px; }
+
+.register {
+  margin-top: 100px;
+  box-sizing: border-box;
+  height: 520px;
+  background-image: url(../img/register.png);
+  padding-top: 80px; }
+  .register div {
+    width: 460px;
+    height: 350px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding-top: 25px; }
+    .register div h2 {
+      text-align: center;
+      font-family: Roboto-Thin;
+      font-size: 28px;
+      margin-bottom: 25px;
+      opacity: 0.7; }
+    .register div form {
+      /* Firefox 19+ */
+      /* Firefox 18- */
+      display: block;
+      margin: 0 auto; }
+      .register div form input::-webkit-input-placeholder {
+        color: #555555; }
+      .register div form input::-moz-placeholder {
+        color: #555555; }
+      .register div form input:-moz-placeholder {
+        color: #555555; }
+      .register div form input:-ms-input-placeholder {
+        color: #555555; }
+      .register div form input, .register div form select, .register div form option, .register div form option:focus {
+        display: block;
+        margin: 0 auto;
+        font-size: 16px;
+        box-sizing: border-box;
+        width: 295px;
+        padding: 5px;
+        border: 1px solid #c4c4c4;
+        padding: 5px 0 5px 20px;
+        color: #000000;
+        font-family: Roboto-Thin; }
+      .register div form select:focus {
+        padding: 0; }
+      .register div form input, .register div form select {
+        background-color: #f5f5f5;
+        margin-bottom: 10px; }
+    .register div button {
+      margin: 0 auto;
+      background-color: #24a259;
+      padding: 8px 25px;
+      border-radius: 4px;
+      border: none;
+      color: #ffffff;
+      font-weight: bold;
+      display: block;
+      font-size: 16px; }
+
+.footer {
+  height: 40px;
+  background-color: #2c3e50;
+  padding-top: 8px;
+  box-sizing: border-box; }
+  .footer p {
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

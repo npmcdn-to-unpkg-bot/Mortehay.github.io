@@ -1,8 +1,9 @@
 {
   "name": "test1",
   "version": "1.0.0",
+
   "description": "",
-  "main": "index.js",
+  "main": "gruntfile.js",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
