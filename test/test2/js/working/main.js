@@ -22,12 +22,15 @@ $( document ).ready(function(){
 for (var i = 0; i < imgArr.length; i++) {
 	starNumber=Math.round( (10*Math.random())/2);
 	var stars='';
-	for (var i = 1; i < 6; i++) {
-		if (i<=starNumber) {
-			stars=stars+'<span class="blackStar">&#9733</span>';
-		} else{
-			stars=stars+'<span class="whiteStar">&#9733</span>';
+	console.log('starNumber', starNumber);
+	for (var j = 1; j < 6; j++) {
+		if (j<=starNumber) {
+			stars+='<span class="blackStar">&#9733</span>';
 		};
+		if (j>starNumber) {
+			stars+='<span class="whiteStar">&#9734;</span>';
+		};
+		
 	};
 	starArr.push(stars);
 	console.log('starArr', starArr);
