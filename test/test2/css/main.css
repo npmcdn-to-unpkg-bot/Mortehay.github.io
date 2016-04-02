@@ -29,6 +29,9 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+button:focus {
+  outline: 0; }
+
 .wraper {
   position: absolute;
   top: 40%;
@@ -43,7 +46,8 @@ body {
   width: 300px;
   height: 300px;
   margin: 0 16px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-bottom: 20px; }
   .item img {
     margin: 10px auto;
     display: block; }
@@ -56,6 +60,10 @@ body {
   .item h2 {
     font-size: 16px; }
 
+.template {
+  height: 300px;
+  margin-bottom: 30px; }
+
 .whitestar {
   color: #C0C0C0; }
 
@@ -64,5 +72,12 @@ body {
 
 .stars {
   text-align: center; }
+
+.morePhotos {
+  display: block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: #FAF0E6;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */

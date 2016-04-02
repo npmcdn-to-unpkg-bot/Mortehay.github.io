@@ -38,6 +38,7 @@ body{
 	  -o-background-size: cover;
 	  background-size: cover;
 }
+button:focus {outline:0;}
 //wraper---------------------------
 .wraper{
 	position: absolute;
@@ -55,6 +56,7 @@ body{
 	height:300px;
 	margin: 0 16px;
 	box-sizing:border-box;
+	margin-bottom:20px; 
 	img{
 		margin: 10px auto;
 		display:block;
@@ -71,6 +73,10 @@ body{
 		font-size: 16px;
 	}
 }
+.template {
+	height:300px;
+	margin-bottom:30px;
+}
 .whitestar{
 	color:#C0C0C0;
 }
@@ -79,4 +85,11 @@ body{
 }
 .stars {
 	text-align: center;
+}
+.morePhotos{
+	display:block;
+	padding: 8px 20px;
+	border-radius:20px;
+	background-color: #FAF0E6;
+	margin: 0 auto;
 }
