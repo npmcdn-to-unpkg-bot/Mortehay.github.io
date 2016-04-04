@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf); }
+@font-face {
+  font-family: Roboto-Thin;
+  src: url(../fonts/Roboto-Thin.ttf); }
+@font-face {
+  font-family: truthwillout;
+  src: url(../fonts/truthwillout.ttf); }
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto-Regular; }
+
+ul {
+  list-style-type: none; }
+
+a:link, a:active, a:visited {
+  text-decoration: none;
+  color: #000000; }
+
+.clear {
+  clear: both; }
+
+body {
+}
+
+button:focus {
+  outline: 0; 
+}
+button:focus {
+  display: block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: #FAF0E6;
+  margin: 0 auto; 
+}
