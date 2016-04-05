@@ -30,6 +30,7 @@ var paramsCanvas=[
 		lat:0
 	}
 ];
+
 //some-code-------------------------------------------
 
 //main-load-canvas----------------------------------
@@ -49,6 +50,7 @@ function mainloadCanvas() {
 		 background.onload = function(){	
 			ctx.drawImage(background,0,0);
 		 };
+		 pointCanvas();
 
  
 };
@@ -78,25 +80,26 @@ function reloadCanvas() {
 
 
 		 };
-		    	
+		pointCanvas();    	
 	});
 };
 function pointCanvas() {
 	var pointCanvas = document.getElementById('points');
 	var point = pointCanvas.getContext('2d');
-
+	
 	pointCanvas.width = 640;
 	pointCanvas.height = 640;
 	point.fillStyle = "#ff0000";
+	point.font = "10px Arial";
 	for (var i = 0; i < paramsCanvas.length; i++) {
 		point.fillRect((320+(320*paramsCanvas[i].lon)/228 ),(320-(320*paramsCanvas[i].lat)/191 ),5,5);
-		console.log('lon', 320+(320*paramsCanvas[i].lon)/90);
-		console.log('lat', 320+(320*paramsCanvas[i].lat)/90);
+		point.strokeText(paramsCanvas[i].name,5+(320+(320*paramsCanvas[i].lon)/228), 5+(320-(320*paramsCanvas[i].lat)/191) );
+		console.log('paramsCanvas[i].name', paramsCanvas[i].name);
 	}
 	var img= new Image();
 	img.src=pointCanvas.toDataURL("image/png");
 	point.drawImage(img,0,0);
-
+	
 };
 //-----------------------------------------------------------
 
@@ -107,7 +110,8 @@ $( document ).ready(function(){
 	
 	mainloadCanvas();
 	reloadCanvas();
-	pointCanvas();
+	$('.newCoords').addParamCanvas();
+	
 });	
 	
 	
@@ -118,6 +122,25 @@ $( document ).ready(function(){
 //jquery plugins--------------------------------------
 (function($){				
 
+$.fn.addParamCanvas = function(){
+		this.on({
+			click: function(){
+				if ( ($('.newLat').val() !== '') && ($('.newLon').val() !== '') && ($('.newName').val() !== '')) {
+					paramsCanvas.push({
+						
+						lat: +($('.newLat').val()),
+						lon: +($('.newLon').val()),
+						name: $('.newName').val()	
+					});
+					console.log('paramsCanvas',paramsCanvas)
+				} else {
+					alert('pleas Enter newLat, newLon, name');
+				}
+
+			}
+		
+	});
+};
 
 //-----------------------------------------------------	
 	
