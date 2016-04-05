@@ -32,64 +32,29 @@ a:link, a:active, a:visited{
 
 body{
 
-	background: url(../img/background.png) no-repeat center center fixed; 
-	  -webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
 }
 button:focus {outline:0;}
 //wraper---------------------------
+.menu{
+	width: 50px;
+	margin: 20px auto;
+}
 .wraper{
-	position: absolute;
-	top:40%;
-	left:50%;
-	margin-left: -500px;
-	width:1000px;
-	height: 300px;
-	
-}
-.item{
-	background-color: #ffffff;
-	float:left;
-	width:300px;
-	height:300px;
-	margin: 0 16px;
-	box-sizing:border-box;
-	margin-bottom:20px; 
-	img{
-		margin: 10px auto;
-		display:block;
-	}
-	h2, p{
-		width:90%;
-		text-align: center;
-		margin: 2% 5%;
-	}
-	p{
-		font-size: 12px;
-	}
-	h2{
-		font-size: 16px;
-	}
-}
-.template {
-	height:300px;
-	margin-bottom:30px;
-}
-.whitestar{
-	color:#C0C0C0;
-}
-.blackstar{
-	color:#000000;
-}
-.stars {
-	text-align: center;
-}
-.morePhotos{
-	display:block;
-	padding: 8px 20px;
-	border-radius:20px;
-	background-color: #FAF0E6;
+	position: relative;
+	width:640px;
+	height:640px;
 	margin: 0 auto;
+	border:1px solid #4a4a4a;
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+}
+.canvas, .point{
+	position:absolute;
+}
+.canvas{
+	z-index:-1;
+}
+.points{
+	z-index:1;
 }
