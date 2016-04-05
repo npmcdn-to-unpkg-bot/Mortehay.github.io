@@ -3,7 +3,7 @@
 $(document).ready(function(){
 	$(".carousel-arrow-left").carouselMove();
 	$(".carousel-arrow-right").carouselMove();
-	$(".carousel-element>img").imgWrap();
+	/*$(".carousel-element>img").imgWrap();*/
 	$(".endlesscarousel").endlessCarousel();
 	
 
@@ -78,9 +78,9 @@ var fadeintime = 500;
 		});
 	};
 
-	$.fn.imgWrap = function(options){
+	/*$.fn.imgWrap = function(options){
 		$(this).wrap('<div class="carousel-element-overlay overlay-color"></div>');
-	};
+	};*/
 
 	$.fn.endlessCarousel = function(options){
 		$('.endlesscarousel').html('<img src="img/endlesscarousel/endlesscarousel-1.png">');
