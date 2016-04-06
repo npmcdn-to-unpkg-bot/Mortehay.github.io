@@ -34,7 +34,7 @@ var paramsCanvas=[
 //some-code-------------------------------------------
 
 //main-load-canvas----------------------------------
-function mainloadCanvas() {
+/*function mainloadCanvas() {
 	$('#progectionType').val('option1');
 		var canvas = document.getElementById("canvas");
 			ctx = canvas.getContext("2d");
@@ -53,10 +53,10 @@ function mainloadCanvas() {
 		 pointCanvas();
 
  
-};
+};*/
 //---------------------------------------------------------------
 //reload-canvas-------------------------------------------
-function reloadCanvas() {
+/*function reloadCanvas() {
 	$('#progectionType').on('change', function() {
 
 		var canvas = document.getElementById("canvas");
@@ -82,8 +82,8 @@ function reloadCanvas() {
 		 };
 		pointCanvas();    	
 	});
-};
-function pointCanvas() {
+};*/
+function pointCanvas(params) {
 	var pointCanvas = document.getElementById('points');
 	var point = pointCanvas.getContext('2d');
 	
@@ -91,10 +91,10 @@ function pointCanvas() {
 	pointCanvas.height = 640;
 	point.fillStyle = "#ff0000";
 	point.font = "10px Arial";
-	for (var i = 0; i < paramsCanvas.length; i++) {
-		point.fillRect((320+(320*paramsCanvas[i].lon)/228 ),(320-(320*paramsCanvas[i].lat)/191 ),5,5);
-		point.strokeText(paramsCanvas[i].name,5+(320+(320*paramsCanvas[i].lon)/228), 5+(320-(320*paramsCanvas[i].lat)/191) );
-		console.log('paramsCanvas[i].name', paramsCanvas[i].name);
+	for (var i = 0; i < params.length; i++) {
+		point.fillRect((320+(320*params[i].lon)/228 ),(320-(320*params[i].lat)/191 ),5,5);
+		point.strokeText(params[i].name,5+(320+(320*params[i].lon)/228), 5+(320-(320*params[i].lat)/191) );
+		console.log('paramsCanvas[i].name', params[i].name);
 	}
 	var img= new Image();
 	img.src=pointCanvas.toDataURL("image/png");
@@ -108,9 +108,12 @@ $( document ).ready(function(){
 	
 	
 	
-	mainloadCanvas();
-	reloadCanvas();
+	/*mainloadCanvas();
+	reloadCanvas();*/
+	$('#canvas').mainloadCanvas();
+	$('#progectionType').reloadCanvas();
 	$('.newCoords').addParamCanvas();
+	pointCanvas(paramsCanvas);
 	
 });	
 	
@@ -120,19 +123,72 @@ $( document ).ready(function(){
 
 
 //jquery plugins--------------------------------------
-(function($){				
+(function($){
+//-main-load-canvas--------------------------------
+$.fn.mainloadCanvas = function(){
+	this.val('option1');
+		var canvas = document.getElementById("canvas");
+			ctx = canvas.getContext("2d");
 
+		canvas.width = 640;
+		canvas.height = 640;
+
+		console.log( ($('#progectionType').val()) );
+		var background = new Image();
+		background.src = links.link1;
+	
+
+		background.onload = function(){	
+			ctx.drawImage(background,0,0);
+		};
+};
+//----------------------------------------------------------
+//--reloadCanvas-------------------------------------
+$.fn.reloadCanvas = function() {
+	this.on({
+			change: function(){
+				var canvas = document.getElementById("canvas");
+			    	ctx = canvas.getContext("2d");
+
+				canvas.width = 640;
+				canvas.height = 640;
+
+				console.log( ($('#progectionType').val()) );
+				var background = new Image();
+				if ( $('#progectionType').val()  =='option1')  {
+					background.src = links.link1;
+				};
+
+				if ( $('#progectionType').val()  =='option2') {
+					background.src = links.link2;
+				};
+
+				background.onload = function(){
+				    	ctx.drawImage(background,0,0);
+				};
+			}
+		})
+};
+//----------------------------------------------------------
+
+//--addParamCanvas-------------------------------
 $.fn.addParamCanvas = function(){
 		this.on({
-			click: function(){
+			click: function() {
 				if ( ($('.newLat').val() !== '') && ($('.newLon').val() !== '') && ($('.newName').val() !== '')) {
-					paramsCanvas.push({
-						
-						lat: +($('.newLat').val()),
-						lon: +($('.newLon').val()),
-						name: $('.newName').val()	
-					});
-					console.log('paramsCanvas',paramsCanvas)
+					if ( ($('.newLat').val() >=-150) && ($('.newLat').val() <=150) && ($('.newLon').val() >=-180) && ($('.newLon').val() <=180) ) {
+						paramsCanvas.push({
+							
+							lat: +($('.newLat').val()),
+							lon: +($('.newLon').val()),
+							name: $('.newName').val()	
+						});
+						console.log('paramsCanvas',paramsCanvas);
+						pointCanvas(paramsCanvas);	
+					} else {
+						alert('pleas check values - newLat - [-150...+150], newLon - [-180...+180] ');		
+					}
+
 				} else {
 					alert('pleas Enter newLat, newLon, name');
 				}
@@ -141,7 +197,7 @@ $.fn.addParamCanvas = function(){
 		
 	});
 };
-
 //-----------------------------------------------------	
+
 	
 })(jQuery);
