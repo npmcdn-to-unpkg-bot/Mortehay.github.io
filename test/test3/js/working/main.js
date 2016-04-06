@@ -33,56 +33,6 @@ var paramsCanvas=[
 
 //some-code-------------------------------------------
 
-//main-load-canvas----------------------------------
-/*function mainloadCanvas() {
-	$('#progectionType').val('option1');
-		var canvas = document.getElementById("canvas");
-			ctx = canvas.getContext("2d");
-
-		canvas.width = 640;
-		canvas.height = 640;
-
-		console.log( ($('#progectionType').val()) );
-		var background = new Image();
-		background.src = links.link1;
-	
-
-		 background.onload = function(){	
-			ctx.drawImage(background,0,0);
-		 };
-		 pointCanvas();
-
- 
-};*/
-//---------------------------------------------------------------
-//reload-canvas-------------------------------------------
-/*function reloadCanvas() {
-	$('#progectionType').on('change', function() {
-
-		var canvas = document.getElementById("canvas");
-			    ctx = canvas.getContext("2d");
-
-		canvas.width = 640;
-		canvas.height = 640;
-
-		console.log( ($('#progectionType').val()) );
-		var background = new Image();
-		if ( $('#progectionType').val()  =='option1')  {
-			background.src = links.link1;
-		};
-
-		if ( $('#progectionType').val()  =='option2') {
-			background.src = links.link2;
-		};
-
-		 background.onload = function(){
-		    	ctx.drawImage(background,0,0);
-
-
-		 };
-		pointCanvas();    	
-	});
-};*/
 function pointCanvas(params) {
 	var pointCanvas = document.getElementById('points');
 	var point = pointCanvas.getContext('2d');
