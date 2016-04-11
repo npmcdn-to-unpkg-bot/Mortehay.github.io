@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- jquery --> 
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+  <!-- templateJs --> 
+  <script src="js/tmpl.js"></script>
+
+  <title>test6</title>
+  <!-- main css-->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- main js-->
+ <!-- <script src="js/script.js"></script> -->
+
+ <script data-main="js/app" src="js/require.js"></script>
+</head>
+
+<body>
+
+<script type="text/template" id="wrapper-template">
+  <div class="wrapper">
+    <div class="item-list"></div>
+    <div class="controlls">
+      <input type="text" class="item-value-name" placeholder="name">
+      <input type="text" class="item-value-email" placeholder="email">
+      <input type="text" class="item-value-phone" placeholder="phone">
+      <input type="text" class="item-value-adress-street" placeholder="street">
+      <input type="text" class="item-value-adress-city" placeholder="city">
+      <input type="text" class="item-value-adress-state" placeholder="state">
+      <input type="text" class="item-value-adress-zip" placeholder="zip">
+      <button class="item-add">add</button>
+    </div>
+  </div>
+  </script>
+  <script type="text/template" id="list-template">
+    <% for (var i = 0; i < data.length; i++) { %>
+      <div><span data-value="<%= i %>" class="item-delete">X</span>
+      <ul>
+        <li> <%= data[i].name %></li>
+        <li> <%= data[i].email %> </li>
+        <li> <%= data[i].phone %> </li>
+        <li> <%= data[i].adress.street %> </li>
+        <li> <%= data[i].adress.city %> </li>
+        <li> <%= data[i].adress.state %> </li>
+        <li> <%= data[i].adress.zip %> </li>
+      </ul>
+      </div>
+    <% }; %>
+      
+      
+  </script>
+   
+</body>
+
+</html>
