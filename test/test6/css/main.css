@@ -5,47 +5,51 @@
 ul{
 	list-style-type:none;
 }
-
+.clear{
+	clear:both;
+}
 .wrapper{
-	width:300px;
 	/* overflow:hidden; */
-	background-color: #e6ccff;
+	background-color: #b3c6ff;
 	margin:50px auto;
 	border-radius: 5px;
 	padding:10px;
+	height: 100%;
 }
+
 .item-list{
-	margin: 0 auto;
-	width:75%;
-	padding: 20px 0;
+	margin:30px 10px; 
+	width:200px;
+
 }
 .item-list ul{
-	-webkit-box-shadow: inset 0px 0px 3px 1px rgba(107,56,107,1);
-	-moz-box-shadow: inset 0px 0px 3px 1px rgba(107,56,107,1);
-	box-shadow: inset 0px 0px 3px 1px rgba(107,56,107,1);
+	-webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	-moz-box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	border-radius:4px;
 }
 .item-list li{
 	
-	border-radius: 3px;
+	border-radius: 4px;
 	padding: 3px 8px;
 	margin-bottom: 3px;
 }
 .item-list>div:hover .item-delete{
-	text-shadow: 0px 0px 15px rgba(245, 233, 235, 1);
-	color:#ffffff;
+	text-shadow: 0px 0px 6px rgba(0, 13, 26, 1);
+	color:#00264d;
 }
 .item-list li:hover{
-	background: #935f9e;
-	  background-image: -webkit-linear-gradient(top, #935f9e, #cf1deb);
-	  background-image: -moz-linear-gradient(top, #935f9e, #cf1deb);
-	  background-image: -ms-linear-gradient(top, #935f9e, #cf1deb);
-	  background-image: -o-linear-gradient(top, #935f9e, #cf1deb);
-	  background-image: linear-gradient(to bottom, #935f9e, #cf1deb);
+	background: #99ccff;
+	-webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	-moz-box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	box-shadow: inset 0px 0px 3px 1px rgba(0, 102, 204,1);
+	border-radius:4px;
 }
 .item-delete{
 	float:right;
 	margin-right: 10px;
 	font-weight: bold;
+	color: #003366;
 }
 .item-add{
 	background: #6e34d9;
@@ -59,8 +63,8 @@ ul{
 	border-radius: 10px;
 	font-family: Arial;
 	color: #ffffff;
-	font-size: 16px;
-	padding: 5px 8px 8px 8px;
+	font-size: 14px;
+	padding: 3px 5px 3px 5px;
 	text-decoration: none;
 }
 .item-add:hover{
@@ -73,9 +77,11 @@ ul{
 	text-decoration: none;
 }
 .controlls{
-	position: absolute;
-	left:0;
-	top:50px;
+	margin:30px 10px; 
 	width:200px;
 	text-align: center;
+}
+.controlls input[type="text"]{
+	text-align: center;
+	opacity: 0.5;
 }
