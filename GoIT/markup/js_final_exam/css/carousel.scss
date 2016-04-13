@@ -40,7 +40,9 @@
     display: block;
     z-index: 10;
     left:10%;
-    color:black;
+    background-color:black;
+    width:30px;
+    height:55px;
     content: url(../img/carousel/arrow-left.png);
 }
 .carousel-1__arrow-right, .carousel-2__arrow-right, .carousel-3__arrow-right{
@@ -48,6 +50,8 @@
     display: block;
     z-index: 10;
     left:80%;
+    width:30px;
+    height:55px;
     color:black;
     content: url(../img/carousel/arrow-right.png);
 }
