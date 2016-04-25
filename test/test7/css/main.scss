@@ -1,18 +1,7 @@
 
 
 //fonts----------------------------
-@font-face {
-    font-family: Roboto-Regular;
-    src: url(../fonts/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: Roboto-Thin;
-    src: url(../fonts/Roboto-Thin.ttf);
-}
-@font-face {
-    font-family: truthwillout;
-    src: url(../fonts/truthwillout.ttf);
-}
+
 //main page-----------------------
 *{
 	padding: 0;
@@ -36,19 +25,53 @@ body{
 button:focus {outline:0;}
 //wraper---------------------------
 
-.wraper{
-	background-color: #b7d6eb;
-	position: relative;
-	width:640px;
-	height:640px;
-	margin: 0 auto;
-	border:1px solid #4a4a4a;
-	-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+h2 {
+        font-size: 1.5em;
+        line-height: 15px;
 }
-.canvas{
-	width:640px;
-	height:640px;
+.map {
+	max-width:90%;
+	max-height: 768px;
+	margin: 0 auto;
+}
+.scale-cnt {
+margin: 5px;
+}
+
+.edit-form-ctn {
+}
+
+.edit-form {
+float: left;
+margin: 5px;
+width: 230px;
+padding: 4px;
+border: 1px solid black;
+}
+
+.edit-form input[type="button"] {
+float: right;
+}
+
+.edit-form-elem label {
+display: block;
+float: left;
+width: 85px;
+}
+
+.edit-form-elem input[type="text"] {
+width: 60px;
+}
+
+.edit-form-elem select {
+width: 130px;
+}
+
+.edit-form br {
+clear: left;
+}
+
+.clearall {
+clear: both;
 }
 
