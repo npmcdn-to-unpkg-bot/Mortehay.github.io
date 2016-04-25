@@ -54,8 +54,20 @@ function drawMarkers(arr,map){
 		var  feature = new OpenLayers.Feature.Vector(
 			new OpenLayers.Geometry.Point(lon, lat).transform("EPSG:4326", "EPSG:900913"),
 			{description: "marker number " + i} ,
-			{externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25  }
-		);
+			{externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 20, graphicXOffset:-12, graphicYOffset:-25, } 
+				
+			);
+		feature.attributes= {
+			/*name: "img#"+i,
+			align:"cm",*/
+			/*favColor:"red",
+			description: "marker number " + i,*/
+			/*externalGraphic: 'img/marker.png', 
+			graphicHeight: 25, 
+			graphicWidth: 20, 
+			graphicXOffset:-12, 
+			graphicYOffset:-25*/
+		};
 		vectorLayer.addFeatures(feature);
 	}
 	map.addLayer(vectorLayer);
