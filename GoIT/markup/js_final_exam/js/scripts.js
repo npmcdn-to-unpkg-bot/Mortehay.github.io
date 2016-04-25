@@ -2,33 +2,41 @@
 var info=[];
 var currentLeftValue =0;
 /*var pixelOffset=260;*/
-var options1={elementsList:'.carousel-1__list', tempValue:'.carousel-1__element', arrowLeft:'carousel-1__arrow-left', arrowRight:'carousel-1__arrow-right', visibleElement: 1, /*pixelsOffset:280*/};
-var options2={elementsList:'.carousel-2__list', tempValue:'.carousel-2__element', arrowLeft:'carousel-2__arrow-left', arrowRight:'carousel-2__arrow-right', visibleElement: 1, /*pixelsOffset:280*/};
-var options3={elementsList:'.carousel-3__list', tempValue:'.carousel-3__element', arrowLeft:'carousel-3__arrow-left', arrowRight:'carousel-3__arrow-right', visibleElement: 1, /*pixelsOffset:280*/};
+var options1={elementsList:'.carousel-1__list', tempValue:'.carousel-1__element', arrowLeft:'carousel-1__arrow-left', arrowRight:'carousel-1__arrow-right', visibleElement: 1, currentLeftValue:0, /*pixelsOffset:280*/};
+var options2={elementsList:'.carousel-2__list', tempValue:'.carousel-2__element', arrowLeft:'carousel-2__arrow-left', arrowRight:'carousel-2__arrow-right', visibleElement: 1, currentLeftValue:0, /*pixelsOffset:280*/};
+var options3={elementsList:'.carousel-3__list', tempValue:'.carousel-3__element', arrowLeft:'carousel-3__arrow-left', arrowRight:'carousel-3__arrow-right', visibleElement: 1, currentLeftValue:0, /*pixelsOffset:280*/};
 //----------------------------------------------------
 function carouselChange(){
 	var winWidth = $(window).width();
+	console.log('winWidth',winWidth);
 	if ( winWidth <=320) {
 		options1.pixelsOffset = 280;
 		options2.pixelsOffset = 280;
 		options3.pixelsOffset = 280;
+		options1.currentLeftValue=0;
+		options2.currentLeftValue=0;
+		options3.currentLeftValue=0;
 	}
 	if ( (winWidth >320) && (winWidth<768) ) {
+		options1.pixelsOffset = 280;
+		options2.pixelsOffset = 280;
+		options3.pixelsOffset = 280;
+		options1.currentLeftValue=0;
+		options2.currentLeftValue=0;
+		options3.currentLeftValue=0;
+	}
+	if ( winWidth >=768  ) {
 		options1.pixelsOffset = 260;
 		options2.pixelsOffset = 260;
 		options3.pixelsOffset = 260;
+		options1.currentLeftValue=0;
+		options2.currentLeftValue=0;
+		options3.currentLeftValue=0;
 	}
-	if ( winWidth >=768  ) {
-		options1.pixelsOffset = 240;
-		options2.pixelsOffset = 240;
-		options3.pixelsOffset = 240;
-	}
-	$('.carousel-1__arrow-left').carouselMove(options1);
-	$('.carousel-1__arrow-right').carouselMove(options1);
-	$('.carousel-2__arrow-left').carouselMove(options2);
-	$('.carousel-2__arrow-right').carouselMove(options2);
-	$('.carousel-3__arrow-left').carouselMove(options3);
-	$('.carousel-3__arrow-right').carouselMove(options3);
+	
+	/*console.log('options1.pixelsOffset ',options1.pixelsOffset );
+	console.log('options2.pixelsOffset ',options2.pixelsOffset );
+	console.log('options3.pixelsOffset ',options3.pixelsOffset );*/
 };
 //generating object with link an classes--------------
 for (var i = 0; i < 6; i++) {
@@ -47,12 +55,12 @@ $(document).ready(function(){
 	
 	$(window).on('resize', carouselChange);
 	
-  	/*$('.carousel-1__arrow-left').carouselMove(options1);
+  	$('.carousel-1__arrow-left').carouselMove(options1);
 	$('.carousel-1__arrow-right').carouselMove(options1);
 	$('.carousel-2__arrow-left').carouselMove(options2);
 	$('.carousel-2__arrow-right').carouselMove(options2);
 	$('.carousel-3__arrow-left').carouselMove(options3);
-	$('.carousel-3__arrow-right').carouselMove(options3);*/
+	$('.carousel-3__arrow-right').carouselMove(options3);
 
 	$('.grid').masonry({
 	  itemSelector: '.grid-item',
@@ -85,22 +93,23 @@ $(document).ready(function(){
 	        	
 	        	if ($(this).hasClass(options.arrowRight)) {
 
-	        		if (currentLeftValue > (-tempValue*options.pixelsOffset) ) {
-	        			currentLeftValue -= options.pixelsOffset;
-		        		elementsList.animate({ left : currentLeftValue + "px"}, 1000);
-		        		console.log("currentLeftValue---=",currentLeftValue);
+	        		if (options.currentLeftValue > (-tempValue*options.pixelsOffset) ) {
+	        			options.currentLeftValue -= options.pixelsOffset;
+		        		elementsList.animate({ left : options.currentLeftValue + "px"}, 1000);
+		        		console.log("currentLeftValue---=",options.currentLeftValue);
 	        		};
 	        	}
 	        	if ($(this).hasClass(options.arrowLeft)) {
 
-	        		if (currentLeftValue < 0) {
-	        			currentLeftValue += options.pixelsOffset;
-	       				elementsList.animate({ left: currentLeftValue + "px"}, 1000);
-		        		console.log("currentLeftValue+++=",currentLeftValue);
+	        		if (options.currentLeftValue < 0) {
+	        			options.currentLeftValue += options.pixelsOffset;
+	       				elementsList.animate({ left: options.currentLeftValue + "px"}, 1000);
+		        		console.log("currentLeftValue+++=",options.currentLeftValue);
 	        		};
 	        	}
 	        	
-	        	console.log("currentLeftValue=***",currentLeftValue);
+	        	console.log("currentLeftValue=***",options.currentLeftValue);
+	        	console.log('options1.pixelsOffset ',options1.pixelsOffset );
 	        }
 		});
 	};

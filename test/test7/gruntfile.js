@@ -1,21 +1,7 @@
 module.exports = function(grunt) {
 
 grunt.initConfig({
-  babel: {
-  options: {
-    plugins: ['transform-react-jsx'], // npm install babel-plugin-transform-react-jsx
-    presets: ['es2015', 'react'] // npm install babel-preset-es2015 babel-preset-react
-  },
-  jsx: {
-    files: [{
-      expand: true,
-      cwd: 'jsx',
-      src: ['*.jsx'],
-      dest: 'js/working/',
-      ext: '.js'
-    }]
-  }
-},
+  
   concat: {
     js: {
       options: {
@@ -60,13 +46,7 @@ grunt.initConfig({
   },
 
   watch: {
-      react: {
-        files: 'jsx/*.jsx',
-        tasks: ['babel', 'jsx'],
-        options: {
-            livereload: 35729
-        }
-      },
+      
       js: {
         files: ['js/working/*.js'],
         tasks: ['concat:js', 'uglify:js'],
@@ -106,7 +86,7 @@ grunt.initConfig({
 });
 
 
-  grunt.loadNpmTasks('grunt-react');
+
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-sass');
