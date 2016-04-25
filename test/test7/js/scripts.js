@@ -1,292 +1,226 @@
-//grlobal variebles-----------------------------------
-var marker1= [{
-		lon:30.63918,
-		lat:50.45207
-	}];
-var markers = [
-	{
-		lon:30.63918,
-		lat:50.45207
-	},
-	{
-		lon:30.64052,
-		lat:50.45246
-	},
-	{
-		lon:30.63976,
-		lat: 50.45468
-	}
-];
-for (var i = 0; i < 10000; i++) {
+var myDom = {
+        points: {
+          text: document.getElementById('points-text'),
+          align: document.getElementById('points-align'),
+          baseline: document.getElementById('points-baseline'),
+          rotation: document.getElementById('points-rotation'),
+          font: document.getElementById('points-font'),
+          weight: document.getElementById('points-weight'),
+          size: document.getElementById('points-size'),
+          offsetX: document.getElementById('points-offset-x'),
+          offsetY: document.getElementById('points-offset-y'),
+          color: document.getElementById('points-color'),
+          outline: document.getElementById('points-outline'),
+          outlineWidth: document.getElementById('points-outline-width'),
+          maxreso: document.getElementById('points-maxreso')
+        },
+        lines: {
+          text: document.getElementById('lines-text'),
+          align: document.getElementById('lines-align'),
+          baseline: document.getElementById('lines-baseline'),
+          rotation: document.getElementById('lines-rotation'),
+          font: document.getElementById('lines-font'),
+          weight: document.getElementById('lines-weight'),
+          size: document.getElementById('lines-size'),
+          offsetX: document.getElementById('lines-offset-x'),
+          offsetY: document.getElementById('lines-offset-y'),
+          color: document.getElementById('lines-color'),
+          outline: document.getElementById('lines-outline'),
+          outlineWidth: document.getElementById('lines-outline-width'),
+          maxreso: document.getElementById('lines-maxreso')
+        },
+        polygons: {
+          text: document.getElementById('polygons-text'),
+          align: document.getElementById('polygons-align'),
+          baseline: document.getElementById('polygons-baseline'),
+          rotation: document.getElementById('polygons-rotation'),
+          font: document.getElementById('polygons-font'),
+          weight: document.getElementById('polygons-weight'),
+          size: document.getElementById('polygons-size'),
+          offsetX: document.getElementById('polygons-offset-x'),
+          offsetY: document.getElementById('polygons-offset-y'),
+          color: document.getElementById('polygons-color'),
+          outline: document.getElementById('polygons-outline'),
+          outlineWidth: document.getElementById('polygons-outline-width'),
+          maxreso: document.getElementById('polygons-maxreso')
+        }
+      };
 
-	markers.push( 
-		{
-			lon:  30.63929+0.1*Math.random(),
-			lat: 50.45283-0.1*Math.random()		
-		}
-	);
-}
-console.log('markers', markers);
+      var getText = function(feature, resolution, dom) {
+        var type = dom.text.value;
+        var maxResolution = dom.maxreso.value;
+        var text = feature.get('name');
 
-//some-code-------------------------------------------
-/*function init(arr) {
+        if (resolution > maxResolution) {
+          text = '';
+        } else if (type == 'hide') {
+          text = '';
+        } else if (type == 'shorten') {
+          text = text.trunc(12);
+        } else if (type == 'wrap') {
+          text = stringDivider(text, 16, '\n');
+        }
 
-
-
-
-   var map = new OpenLayers.Map("basicMap");
-
-    var mapnik = new OpenLayers.Layer.OSM();
-    map.addLayer(mapnik);
-    map.setCenter(new OpenLayers.LonLat(30.63929, 50.45283) // Центр карты
-      .transform(
-        new OpenLayers.Projection("EPSG:4326"), // преобразование из WGS 1984
-        new OpenLayers.Projection("EPSG:900913") // в Spherical Mercator Projection
-      ), 17 // Уровень масштаба
-    );
-    drawMarkers(markers, map);
-   
-}	
-function drawMarkers(arr,map){
-
-   	var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
-   	var marker = new OpenLayers.Feature.Vector(
-			myLocation,
-			{description: "marker number " + i} ,
-			{externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25 }
-		);
-   	overlay.addFeatures([ new OpenLayers.Feature.Vector(myLocation, {tooltip: 'OpenLayers'})
-    ]);
-	for (var i = 0; i < arr.length; i++) {
-		var lon = arr[i].lon;
-		var lat = arr[i].lat;
-<<<<<<< HEAD
-		var  feature = new OpenLayers.Feature.Vector(
-			new OpenLayers.Geometry.Point(lon, lat).transform("EPSG:4326", "EPSG:900913"),
-			{description: "marker number " + i} ,
-			{externalGraphic: 'img/marker.png', graphicHeight: 25, graphicWidth: 20, graphicXOffset:-12, graphicYOffset:-25, } 
-				
-			);
-		feature.attributes= {
-			/*name: "img#"+i,
-			align:"cm",*/
-			/*favColor:"red",
-			description: "marker number " + i,*/
-			/*externalGraphic: 'img/marker.png', 
-			graphicHeight: 25, 
-			graphicWidth: 20, 
-			graphicXOffset:-12, 
-			graphicYOffset:-25*/
-		};
-		vectorLayer.addFeatures(feature);
-=======
-		var myLocation = new OpenLayers.Geometry.Point(lon, lat).transform('EPSG:4326', 'EPSG:3857');
-		
-		var popup = new OpenLayers.Popup.FramedCloud("Popup", 
-        myLocation.getBounds().getCenterLonLat(), null,
-        '<a target="_blank" href="http://openlayers.org/">We</a> ' +
-        'could be here.<br>Or elsewhere.', null,
-        true // <-- true if we want a close (X) button, false otherwise
-    );
-		vectorLayer.addFeatures(marker);
->>>>>>> 48d82cd3aa1e81dce2993b6c11adc98ffc9df98c
-	}
-	map.addLayer(vectorLayer);
-};
+        return text;
+      };
 
 
-*/
-/*function init() {
-    
-    // The overlay layer for our marker, with a simple diamond as symbol
-    var overlay = new OpenLayers.Layer.Vector('Overlay', {
-        styleMap: new OpenLayers.StyleMap({
-            externalGraphic: 'img/marker.png',
-            graphicWidth: 20, graphicHeight: 24, graphicYOffset: -24,
-            title: '${tooltip}'
-        })
-    });
+      var createTextStyle = function(feature, resolution, dom) {
+        var align = dom.align.value;
+        var baseline = dom.baseline.value;
+        var size = dom.size.value;
+        var offsetX = parseInt(dom.offsetX.value, 10);
+        var offsetY = parseInt(dom.offsetY.value, 10);
+        var weight = dom.weight.value;
+        var rotation = parseFloat(dom.rotation.value);
+        var font = weight + ' ' + size + ' ' + dom.font.value;
+        var fillColor = dom.color.value;
+        var outlineColor = dom.outline.value;
+        var outlineWidth = parseInt(dom.outlineWidth.value, 10);
 
-    // The location of our marker and popup. We usually think in geographic
-    // coordinates ('EPSG:4326'), but the map is projected ('EPSG:3857').
-    var myLocation = new OpenLayers.Geometry.Point(10.2, 48.9).transform('EPSG:4326', 'EPSG:3857');
-    var centerLocation = new OpenLayers.Geometry.Point(10.2, 48.9).transform('EPSG:4326', 'EPSG:3857');
-    // We add the marker with a tooltip text to the overlay
-    overlay.addFeatures([
-        new OpenLayers.Feature.Vector(myLocation, {tooltip: 'OpenLayers'})
-    ]);
-
-    // A popup with some information about our location
-    var popup = new OpenLayers.Popup.FramedCloud("Popup", 
-        myLocation.getBounds().getCenterLonLat(), null,
-        '111'+'11', null,
-        true // <-- true if we want a close (X) button, false otherwise
-    );
-
-     // Create a point feature to show the label offset options
-            var labelOffsetPoint = new OpenLayers.Geometry.Point(10.2, 48.9);  
-            var labelOffsetFeature = new OpenLayers.Feature.Vector(labelOffsetPoint);
-            labelOffsetFeature.attributes = {
-                name: "offset",
-                age: 22,
-                favColor: 'blue',
-                align: "rt",
-                // positive value moves the label to the right
-                xOffset: 50,
-                // negative value moves the label down
-                yOffset: -15
-            };
-
-    // Finally we create the map
-    map = new OpenLayers.Map({
-        div: "map", projection: "EPSG:3857",
-        layers: [new OpenLayers.Layer.OSM(), overlay],
-        center: [centerLocation.getBounds().getCenterLonLat()], zoom: 14
-    });
-    // and add the popup to it.
-    map.addPopup(popup, labelOffsetPoint);
-}	
-*/
-
-var map;
-
-function init(markers, marker1){
-    map = new OpenLayers.Map('map');
-    
-    var layer = new OpenLayers.Layer.WMS( "OpenLayers WMS", 
-            "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'} );
-    map.addLayer(layer);
-    
-    // allow testing of specific renderers via "?renderer=Canvas", etc
-    var renderer = OpenLayers.Util.getParameters(window.location.href).renderer;
-    renderer = (renderer) ? [renderer] : OpenLayers.Layer.Vector.prototype.renderers;
-    
-    var vectorLayer = new OpenLayers.Layer.Vector("Simple Geometry", {
-        styleMap: new OpenLayers.StyleMap({'default':{
-            strokeColor: "#00FF00",
-            strokeOpacity: 1,
-            strokeWidth: 3,
-            fillColor: "#FF5500",
-            fillOpacity: 0.5,
-            pointRadius: 6,
-            pointerEvents: "visiblePainted",
-            // label with \n linebreaks
-            label : "_ ${name}\n_ ${type}",
-            
-            fontColor: "${favColor}",
-            fontSize: "10px",
-            fontFamily: "Courier New, monospace",
-            fontWeight: "bold",
-            labelAlign: "${align}",
-            labelXOffset: "${xOffset}",
-            labelYOffset: "${yOffset}",
-            labelOutlineColor: "white",
-            labelOutlineWidth: 3
-        }}),
-        renderers: renderer
-    });
-    
- /*   // create a point feature
-    var point = new OpenLayers.Geometry.Point(-111.04, 45.68);
-    var pointFeature = new OpenLayers.Feature.Vector(point);
-    pointFeature.attributes = {
-        name: "toto",
-        age: 20,
-        favColor: 'red',
-        align: "cm"
-    };*/
-    
-    // create a polygon feature from a linear ring of points
-    /*var pointList = [];
-    for(var p=0; p<6; ++p) {
-        var a = p * (2 * Math.PI) / 7;
-        var r = Math.random(1) + 1;
-        var newPoint = new OpenLayers.Geometry.Point(point.x + 5 + (r * Math.cos(a)),
-                                                     point.y + 5 + (r * Math.sin(a)));
-        pointList.push(newPoint);
-    }
-    pointList.push(pointList[0]);
-    
-    var linearRing = new OpenLayers.Geometry.LinearRing(pointList);
-    var polygonFeature = new OpenLayers.Feature.Vector(
-        new OpenLayers.Geometry.Polygon([linearRing]));
-    polygonFeature.attributes = {
-        name: "dude",
-        age: 21,
-        favColor: 'purple',
-        align: 'lb'
-    };
-    
-    multiFeature = new OpenLayers.Feature.Vector(
-        new OpenLayers.Geometry.Collection([
-            new OpenLayers.Geometry.LineString([
-                new OpenLayers.Geometry.Point(-105,40),
-                new OpenLayers.Geometry.Point(-95,45)
-            ]),
-            new OpenLayers.Geometry.Point(-105, 40)
-        ]),
-        {
-            name: "ball-and-chain",
-            age: 30,
-            favColor: 'black',
-            align: 'rt'
+        return new ol.style.Text({
+          textAlign: align,
+          textBaseline: baseline,
+          font: font,
+          text: getText(feature, resolution, dom),
+          fill: new ol.style.Fill({color: fillColor}),
+          stroke: new ol.style.Stroke({color: outlineColor, width: outlineWidth}),
+          offsetX: offsetX,
+          offsetY: offsetY,
+          rotation: rotation
         });
-*/
-	for (var i = 0; i < markers.length; i++) {
-		/*console.log('markers', markers[i].lon);*/
-		// Create a point feature to show the label offset options
-	    var labelOffsetPoint = new OpenLayers.Geometry.Point(markers[i].lon, markers[i].lat);
-	    var labelOffsetFeature = new OpenLayers.Feature.Vector(labelOffsetPoint);
-	    labelOffsetFeature.attributes = {
-	        name: "offset",
-	        type: 22,
-	        favColor: 'blue',
-	        align: "cm",
-	        // positive value moves the label to the right
-	        xOffset: 20,
-	        // negative value moves the label down
-	        yOffset: -15
-	    };
-
-	}
-    
+      };
 
 
-   /* var nullFeature = new OpenLayers.Feature.Vector(null);
-    nullFeature.attributes = {
-        name: "toto is some text about the world",
-        age: 20,
-        favColor: 'red',
-        align: "cm"
-    };
-    */
-    
-    /*vectorLayer.drawFeature(multiFeature);*/
-    map.setCenter(new OpenLayers.LonLat(marker1[0].lon, marker1[0].lat), 10);
-    vectorLayer.addFeatures([/*pointFeature,*/ /*polygonFeature,*/ /*multiFeature,*/ labelOffsetFeature/*, nullFeature */]);
-    map.addLayer(vectorLayer);
-}
+      // Polygons
+      function polygonStyleFunction(feature, resolution) {
+        return new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: 'blue',
+            width: 1
+          }),
+          fill: new ol.style.Fill({
+            color: 'rgba(0, 0, 255, 0.1)'
+          }),
+          text: createTextStyle(feature, resolution, myDom.polygons)
+        });
+      }
+
+      var vectorPolygons = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'data/geojson/polygon-samples.geojson',
+          format: new ol.format.GeoJSON()
+        }),
+        style: polygonStyleFunction
+      });
 
 
-//-----------------------------------------------------------
+      // Lines
+      function lineStyleFunction(feature, resolution) {
+        return new ol.style.Style({
+          stroke: new ol.style.Stroke({
+            color: 'green',
+            width: 2
+          }),
+          text: createTextStyle(feature, resolution, myDom.lines)
+        });
+      }
 
-//--jquery main---------------------------------------
-$( document ).ready(function(){
-	
-	init(markers, marker1);
-	
-});	
-	
-	
- 
-//----------------------------------------------------
+      var vectorLines = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'data/geojson/line-samples.geojson',
+          format: new ol.format.GeoJSON()
+        }),
+        style: lineStyleFunction
+      });
 
 
-//jquery plugins--------------------------------------
-(function($){
-	
-//-----------------------------------------------------
-//-----------------------------------------------------	
+      // Points
+      function pointStyleFunction(feature, resolution) {
+        return new ol.style.Style({
+          image: new ol.style.Circle({
+            radius: 10,
+            fill: new ol.style.Fill({color: 'rgba(255, 0, 0, 0.1)'}),
+            stroke: new ol.style.Stroke({color: 'red', width: 1})
+          }),
+          text: createTextStyle(feature, resolution, myDom.points)
+        });
+      }
 
-	
-})(jQuery);
+      var vectorPoints = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: 'data/geojson/point-samples.geojson',
+          format: new ol.format.GeoJSON()
+        }),
+        style: pointStyleFunction
+      });
+
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'osm'})
+          }),
+          vectorPolygons,
+          vectorLines,
+          vectorPoints
+        ],
+        target: 'map',
+        view: new ol.View({
+          center: [-8161939, 6095025],
+          zoom: 8
+        })
+      });
+
+      if (document.getElementById('refresh-points') ) {
+        document.getElementById('refresh-points').addEventListener('click', function() {
+            vectorPoints.setStyle(pointStyleFunction);
+          });
+      };
+      
+      if ( document.getElementById('refresh-lines')) {
+        document.getElementById('refresh-lines').addEventListener('click', function() {
+            vectorLines.setStyle(lineStyleFunction);
+          });
+      };
+      if ( document.getElementById('refresh-polygons')) {
+        document.getElementById('refresh-polygons').addEventListener('click', function() {
+            vectorPolygons.setStyle(polygonStyleFunction);
+          });
+      };
+
+      
+
+      
+      
+
+
+      /**
+       * @param {number} n The max number of characters to keep.
+       * @return {string} Truncated string.
+       */
+      String.prototype.trunc = String.prototype.trunc ||
+          function(n) {
+            return this.length > n ? this.substr(0, n - 1) + '...' : this.substr(0);
+          };
+
+
+      // http://stackoverflow.com/questions/14484787/wrap-text-in-javascript
+      function stringDivider(str, width, spaceReplacer) {
+        if (str.length > width) {
+          var p = width;
+          while (p > 0 && (str[p] != ' ' && str[p] != '-')) {
+            p--;
+          }
+          if (p > 0) {
+            var left;
+            if (str.substring(p, p + 1) == '-') {
+              left = str.substring(0, p + 1);
+            } else {
+              left = str.substring(0, p);
+            }
+            var right = str.substring(p + 1);
+            return left + spaceReplacer + stringDivider(right, width, spaceReplacer);
+          }
+        }
+        return str;
+      }
