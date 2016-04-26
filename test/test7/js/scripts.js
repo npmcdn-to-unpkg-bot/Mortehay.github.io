@@ -3,69 +3,76 @@
 var urlPoints = "https://api.myjson.com/bins/4373y";
 var urlLines = "https://api.myjson.com/bins/1w3vy";
 var urlPoligons = "https://api.myjson.com/bins/3549a";
+/*var myDom;*/
 //---------------------------------------------------
 var centerPoint=[
 	{
-		lon:-81.61939,
-		lat:60.95025,
+		lon:-8161939,
+		lat:6095025,
 		zoom:4
 	}
 ];
 //main parameters-------------------------------------
-var myDom = {
-  points: {
-    text: $('#points-text'),
-    align: $('#points-align'),
-    baseline: $('#points-baseline'),
-    rotation: $('#points-rotation'),
-    font: $('#points-font'),
-    weight: $('#points-weight'),
-    size: $('#points-size'),
-    offsetX: $('#points-offset-x'),
-    offsetY: $('#points-offset-y'),
-    color: $('#points-color'),
-    outline: $('#points-outline'),
-    outlineWidth: $('#points-outline-width'),
-    maxreso: $('#points-maxreso')
-  },
-  lines: {
-    text: $('#lines-text'),
-    align: $('#lines-align'),
-    baseline: $('#lines-baseline'),
-    rotation: $('#lines-rotation'),
-    font: $('#lines-font'),
-    weight: $('#lines-weight'),
-    size: $('#lines-size'),
-    offsetX: $('#lines-offset-x'),
-    offsetY: $('#lines-offset-y'),
-    color: $('#lines-color'),
-    outline: $('#lines-outline'),
-    outlineWidth: $('#lines-outline-width'),
-    maxreso: $('#lines-maxreso')
-  },
-  polygons: {
-    text: $('#polygons-text'),
-    align: $('#polygons-align'),
-    baseline: $('#polygons-baseline'),
-    rotation: $('#polygons-rotation'),
-    font: $('#polygons-font'),
-    weight: $('#polygons-weight'),
-    size: $('#polygons-size'),
-    offsetX: $('#polygons-offset-x'),
-    offsetY: $('#polygons-offset-y'),
-    color: $('#polygons-color'),
-    outline: $('#polygons-outline'),
-    outlineWidth: $('#polygons-outline-width'),
-    maxreso: $('#polygons-maxreso')
-  }
+
+function myDom() {
+	return myDom = {
+	  points: {
+	    text: $('#points-text').val() ,
+	    align: $('#points-align').val(),
+	    baseline: $('#points-baseline').val(),
+	    rotation: $('#points-rotation').val(),
+	    font: $('#points-font').val(),
+	    weight: $('#points-weight').val(),
+	    size: $('#points-size').val(),
+	    offsetX: $('#points-offset-x').val(),
+	    offsetY: $('#points-offset-y').val(),
+	    color: $('#points-color').val(),
+	    outline: $('#points-outline').val(),
+	    outlineWidth: $('#points-outline-width').val(),
+	    maxreso: $('#points-maxreso').val()
+	  },
+	  lines: {
+	    text: $('#lines-text').val(),
+	    align: $('#lines-align').val(),
+	    baseline: $('#lines-baseline').val(),
+	    rotation: $('#lines-rotation').val(),
+	    font: $('#lines-font').val(),
+	    weight: $('#lines-weight').val(),
+	    size: $('#lines-size').val(),
+	    offsetX: $('#lines-offset-x').val(),
+	    offsetY: $('#lines-offset-y').val(),
+	    color: $('#lines-color').val(),
+	    outline: $('#lines-outline').val(),
+	    outlineWidth: $('#lines-outline-width').val(),
+	    maxreso: $('#lines-maxreso').val()
+	  },
+	  polygons: {
+	    text: $('#polygons-text').val(),
+	    align: $('#polygons-align').val(),
+	    baseline: $('#polygons-baseline').val(),
+	    rotation: $('#polygons-rotation').val(),
+	    font: $('#polygons-font').val(),
+	    weight: $('#polygons-weight').val(),
+	    size: $('#polygons-size').val(),
+	    offsetX: $('#polygons-offset-x').val(),
+	    offsetY: $('#polygons-offset-y').val(),
+	    color: $('#polygons-color').val(),
+	    outline: $('#polygons-outline').val(),
+	    outlineWidth: $('#polygons-outline-width').val(),
+	    maxreso: $('#polygons-maxreso').val()
+	  }
+	};
 };
+
 //---------------------------------------------------------------
 //text taransform -----------------------------------------------
-var getText = function(feature, resolution, dom) {
-  var type = dom.text.value;
-  var maxResolution = dom.maxreso.value;
+function getText(feature, resolution, dom) {
+  var type = dom.text;
+  console.log('type', type );
+  var maxResolution = dom.maxreso;
+    console.log('maxResolution', maxResolution );
   var text = feature.get('text')+' ';
-  console.log("feature.get('text')", feature.get('text'))
+
   if (resolution > maxResolution) {
     text = '';
   } else if (type == 'hide') {
@@ -80,18 +87,19 @@ var getText = function(feature, resolution, dom) {
 };
 
 
-var createTextStyle = function(feature, resolution, dom) {
-  var align = dom.align.value;
-  var baseline = dom.baseline.value;
-  var size = dom.size.value;
-  var offsetX = parseInt(dom.offsetX.value, 10);
-  var offsetY = parseInt(dom.offsetY.value, 10);
-  var weight = dom.weight.value;
-  var rotation = parseFloat(dom.rotation.value);
-  var font = weight + ' ' + size + ' ' + dom.font.value;
-  var fillColor = dom.color.value;
-  var outlineColor = dom.outline.value;
-  var outlineWidth = parseInt(dom.outlineWidth.value, 10);
+
+function createTextStyle(feature, resolution, dom) {
+  var align = dom.align;
+  var baseline = dom.baseline;
+  var size = dom.size;
+  var offsetX = parseInt(dom.offsetX, 10);
+  var offsetY = parseInt(dom.offsetY, 10);
+  var weight = dom.weight;
+  var rotation = parseFloat(dom.rotation);
+  var font = weight + ' ' + size + ' ' + dom.font;
+  var fillColor = dom.color;
+  var outlineColor = dom.outline;
+  var outlineWidth = parseInt(dom.outlineWidth, 10);
 
   return new ol.style.Text({
     textAlign: align,
@@ -121,13 +129,7 @@ function polygonStyleFunction(feature, resolution) {
   });
 }
 
-var vectorPolygons = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: urlPoligons,
-    format: new ol.format.GeoJSON()
-  }),
-  style: polygonStyleFunction
-});
+
 
 
 // Lines---------------------------------------------
@@ -141,13 +143,7 @@ function lineStyleFunction(feature, resolution) {
   });
 }
 
-var vectorLines = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: urlLines,
-    format: new ol.format.GeoJSON()
-  }),
-  style: lineStyleFunction
-});
+
 
 
 // Points------------------------------------------
@@ -158,18 +154,11 @@ function pointStyleFunction(feature, resolution) {
       fill: new ol.style.Fill({color: 'rgba(255, 0, 0, 0.1)'}),
       stroke: new ol.style.Stroke({color: 'red', width: 1})
     }),
-    text: createTextStyle(feature, resolution, myDom.points),
-    console:console.log('pointStyleFunction')
+    text: createTextStyle(feature, resolution, myDom.points)
   });
 }
 
-var vectorPoints = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: urlPoints,
-    format: new ol.format.GeoJSON()
-  }),
-  style: pointStyleFunction
-});
+
 // main map -----------------------------------------
 function init(vectorPolygons, vectorLines, vectorPoints, centerPoint) {
 	var map = new ol.Map({
@@ -183,37 +172,14 @@ function init(vectorPolygons, vectorLines, vectorPoints, centerPoint) {
 	  ],
 	  target: 'map',
 	  view: new ol.View({
-	    center: [/*centerPoint[0].lon*/-8161939, /*centerPoint[0].lat*/6095025],
-	    zoom: centerPoint[0].zoom,
-	    log:console.log(centerPoint[0].lon)
+	    center: [centerPoint[0].lon, centerPoint[0].lat],
+	    zoom: centerPoint[0].zoom
+
 	  })
 	  
 	});
-	console.log(centerPoint[0].lon);
-}
 
-
-
-// refresh params----------------------------------
-
-/*if ($('#refresh-points')) {
-	$('#refresh-points').on('click', function() {
-	console.log('click');
-      vectorPoints.setStyle(pointStyleFunction);
-    });
 };
-if ($('#refresh-lines')) {
-	$('#refresh-lines').on('click', function() {
-      vectorLines.setStyle(lineStyleFunction);
-    });
-};
-
-if ($('#refresh-polygons')) {
-	$('#refresh-polygons').on('click', function() {
-      vectorPolygons.setStyle(polygonStyleFunction);
-    });
-};*/
-
 
 
 //text transform
@@ -250,7 +216,34 @@ function stringDivider(str, width, spaceReplacer) {
 
 //--jquery main---------------------------------------
 $( document ).ready(function(){
-	
+
+	myDom();
+	console.log('myDom', myDom);
+
+	var vectorPolygons = new ol.layer.Vector({
+	  source: new ol.source.Vector({
+	    url: urlPoligons,
+	    format: new ol.format.GeoJSON()
+	  }),
+	  style: polygonStyleFunction
+	});
+
+	var vectorLines = new ol.layer.Vector({
+	  source: new ol.source.Vector({
+	    url: urlLines,
+	    format: new ol.format.GeoJSON()
+	  }),
+	  style: lineStyleFunction
+	});
+
+	var vectorPoints = new ol.layer.Vector({
+	  source: new ol.source.Vector({
+	    url: urlPoints,
+	    format: new ol.format.GeoJSON()
+	  }),
+	  style: pointStyleFunction
+	});
+
 	init(vectorPolygons, vectorLines, vectorPoints, centerPoint);
 
 	$('#refresh-points').refresh();
@@ -266,20 +259,23 @@ $( document ).ready(function(){
 
 //jquery plugins--------------------------------------
 (function($){
+
+
+// refresh params----------------------------------
 	$.fn.refresh = function() {
 		this.on('click', function() {
 			/*console.log('click');*/
 			if ( $(this).is($('#refresh-points') ) ) {
-				console.log('click1');
+				/*console.log('click1');*/
 				vectorPoints.setStyle(pointStyleFunction);
 			};
 			if ( $(this).is($('#refresh-lines') ) ) {
-				console.log('click2');
+				/*console.log('click2');*/
 				vectorLines.setStyle(lineStyleFunction);
 
 			};
 			if ( $(this).is($('#refresh-polygons') ) ) {
-				console.log('click3');
+				/*console.log('click3');*/
 				vectorPolygons.setStyle(polygonStyleFunction);
 			};
 		});
