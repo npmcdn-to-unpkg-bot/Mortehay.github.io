@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
 grunt.initConfig({
   
+ 
   concat: {
     js: {
       options: {
@@ -70,7 +71,7 @@ grunt.initConfig({
       },
       
       html: {
-        files: ['js_final_exam.html'],
+        files: ['*.html'],
         options: {
           livereload: 35729
         }
@@ -83,6 +84,7 @@ grunt.initConfig({
           } 
       }
     }
+
 });
 
 
