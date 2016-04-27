@@ -1,9 +1,9 @@
          
 //links to external database
-var urlPoints = "https://api.myjson.com/bins/4373y";
-var urlLines = "https://api.myjson.com/bins/1w3vy";
-var urlPoligons = "https://api.myjson.com/bins/3549a";
-/*var myDom;*/
+var urlPoints = /*"https://api.myjson.com/bins/4373y"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
+var urlLines = /*"https://api.myjson.com/bins/1w3vy"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
+var urlPoligons = /*"https://api.myjson.com/bins/3549a"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
+var myDom;
 //---------------------------------------------------
 var centerPoint=[
 	{
@@ -14,55 +14,9 @@ var centerPoint=[
 ];
 //main parameters-------------------------------------
 
-function myDom() {
-	return myDom = {
-	  points: {
-	    text: $('#points-text').val() ,
-	    align: $('#points-align').val(),
-	    baseline: $('#points-baseline').val(),
-	    rotation: $('#points-rotation').val(),
-	    font: $('#points-font').val(),
-	    weight: $('#points-weight').val(),
-	    size: $('#points-size').val(),
-	    offsetX: $('#points-offset-x').val(),
-	    offsetY: $('#points-offset-y').val(),
-	    color: $('#points-color').val(),
-	    outline: $('#points-outline').val(),
-	    outlineWidth: $('#points-outline-width').val(),
-	    maxreso: $('#points-maxreso').val()
-	  },
-	  lines: {
-	    text: $('#lines-text').val(),
-	    align: $('#lines-align').val(),
-	    baseline: $('#lines-baseline').val(),
-	    rotation: $('#lines-rotation').val(),
-	    font: $('#lines-font').val(),
-	    weight: $('#lines-weight').val(),
-	    size: $('#lines-size').val(),
-	    offsetX: $('#lines-offset-x').val(),
-	    offsetY: $('#lines-offset-y').val(),
-	    color: $('#lines-color').val(),
-	    outline: $('#lines-outline').val(),
-	    outlineWidth: $('#lines-outline-width').val(),
-	    maxreso: $('#lines-maxreso').val()
-	  },
-	  polygons: {
-	    text: $('#polygons-text').val(),
-	    align: $('#polygons-align').val(),
-	    baseline: $('#polygons-baseline').val(),
-	    rotation: $('#polygons-rotation').val(),
-	    font: $('#polygons-font').val(),
-	    weight: $('#polygons-weight').val(),
-	    size: $('#polygons-size').val(),
-	    offsetX: $('#polygons-offset-x').val(),
-	    offsetY: $('#polygons-offset-y').val(),
-	    color: $('#polygons-color').val(),
-	    outline: $('#polygons-outline').val(),
-	    outlineWidth: $('#polygons-outline-width').val(),
-	    maxreso: $('#polygons-maxreso').val()
-	  }
-	};
-};
+/*function myDom() {
+	
+};*/
 
 //---------------------------------------------------------------
 //text taransform -----------------------------------------------
@@ -154,7 +108,9 @@ function pointStyleFunction(feature, resolution) {
       fill: new ol.style.Fill({color: 'rgba(255, 0, 0, 0.1)'}),
       stroke: new ol.style.Stroke({color: 'red', width: 1})
     }),
-    text: createTextStyle(feature, resolution, myDom.points)
+    text: createTextStyle(feature, resolution, myDom.points),
+    res:console.log('currentRes', resolution)
+
   });
 }
 
@@ -217,8 +173,8 @@ function stringDivider(str, width, spaceReplacer) {
 //--jquery main---------------------------------------
 $( document ).ready(function(){
 
-	myDom();
-	console.log('myDom', myDom);
+	/*myDom();*/
+	
 
 	var vectorPolygons = new ol.layer.Vector({
 	  source: new ol.source.Vector({
@@ -248,8 +204,9 @@ $( document ).ready(function(){
 
 	$('#refresh-points').refresh();
 	$('#refresh-lines').refresh();
-	$('#refresh-polygons').refresh();	
-		
+	$('#refresh-polygons').refresh();
+      $('body').myDom();	
+	console.log('myDom', myDom);	
 });	
 	
 	
@@ -281,6 +238,56 @@ $( document ).ready(function(){
 		});
 	}
 //-----------------------------------------------------
+//myDom------------------------------------------
+$.fn.myDom = function(){
+  return myDom = {
+    points: {
+      text: $('#points-text').val() ,
+      align: $('#points-align').val(),
+      baseline: $('#points-baseline').val(),
+      rotation: $('#points-rotation').val(),
+      font: $('#points-font').val(),
+      weight: $('#points-weight').val(),
+      size: $('#points-size').val(),
+      offsetX: $('#points-offset-x').val(),
+      offsetY: $('#points-offset-y').val(),
+      color: $('#points-color').val(),
+      outline: $('#points-outline').val(),
+      outlineWidth: $('#points-outline-width').val(),
+      maxreso: $('#points-maxreso').val()
+    },
+    lines: {
+      text: $('#lines-text').val(),
+      align: $('#lines-align').val(),
+      baseline: $('#lines-baseline').val(),
+      rotation: $('#lines-rotation').val(),
+      font: $('#lines-font').val(),
+      weight: $('#lines-weight').val(),
+      size: $('#lines-size').val(),
+      offsetX: $('#lines-offset-x').val(),
+      offsetY: $('#lines-offset-y').val(),
+      color: $('#lines-color').val(),
+      outline: $('#lines-outline').val(),
+      outlineWidth: $('#lines-outline-width').val(),
+      maxreso: $('#lines-maxreso').val()
+    },
+    polygons: {
+      text: $('#polygons-text').val(),
+      align: $('#polygons-align').val(),
+      baseline: $('#polygons-baseline').val(),
+      rotation: $('#polygons-rotation').val(),
+      font: $('#polygons-font').val(),
+      weight: $('#polygons-weight').val(),
+      size: $('#polygons-size').val(),
+      offsetX: $('#polygons-offset-x').val(),
+      offsetY: $('#polygons-offset-y').val(),
+      color: $('#polygons-color').val(),
+      outline: $('#polygons-outline').val(),
+      outlineWidth: $('#polygons-outline-width').val(),
+      maxreso: $('#polygons-maxreso').val()
+    }
+  };
+};
 //-----------------------------------------------------	
 
 	
