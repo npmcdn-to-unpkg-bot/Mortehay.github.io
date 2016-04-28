@@ -1,8 +1,8 @@
          
 //links to external database
-var urlPoints = /*"https://api.myjson.com/bins/4373y"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
-var urlLines = /*"https://api.myjson.com/bins/1w3vy"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
-var urlPoligons = /*"https://api.myjson.com/bins/3549a"*/"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710";
+var urlPoints = "https://api.myjson.com/bins/4373y"/*"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710"*/;
+var urlLines = "https://api.myjson.com/bins/1w3vy"/*"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710"*/;
+var urlPoligons = "https://api.myjson.com/bins/3549a"/*"http://127.0.0.1:5984/points/53cd2af0e5f105d8085ec5ba69002710"*/;
 var myDom;
 //---------------------------------------------------
 var centerPoint=[
