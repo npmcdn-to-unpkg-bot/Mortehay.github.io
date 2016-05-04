@@ -24,8 +24,8 @@ h2 {
   line-height: 15px; }
 
 .map {
-  max-width: 90%;
-  max-height: 768px;
+  max-width: 95%;
+  max-height: 960px;
   margin: 0 auto; }
 
 .scale-cnt {
@@ -58,8 +58,5 @@ h2 {
 
 .clearall {
   clear: both; }
-.data{
-  height:5000px;
-  color:#ffffff;
-}
+
 /*# sourceMappingURL=main.css.map */

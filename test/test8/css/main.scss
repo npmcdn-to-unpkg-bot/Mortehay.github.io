@@ -30,8 +30,8 @@ h2 {
         line-height: 15px;
 }
 .map {
-	max-width:90%;
-	max-height: 768px;
+	max-width:95%;
+	max-height: 960px;
 	margin: 0 auto;
 }
 .scale-cnt {
@@ -47,7 +47,7 @@ margin: 5px;
 width: 230px;
 padding: 4px;
 border: 1px solid black;
-display:none;
+/* display:none; */
 }
 
 .edit-form input[type="button"] {
