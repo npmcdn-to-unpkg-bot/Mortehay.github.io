@@ -27,9 +27,8 @@ var centerPoint=[
 //text taransform -----------------------------------------------
 function getText(feature, resolution, dom) {
   var type = dom.text;
-  console.log('type', type );
+
   var maxResolution = dom.maxreso;
-    console.log('maxResolution', maxResolution );
   var text = /*feature.get('street')+' ' +feature.get('h')+' '+feature.get('p')+' '+*/feature.get('description')+ ' ';
 
   if (resolution > maxResolution) {
@@ -43,7 +42,7 @@ function getText(feature, resolution, dom) {
   }
 
   return text;
-};
+}
 
 
 
@@ -71,7 +70,7 @@ function createTextStyle(feature, resolution, dom) {
     offsetY: offsetY,
     rotation: rotation
   });
-};
+}
 //----------------------------------------------------
 
 // Polygons-------------------------------------------
@@ -114,7 +113,7 @@ function pointStyleFunction(feature, resolution) {
       stroke: new ol.style.Stroke({color: 'red', width: 1})
     }),
     text: createTextStyle(feature, resolution, myDom.points),
-    res:console.log('currentRes', resolution)
+/*    res:console.log('currentRes', resolution)*/
 
   });
 }
@@ -140,7 +139,7 @@ function init(vectorPolygons, vectorLines, vectorPoints, centerPoint) {
 	  
 	});
 
-};
+}
 
 
 //text transform
@@ -210,7 +209,7 @@ $( document ).ready(function(){
 	$('#refresh-points').refresh();
 	$('#refresh-lines').refresh();
 	$('#refresh-polygons').refresh();
-      $('body').myDom();	
+      	$('body').myDom();	
 	console.log('myDom', myDom);	
 //-----------------------------------
  
@@ -236,18 +235,18 @@ $( document ).ready(function(){
 			if ( $(this).is($('#refresh-points') ) ) {
 				/*console.log('click1');*/
 				vectorPoints.setStyle(pointStyleFunction);
-			};
+			}
 			if ( $(this).is($('#refresh-lines') ) ) {
 				/*console.log('click2');*/
 				vectorLines.setStyle(lineStyleFunction);
 
-			};
+			}
 			if ( $(this).is($('#refresh-polygons') ) ) {
 				/*console.log('click3');*/
 				vectorPolygons.setStyle(polygonStyleFunction);
-			};
+			}
 		});
-	}
+	};
 //-----------------------------------------------------
 //myDom------------------------------------------
 $.fn.myDom = function(){
@@ -265,7 +264,7 @@ $.fn.myDom = function(){
       color: $('#points-color').val(),
       outline: $('#points-outline').val(),
       outlineWidth: $('#points-outline-width').val(),
-      maxreso: $('#points-maxreso').val()
+      maxreso: $('#points-maxreso').onchange()
     },
     lines: {
       text: $('#lines-text').val(),
@@ -301,5 +300,15 @@ $.fn.myDom = function(){
 };
 //-----------------------------------------------------	
 
+$.fn.onchange = function() {
+	value = this.change(function(){
+		value = $(this).val();
+		console.log('$(this).val() inner',value);
+		return value;
+	}).change().val()
+	console.log('$(this).val() outer',value);
+	return value;
+	
+};
 	
 })(jQuery);
