@@ -40,9 +40,10 @@ var centerPoint=[
                 name: 'OSM'
             });
             //---geratin group of heat layers :)
-            var heatmap_category_group=[]; // empty array
+            //var heatmap_category_group=[]; // empty array
+            var heatmap_category_group_cluster=[]; // empty array
             // function for creating heat layer 
-            function heatmap_categore_id(){ 
+            /*function heatmap_categoryId(){ 
 
                  heatmap_category_id = new ol.layer.Heatmap({
                   source: new ol.source.Vector({
@@ -54,19 +55,48 @@ var centerPoint=[
                   visible: true,      
                   name: mainLinks[i].category_description
                 });
+
                 return heatmap_category_id;
+            };*/
+
+
+            function heatmap_categoryId_cluster(){ 
+                //original source
+                originalSource =  new ol.source.Vector({
+                    url: mainLinks[i].link,
+                    projection: 'EPSG:3857',
+                    format: new ol.format.GeoJSON()
+              
+                });
+                //console.log('originalSource', originalSource);
+                clasterSource = new ol.source.Cluster({
+                  distance: 20,
+                  source: originalSource   
+                })
+                //console.log('clasterSource',clasterSource);
+                heatmap_category_id_cluster = new ol.layer.Heatmap({
+                  source: clasterSource,
+                  radius: 3,
+                  visible: true,
+                  gradient: ['#00f', '#0ff', '#0f0', '#ff0', '#f00'],      
+                  name: mainLinks[i].category_description
+                });
+                return heatmap_category_id_cluster;
             };
+
             // end of the function
             // pushing separate layers to one array
             for (var i = 0; i < mainLinks.length; i++) { 
-              heatmap_category_group.push(heatmap_categore_id(i, mainLinks)); 
+              //heatmap_category_group.push(heatmap_categoryId(i, mainLinks)); 
+              heatmap_category_group_cluster.push(heatmap_categoryId_cluster(i, mainLinks)); 
             }
             
-            console.log('heatmap_category_group', heatmap_category_group); //testing result
+            //console.log('heatmap_category_group', heatmap_category_group); //testing result
+            //console.log('heatmap_category_group_cluster', heatmap_category_group_cluster); //testing result
            //------------------
 
             var layerHeatmap = new ol.layer.Group({
-                layers: heatmap_category_group.reverse(),
+                layers: heatmap_category_group_cluster/*.reverse()*/,
                 name: 'Heatmap Group'
             });
 
