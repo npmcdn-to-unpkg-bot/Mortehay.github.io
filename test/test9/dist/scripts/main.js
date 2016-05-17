@@ -209,7 +209,7 @@ $( document ).ready(function(){
 	$('#refresh-points').refresh();
 	$('#refresh-lines').refresh();
 	$('#refresh-polygons').refresh();
-      	$('body').myDom();	
+      	$('select').myDom();	
 	console.log('myDom', myDom);	
 //-----------------------------------
  
@@ -301,13 +301,15 @@ $.fn.myDom = function(){
 //-----------------------------------------------------	
 
 $.fn.onchange = function() {
-	value = this.change(function(){
+
+	newvalue = this.change(function(){
 		value = $(this).val();
 		console.log('$(this).val() inner',value);
 		return value;
 	}).change().val()
-	console.log('$(this).val() outer',value);
-	return value;
+	
+	console.log('$(this).val() outer',newvalue);
+	return newvalue;
 	
 };
 	
