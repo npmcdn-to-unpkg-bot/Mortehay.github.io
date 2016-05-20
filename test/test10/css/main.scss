@@ -31,9 +31,10 @@ h2 {
         line-height: 15px;
 }
 .map {
-	max-width:95%;
+	width:600px;
 	max-height: 960px;
 	margin: 0 auto;
+	float:left;
 }
 .scale-cnt {
 margin: 5px;
@@ -75,6 +76,11 @@ clear: left;
 
 .clearall {
 clear: both;
+}
+
+.statistic{
+float:left;
+width:300px;
 }
 
 

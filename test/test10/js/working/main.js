@@ -19,7 +19,24 @@ links();
 for (var i = 0; i < mainLinks.length; i++) {
   mainLinks[i].link = 'http://localhost/test10/php/category_id_'+mainLinks[i].category_id+'.php'
 }
-console.log(mainLinks)
+console.log(mainLinks);
+//test lines 
+
+function lines(){
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("GET", "http://localhost/test10/php/cable_test.php", false);
+  
+  xmlhttp.send();
+  if (xmlhttp.status != 200) {
+        // обработать ошибку
+        alert('Ошибка ' + xmlhttp.status + ': ' + xmlhttp.statusText);
+      } else {
+        // вывести результат
+        return mainLines = JSON.parse(xmlhttp.responseText);
+      }
+};
+lines();
+console.log('lines()', mainLines);
 
 //---------------------------------------------------
 //center point and zoom level

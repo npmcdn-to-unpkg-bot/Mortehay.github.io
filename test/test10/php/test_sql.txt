@@ -1,0 +1,14 @@
+CREATE TABLE linesdb(
+  id MEDIUMINT NOT NULL AUTO_INCREMENT,
+  descript CHAR(30) NOT NULL,
+  gis_line MULTILINESTRING NOT NULL,
+  line_descr TEXT NOT NULL,
+  line_type INTEGER NOT NULL,
+  PRIMARY KEY(id)
+);
+INSERT INTO linesdb(descript, gis_line, line_descr, line_type)
+VALUES 
+(('cable'), (MULTILINESTRINGFROMTEXT('MULTILINESTRING((10 48,10 21),(16 0,16 23))')), ('cabel 1'), ('1')),
+(('cable'), (MULTILINESTRINGFROMTEXT('MULTILINESTRING((10 21,10 0),(16 23,16 48))')), ('cabel 2'), ('4')),
+(('cable'), (MULTILINESTRINGFROMTEXT('MULTILINESTRING((10 48,10 0),(16 0,16 48))')), ('cabel 3'), ('6')),
+(('cable'), (MULTILINESTRINGFROMTEXT('MULTILINESTRING((10 21,10 0),(16 23,16 48))')), ('cabel 4'), ('2'));
