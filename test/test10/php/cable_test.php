@@ -49,7 +49,7 @@ $servername = "localhost";
          die("Connection failed: " . $conn->connect_error);
     } 
 
-    $sql = "SELECT id, descript, gis_line, line_descr, line_type FROM linesdb "; 
+    $sql = "SELECT id, descript, AsText(gis_line), line_descr, line_type FROM linesdb "; 
     $result = $conn->query($sql);
     
      $json = array();
@@ -63,7 +63,7 @@ $servername = "localhost";
               $arr = array(
                   'id' => (int)$row['id'],
                   'descript'=>$row['descript'],
-                  'gis_line'=>createGISData($row['gis_line']),
+                  'gis_line'=>$row['AsText(gis_line)'],
                   'line_descr'=>$row['line_descr'],
                   'line_type' =>(int)$row[ 'line_type']
                 

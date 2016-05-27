@@ -1,0 +1,2 @@
+COPY chercassy (id, street, h, p, house_id, host_id, description, hostname, notes, lon, lat)
+FROM 'c:\xampp\htdocs\test10\csv\hosts_new_gps_data.csv' DELIMITER ';' CSV HEADER  encoding 'windows-1251';

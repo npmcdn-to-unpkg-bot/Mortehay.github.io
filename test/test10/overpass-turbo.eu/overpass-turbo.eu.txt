@@ -1,0 +1,25 @@
+<!--
+This query looks for nodes, ways and relations 
+with the given key.
+Choose your region and hit the Run button above!
+-->
+{{key=building}}
+<osm-script output="json">
+  <union>
+    <query type="node">
+      <has-kv k="{{key}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="way">
+      <has-kv k="{{key}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="relation">
+      <has-kv k="{{key}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <print mode="body"/>
+  <recurse type="down"/>
+  <print mode="skeleton"/>
+</osm-script>
