@@ -1,0 +1,24 @@
+CREATE TABLE chercassy_line (
+            id serial NOT NULL, 
+            start_address character varying(50),
+            end_address character varying(50),
+            type character varying(50), 
+            wires integer,
+            length integer,
+            host_id integer,
+            notes character varying(50),
+
+            the_geom geometry,
+            CONSTRAINT chercassy_line_pkey PRIMARY KEY (id),
+
+            CONSTRAINT enforce_srid_the_geom CHECK (st_srid(the_geom) = 4326)
+);
+
+-- Index: landmarks_the_geom_gist
+
+-- DROP INDEX  chercassy_line_the_geom_gist;
+
+CREATE INDEX chercassy_line_the_geom_gist
+  ON chercassy_line
+  USING gist
+  (the_geom );

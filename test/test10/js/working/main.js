@@ -24,7 +24,7 @@ console.log(mainLinks);
 
 function lines(){
   xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", "http://localhost/test10/php/cable_test.php", false);
+  xmlhttp.open("GET", "http://localhost/test10/php_postgre/test_postgre.php", false);
   
   xmlhttp.send();
   if (xmlhttp.status != 200) {
@@ -35,7 +35,7 @@ function lines(){
         return mainLines = JSON.parse(xmlhttp.responseText);
       }
 };
-lines();
+lines(); //you have to add database to mariaDB
 console.log('lines()', mainLines);
 
 //---------------------------------------------------
