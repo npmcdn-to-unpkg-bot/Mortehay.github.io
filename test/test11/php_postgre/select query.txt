@@ -1,0 +1,1 @@
+SELECT * FROM public.chercassy_cables_cc WHERE wires = 13;

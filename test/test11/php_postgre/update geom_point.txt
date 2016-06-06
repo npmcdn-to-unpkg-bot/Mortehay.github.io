@@ -1,0 +1,2 @@
+UPDATE cherkassy_sw
+SET geom = ST_GeomFromText('POINT(' || lon || ' ' || lat || ')',4326);

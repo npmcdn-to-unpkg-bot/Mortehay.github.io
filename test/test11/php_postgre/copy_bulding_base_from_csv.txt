@@ -1,0 +1,2 @@
+COPY cherkassy_buildings (WKT, id_rel, doggy_id_rel, addr_housenumber, addr_street, amenity, architect, building, building_levels, heritage, heritage_name, name)
+FROM '/tmp/cherkassy_buidings_short.csv' DELIMITER ';' CSV HEADER  encoding 'windows-1251';

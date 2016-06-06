@@ -1,0 +1,1 @@
+UPDATE chercassy_cables_cc SET geom_cables = the_geom FROM chercassy_line WHERE chercassy_cables_cc.id = chercassy_line.id

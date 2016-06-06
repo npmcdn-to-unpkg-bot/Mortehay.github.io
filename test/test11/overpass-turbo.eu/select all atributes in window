@@ -1,0 +1,19 @@
+<osm-script>
+<!-- gather results -->
+  <union>
+    <!-- query part for: “type=building” -->
+    <query type="node">
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="way">
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="relation">
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <!-- print results -->
+  <print mode="body"/>
+  <recurse type="down"/>
+  <print mode="skeleton" order="quadtile"/>
+</osm-script>

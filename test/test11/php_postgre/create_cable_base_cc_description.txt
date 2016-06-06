@@ -1,0 +1,26 @@
+CREATE TABLE chercassy_cables_cc (
+            id serial NOT NULL,            
+            start_address character varying(50),
+            start_well character varying(10),
+            end_address character varying(50),
+            end_well character varying(10),
+            chanel_length real,
+            total_length real,
+            type character varying(20),
+            cable_type character varying(25),
+            wires integer,
+            cable_description character varying(25),
+            diameter character varying(20),
+            tu_number character varying(100),
+            progect_number character varying(50),  
+            acceptance_act character varying(50),
+            cable_number character varying(50),
+            start_wiring character varying(50),
+            end_wiring character varying(50),
+            geo_id character varying(10),
+            notes character varying(50),
+
+            CONSTRAINT chercassy_cables_cc_pkey PRIMARY KEY (id)
+
+);
+

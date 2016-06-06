@@ -1,0 +1,2 @@
+COPY chercassy_cables_cc (id , start_address, start_well, end_address, end_well, chanel_length, total_length, type, cable_type, wires, cable_description, diameter, tu_number, progect_number,  acceptance_act, cable_number, start_wiring, end_wiring, geo_id, notes)
+FROM 'c:\xampp\htdocs\test11\csv\cable_cc_description.csv' DELIMITER ';' CSV HEADER  encoding 'windows-1251';

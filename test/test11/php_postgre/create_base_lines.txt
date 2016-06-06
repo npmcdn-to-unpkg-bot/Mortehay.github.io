@@ -1,0 +1,29 @@
+CREATE TABLE chercassy_cables_cc (
+            id serial NOT NULL, 
+            the_geom geometry,            
+            start_address character varying(50),
+            start_well character varying(10),
+            end_address character varying(50),
+            end_well character varying(10),
+            type character varying(50), 
+            wires integer,
+            diameter real,
+            length integer,
+            tu_number character varying(50),
+            progect_number character varying(50),  
+            acceptance_act character varying(50),
+            notes character varying(50),
+
+            CONSTRAINT chercassy_cables_cc_pkey PRIMARY KEY (id),
+
+            CONSTRAINT enforce_srid_the_geom CHECK (st_srid(the_geom) = 4326)
+);
+
+-- Index: landmarks_the_geom_gist
+
+-- DROP INDEX  chercassy_cables_cc_the_geom_gist;
+
+CREATE INDEX chercassy_cables_cc_the_geom_gist
+  ON chercassy_cables_cc
+  USING gist
+  (the_geom );

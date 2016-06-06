@@ -1,0 +1,31 @@
+CREATE TABLE cherkassy_buildings (
+            id serial NOT NULL,
+            WKT text,
+            id_rel character varying(50), 
+            doggy_id_rel character varying(50),
+            addr_housenumber character varying(50),
+            addr_street character varying(50),
+            amenity character varying(50),
+            architect character varying(50),
+            building character varying(50),
+            building_levels character varying(50),
+            heritage character varying(50),
+            heritage_name character varying(50),
+            name character varying(100),
+            house_id character varying(50),
+            description character varying(50),
+            notes character varying(50),
+            geom geometry,
+            CONSTRAINT cherkassy_buldings_pkey PRIMARY KEY (id),
+            CONSTRAINT enforce_geotype_geom CHECK (geometrytype(geom) = 'POLYGON'::text OR geom IS NULL),
+            CONSTRAINT enforce_srid_geom CHECK (st_srid(geom) = 4326)
+);
+
+-- Index: cherkassy_building_geom_gist
+
+-- DROP INDEX  cherkassy_building_geom_gist;
+
+CREATE INDEX cherkassy_building_geom_gist
+  ON cherkassy_buildings
+  USING gist
+  (geom );

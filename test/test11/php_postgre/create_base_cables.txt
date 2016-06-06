@@ -1,0 +1,16 @@
+CREATE TABLE cherkassy_cables_cc (
+            id serial NOT NULL, 
+            geom geometry,            
+            notes character varying(50),
+            CONSTRAINT chercassy_cables_cc_pkey PRIMARY KEY (id),
+            CONSTRAINT enforce_srid_the_geom CHECK (st_srid(the_geom) = 4326)
+);
+
+-- Index: landmarks_the_geom_gist
+
+-- DROP INDEX  cherkassy_cables_cc_the_geom_gist;
+
+CREATE INDEX cherkassy_cables_cc_the_geom_gist
+  ON cherkassy_cables_cc
+  USING gist
+  (the_geom );

@@ -1,0 +1,27 @@
+CREATE TABLE cherkassy_sw (
+            id serial NOT NULL, 
+            street character varying(50), 
+            h character varying(10),
+            p character varying(10),
+            house_id integer,
+            host_id integer,
+            description character varying(50),
+            hostname character varying(50),
+            notes character varying(50),
+            lon real,
+            lat real,
+            geom geometry,
+            CONSTRAINT cherkassy_sw_pkey PRIMARY KEY (id),
+            CONSTRAINT enforce_dimsgeom CHECK (st_ndims(geom) = 2),
+            CONSTRAINT enforce_geotype_geom CHECK (geometrytype(geom) = 'POINT'::text OR geom IS NULL),
+            CONSTRAINT enforce_srid_geom CHECK (st_srid(geom) = 4326)
+);
+
+-- Index: landmarks_geom_gist
+
+-- DROP INDEX  cherkassy_geom_gist;
+
+CREATE INDEX cherkassy_geom_gist
+  ON cherkassy_sw
+  USING gist
+  (geom );
