@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <head>
+    <title>filmdb</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 
+   
+    <!-- jquery -->
+    <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"   integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="   crossorigin="anonymous"></script>
+     <!-- tmpl -->
+    <script src="js/lib/tmpl.js"></script>
+    <!-- mainCSS -->
+    <link rel="stylesheet" href="css/main.min.css" type="text/css">
+  
+  </head>
+  <body>
+
+    <div id="search" class="search">
+      <p><b>Start typing a film name in the input field below:</b></p>
+      <form> 
+      Film: <input type="text" id="text"> <!-- onkeyup="showHint(this.value)"  -->
+            <input type="button" value="search" id="search">
+      </form>
+      <div><span id="txtHint"></span></div>
+      
+    </div>
+  
+    <div id="result" class="result">
+        <script type="text/template" id="template">
+          <% for (var i=0; i<data.length;i++) {%>
+              <div><img src=" <%= data[i].imgLink %> " alt="none"></div>
+              <div>
+                <h1><%= data[i].film_name %></h1>
+                <p><%= data[i].link%></p>
+                <p><%= data[i].format%></p>
+                <p><%= data[i].genre%></p>
+                <p><%= data[i].production_year%></p>
+                <p><%= data[i].episods_num%></p>
+                <p><%= data[i].producer%></p>
+                <p><%= data[i].scenario%></p>
+                <p><%= data[i].production_designer  %></p>
+                <p><%= data[i].camera_director%></p>
+                <p><%= data[i].composer%></p>
+                <p><%= data[i].producers%></p>
+                <p><%= data[i].premiere%></p>
+                <p class="filmDescription"><%= data[i].description%></p>
+
+              </div>
+          <% }%>
+        </script>
+    </div>  
+    
+    <div id="clearall" class="clearall"></div> 
+  
+
+
+    <!-- mainJS -->
+    <script src="js/scripts.min.js"></script>
+    
+
+
+
+  </body>
+</html>
