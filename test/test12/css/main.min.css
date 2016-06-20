@@ -1,1 +1,1 @@
-*{padding:0;margin:0;font-family:Roboto-Regular}ul{list-style-type:none}a:active,a:link,a:visited{text-decoration:none;color:#000}.clear{clear:both}body{background-color:#81bee6}button:focus{outline:0}
+*{padding:0;margin:0;font-family:Roboto-Regular}ul{list-style-type:none}a:active,a:link,a:visited{text-decoration:none;color:#000}.clear{clear:both}body{background-color:#81bee6}button:focus{outline:0}.result{width:600px;color:#000;background-color:#ccf}.result div:nth-child(1){width:15%;float:left}.result div:nth-child(2){width:85%;float:left}

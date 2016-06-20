@@ -19,4 +19,15 @@ body {
 button:focus {
   outline: 0; }
 
+.result {
+  width: 600px;
+  color: #000000;
+  background-color: #ccccff; }
+  .result div:nth-child(1) {
+    width: 15%;
+    float: left; }
+  .result div:nth-child(2) {
+    width: 85%;
+    float: left; }
+
 /*# sourceMappingURL=main.css.map */

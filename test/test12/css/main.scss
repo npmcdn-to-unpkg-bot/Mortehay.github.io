@@ -25,4 +25,17 @@ body{
 }
 button:focus {outline:0;}
 //wraper---------------------------
-
+.result{
+	width:600px;
+	//height:800px;
+	color:#000000;
+	background-color: #ccccff;
+	div:nth-child(1){
+		width:15%;
+		float:left;
+	}
+	div:nth-child(2){
+		width:85%;
+		float:left;
+	}
+}
