@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0000ff",
+        "name": "marker_1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.345703125,
+          49.28214015975995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0000ff",
+        "name": "marker_2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.81640625,
+          51.26191485308454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0000ff",
+        "name": "marker_4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.056640625,
+          48.850258199721495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0000ff",
+        "name": "marker_3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.838378906249996,
+          48.44377831058805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#0000ff",
+        "name": "marker_5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.57373046875,
+          47.17477833929903
+        ]
+      }
+    }
+  ]
+}
