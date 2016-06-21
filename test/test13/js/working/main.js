@@ -13,21 +13,31 @@ var centerPoint=[
 
 var defaultPointStyle = new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 5,
-      fill: new ol.style.Fill({color: 'white'}),
+      radius: 10,
+      fill: new ol.style.Fill({color: '#66ffff'}),
       stroke: new ol.style.Stroke({
           color: [101, 95, 90, 1],
           width: 1
         })  
     })
   })
-var newPointStyle= new ol.style.Style({
+var newPointClickStyle= new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 5,
-      fill: new ol.style.Fill({color: 'red'}),
+      radius: 10,
+      fill: new ol.style.Fill({color: '#ff5050'}),
       stroke: new ol.style.Stroke({
-          color: [181, 25, 90, 1],
-          width: 1
+          color: [204, 102, 153, 1],
+          width: 3
+        })  
+    })
+  })
+var newPointHoverStyle= new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 10,
+      fill: new ol.style.Fill({color: '#ccff33'}),
+      stroke: new ol.style.Stroke({
+          color: [153, 102, 51, 1],
+          width: 3
         })  
     })
   })
@@ -56,12 +66,20 @@ var testPoints = new ol.layer.Vector({
 
 var selectInteraction = new ol.interaction.Select({
         condition: ol.events.condition.singleClick,
-        toggleCondition: ol.events.condition.shiftKeyOnly,
-        layers: function (layer) {
-          return layer.get('id') == 'srm';
-        },
-        style: newPointStyle
+        toggleCondition: ol.events.condition.singleClick,//shiftKeyOnly
+        layers: [
+          (function (layer) {
+            
+            return layer.get('id') == 'srm';
+          }),
+          (function (layer) {
+            console.log(layer.getFeatures());
+            return layer.getFeatures();
+
+          })],
+        style: newPointClickStyle
       });
+
 // Create map
 var map = new ol.Map({
     target: 'map',  // The DOM element that will contains the map
@@ -75,6 +93,8 @@ var map = new ol.Map({
 });
 
 map.getInteractions().extend([selectInteraction]);
+
+var highlightStyleCache = {};
 
 //layer style
 function styleFunction(feature, resolution) {
@@ -103,47 +123,48 @@ function styleFunction(feature, resolution) {
 
       // when the mouse moves over the map, we get an event that we can use
       // to create a new feature overlay from
-      map.on('pointermove', function(browserEvent) {
-        // first clear any existing features in the overlay
-        featureOverlay.getFeatures().clear();
-        var coordinate = browserEvent.coordinate;
-        var pixel = browserEvent.pixel;
-        // then for each feature at the mouse position ...
-        map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-          // check the layer property, if it is not set then it means we
-          // are over an OverlayFeature and we can ignore this feature
-          if (!layer) {
-            return;
-          }
-          // test the feature's geometry type and compute a reasonable point
-          // at which to display the text.
-          var geometry = feature.getGeometry();
-          var point;
-          switch (geometry.getType()) {
-          case 'MultiPolygon':
-            var poly = geometry.getPolygons().reduce(function(left, right) {
-              return left.getArea() > right.getArea() ? left : right;
-            });
-            point = poly.getInteriorPoint().getCoordinates();
-            break;
-          case 'Polygon':
-            point = geometry.getInteriorPoint().getCoordinates();
-            break;
-          default:
-            point = geometry.getClosestPoint(coordinate);
-          }
-          // create a new feature to display the text
-          textFeature = new ol.Feature({
-            geometry: new ol.geom.Point(point),
-            text: feature.get('name'),
-    
-          });
-          // and add it to the featureOverlay.  Also add the feature itself
-          // so the country gets outlined
-          featureOverlay.addFeature(textFeature);
-          featureOverlay.addFeature(feature);
-        });
-      });
+var featureOverlay = new ol.FeatureOverlay({
+  map: map,
+  style: function(feature, resolution) {
+    var text = resolution < 5000 ? feature.get('name') : '';
+    if (!highlightStyleCache[text]) {
+      highlightStyleCache[text] = [newPointHoverStyle];
+    }
+    return highlightStyleCache[text];
+  }
+});
+
+var highlight;
+var displayFeatureInfo = function(pixel) {
+
+  var feature = map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+    return feature;
+  });
+
+  if (feature !== highlight) {
+    if (highlight) {
+      featureOverlay.removeFeature(highlight);
+    }
+    if (feature) {
+      featureOverlay.addFeature(feature);
+    }
+    highlight = feature;
+  }
+
+};
+
+map.on('pointermove', function(evt) {
+  if (evt.dragging) {
+    return;
+  }
+  var pixel = map.getEventPixel(evt.originalEvent);
+  displayFeatureInfo(pixel);
+});
+
+map.on('click', function(evt) {
+  displayFeatureInfo(evt.pixel);
+});
+
 
 
 
