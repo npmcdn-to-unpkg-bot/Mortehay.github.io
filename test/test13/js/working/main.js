@@ -34,7 +34,7 @@ var newPointClickStyle= new ol.style.Style({
 var newPointHoverStyle= new ol.style.Style({
     image: new ol.style.Circle({
       radius: 10,
-      fill: new ol.style.Fill({color: '#ccff33'}),
+      //fill: new ol.style.Fill({color: '#ccff33'}), causes difficulty in click on point
       stroke: new ol.style.Stroke({
           color: [153, 102, 51, 1],
           width: 3
@@ -64,18 +64,34 @@ var testPoints = new ol.layer.Vector({
   style: defaultPointStyle/**/
 });
 
+/*testPoints.events.on({
+  loadend: function() { console.log(testPoints.getSource().getFeatures());}
+});*/
+
+var vectorSource = testPoints.getSource();
+var listenerKey = vectorSource.on('change', function(e) {
+  if (vectorSource.getState() == 'ready') {
+    var featureCount = vectorSource.getFeatures().length;
+    // ...
+    console.log(featureCount);
+    
+    console.log(vectorSource.getFeatures());
+    ol.Observable.unByKey(listenerKey);
+    // use vectorSource.unByKey(listenerKey) instead
+    // if you do use the "master" branch of ol3
+  }
+});
+
+
+
+
 var selectInteraction = new ol.interaction.Select({
         condition: ol.events.condition.singleClick,
         toggleCondition: ol.events.condition.singleClick,//shiftKeyOnly
         layers: [
           (function (layer) {
-            
-            return layer.get('id') == 'srm';
-          }),
-          (function (layer) {
-            console.log(layer.getFeatures());
-            return layer.getFeatures();
 
+            return layer.get('id') == 'srm';
           })],
         style: newPointClickStyle
       });
