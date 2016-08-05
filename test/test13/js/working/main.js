@@ -1,5 +1,5 @@
 
-
+var layerId;
 //center point of map
 var centerPoint=[
   {
@@ -68,19 +68,19 @@ var testPoints = new ol.layer.Vector({
   loadend: function() { console.log(testPoints.getSource().getFeatures());}
 });*/
 
-var vectorSource = testPoints.getSource();
+/*var vectorSource = testPoints.getSource();
 var listenerKey = vectorSource.on('change', function(e) {
   if (vectorSource.getState() == 'ready') {
     var featureCount = vectorSource.getFeatures().length;
     // ...
     console.log(featureCount);
     
-    console.log(vectorSource.getFeatures());
+    console.log(vectorSource.getFeatures()[0]);
     ol.Observable.unByKey(listenerKey);
     // use vectorSource.unByKey(listenerKey) instead
     // if you do use the "master" branch of ol3
   }
-});
+});*/
 
 
 
@@ -90,8 +90,8 @@ var selectInteraction = new ol.interaction.Select({
         toggleCondition: ol.events.condition.singleClick,//shiftKeyOnly
         layers: [
           (function (layer) {
-
-            return layer.get('id') == 'srm';
+            layerId = layer.get('id');
+            return layerId == 'srm';
           })],
         style: newPointClickStyle
       });
@@ -177,9 +177,9 @@ map.on('pointermove', function(evt) {
   displayFeatureInfo(pixel);
 });
 
-map.on('click', function(evt) {
+/*map.on('click', function(evt) {
   displayFeatureInfo(evt.pixel);
-});
+});*/
 
 
 
