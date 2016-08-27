@@ -8,13 +8,10 @@ var arrayIndexNew = [];
 var arrayIndexNew2D = [];
 var arrayOutput = [];
 var temp= -10000;
-var tempElement;
-var temp2 = 100;
-var day;
 var dayx;
 var time;
 //var tempL='';
-var tempS='';
+var tempTime;
 var value;
 var theOrder = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс' ];
 var arraySorted;
@@ -85,7 +82,8 @@ $.fn.clickFunction = function(){
 						if( Math.abs(temp - arraySorted[z][1]) <= 0.5) {
 							console.log(temp - arraySorted[z][1]);
 							console.log(z);
-							arrayIndexNew.push(z);							
+							arrayIndexNew.push(z);
+							arrayIndexNew2D.push([arraySorted[z][0],z]);						
 						};		
 					}
 					temp = arraySorted[z][1];
@@ -97,28 +95,33 @@ $.fn.clickFunction = function(){
 			console.log('arrayIndexNew', arrayIndexNew);
 			console.log('arrayIndexNew2D', arrayIndexNew2D);
 			//-----generate result array
-			for (var m = 0; m < arraySorted.length; m++) {
-				if (arrayIndexNew.indexOf(m)< 0) {
-					day = theOrder[arraySorted[m][0]];
-					if (arraySorted[m][1] - Math.floor(arraySorted[m][1]) >0) {
-						time = Math.floor(arraySorted[m][1]) + ':' + ((arraySorted[m][1] - Math.floor(arraySorted[m][1]) ) +'').replace('0.5','30');
-					} else {
-						time = arraySorted[m][1] + ':00';
-					}				
-					arrayTemp.push(day +' ' + time);
-				} else{
-					if( (arrayIndexNew.indexOf(m) >= 0) ){
-						dayx = dayx + theOrder[arraySorted[m][0]];arrayTemp.push(dayx +' ' + 'time');
-					} else {
-						arrayTemp.push('-----')
+			for (var s = 0; s < theOrder.length; s++) {
+				tempTime='';
+				day = theOrder[s];
+				for (var w = 0; w < arraySorted.length; w++) {
+					if (arraySorted[w][0] == s) {
+						if ( (arraySorted[w][1] - Math.floor(arraySorted[w][1]) >0) ) {
+							time = Math.floor(arraySorted[w][1]) + ':' + ((arraySorted[w][1] - Math.floor(arraySorted[w][1]) ) +'').replace('0.5','30');
+						} else {
+							time = arraySorted[w][1] + ':00';
+						}
+						if (tempTime=='') {
+							tempTime=tempTime+time;
+						} else {
+							tempTime=tempTime+', '+time;
+						}
+						
 					}
 					
-
-					
 				}
-
 				
-			}
+				if (arrayIndex.indexOf(s) >= 0) {
+					arrayTemp.push(day +' ' + tempTime);
+				}
+				
+
+			}				
+			
 			//console.log('arraySorted', arraySorted); //sorted array
 			//console.log('arrayIndexNew.length', arrayIndexNew.length);
 			//console.log('arraySorted.length', arraySorted.length);
