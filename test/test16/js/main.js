@@ -37,15 +37,13 @@ $.fn.clickFunction = function(){
 		var time = '';
 		var tempTime = 0;
 		var theOrder = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс' ];
-		//input = $('#input').val();
-		input = string;
+		
+		input = $('#input').val();
+		//input = string;
 		if (input =='' ){
 			alert('please insert data');
 		} else {
 			console.log('input', input);
-			/*for (var i = 0; i < input.length; i++) {
-				arrayIndex.push(theOrder.indexOf(input.substring(0,2)));
-			}*/
 			
 			arrayInput = input.split(',');
 			
